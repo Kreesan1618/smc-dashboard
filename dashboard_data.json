@@ -1,23 +1,23 @@
 {
-  "scan_time": "15 Mar 2026 \u00b7 21:00 UTC",
+  "scan_time": "15 Mar 2026 \u00b7 22:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 71745.07,
+      "price": 72044.51,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2130.25,
+      "price": 2138.22,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 88.83,
-      "trend": "\ud83d\udd34 \u25bc"
+      "price": 89.89,
+      "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
@@ -57,26 +57,15 @@
       "unrealized_pnl": 6.91
     },
     {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
+      "symbol": "ETHUSDT",
+      "symbol_name": "ETH",
       "direction": "LONG",
-      "entry": 71211.95,
-      "current": 71745.07,
-      "tp": 72161.3,
-      "sl": 70737.28,
-      "unrealized_pct": 0.75,
-      "unrealized_pnl": 224.63
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "entry": 88.3,
-      "current": 88.83,
-      "tp": 86.62,
-      "sl": 89.14,
-      "unrealized_pct": -0.6,
-      "unrealized_pnl": -126.55
+      "entry": 2129.05,
+      "current": 2138.22,
+      "tp": 2172.42,
+      "sl": 2107.36,
+      "unrealized_pct": 0.43,
+      "unrealized_pnl": 84.57
     }
   ],
   "closed_trades": [
@@ -117,6 +106,30 @@
       "exit_time": "2026-03-15 20:00"
     },
     {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "LONG",
+      "result": "TP_HIT",
+      "entry": "71211.95",
+      "exit_price": "72161.3",
+      "pnl": "339.59",
+      "pnl_pct": "3.4",
+      "scan_time": "2026-03-15 00:00:32",
+      "exit_time": "2026-03-15 21:00"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "SHORT",
+      "result": "SL_HIT",
+      "entry": "88.3",
+      "exit_price": "89.14",
+      "pnl": "-242.94",
+      "pnl_pct": "-2.43",
+      "scan_time": "2026-03-15 03:00:34",
+      "exit_time": "2026-03-15 21:00"
+    },
+    {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
       "direction": "LONG",
@@ -142,34 +155,34 @@
     }
   ],
   "stats": {
-    "total": 9,
+    "total": 11,
     "open": 4,
-    "wins": 1,
-    "losses": 4,
-    "win_rate": 20.0,
-    "total_pnl": -555.25
+    "wins": 2,
+    "losses": 5,
+    "win_rate": 28.57142857142857,
+    "total_pnl": -458.6
   },
   "signal_radar": [
     {
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
-      "trend": -1,
+      "trend": 1,
       "proximity": 75,
-      "note": "Trend active \u00b7 Volume confirmed \u00b7 Near order block"
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "XAUUSDT",
