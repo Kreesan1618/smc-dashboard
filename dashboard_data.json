@@ -1,28 +1,28 @@
 {
-  "scan_time": "15 Mar 2026 \u00b7 22:00 UTC",
+  "scan_time": "15 Mar 2026 \u00b7 23:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 72044.51,
+      "price": 72774.24,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2138.22,
+      "price": 2186.58,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 89.89,
+      "price": 92.82,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5061.7001953125,
+      "price": 5024.10009765625,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -57,15 +57,15 @@
       "unrealized_pnl": 6.91
     },
     {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
       "direction": "LONG",
-      "entry": 2129.05,
-      "current": 2138.22,
-      "tp": 2172.42,
-      "sl": 2107.36,
-      "unrealized_pct": 0.43,
-      "unrealized_pnl": 84.57
+      "entry": 72109.58,
+      "current": 72774.24,
+      "tp": 73174.41,
+      "sl": 71577.16,
+      "unrealized_pct": 0.92,
+      "unrealized_pnl": 249.68
     }
   ],
   "closed_trades": [
@@ -152,15 +152,39 @@
       "pnl_pct": "3.52",
       "scan_time": "2026-03-15 14:00:28",
       "exit_time": "2026-03-15 20:00"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "symbol_name": "ETH",
+      "direction": "LONG",
+      "result": "TP_HIT",
+      "entry": "2129.05",
+      "exit_price": "2172.42",
+      "pnl": "360.32",
+      "pnl_pct": "3.6",
+      "scan_time": "2026-03-15 21:00:30",
+      "exit_time": "2026-03-15 22:00"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "LONG",
+      "result": "TP_HIT",
+      "entry": "90.0",
+      "exit_price": "92.1",
+      "pnl": "365.21",
+      "pnl_pct": "3.65",
+      "scan_time": "2026-03-15 22:00:32",
+      "exit_time": "2026-03-15 23:00"
     }
   ],
   "stats": {
     "total": 11,
-    "open": 4,
-    "wins": 2,
+    "open": 2,
+    "wins": 4,
     "losses": 5,
-    "win_rate": 28.57142857142857,
-    "total_pnl": -458.6
+    "win_rate": 44.44444444444444,
+    "total_pnl": 266.92999999999995
   },
   "signal_radar": [
     {
@@ -188,8 +212,8 @@
       "symbol": "XAUUSDT",
       "name": "GOLD",
       "trend": -1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Structure break"
     },
     {
       "symbol": "TSLAUSDT",
