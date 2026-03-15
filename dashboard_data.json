@@ -1,0 +1,31 @@
+{
+  "scan_time": "15 Mar 2026 · 14:01 UTC",
+  "market_status": [
+    {"symbol": "BTCUSDT", "symbol_name": "BTC", "price": 70680, "trend": "🟢 ▲"},
+    {"symbol": "ETHUSDT", "symbol_name": "ETH", "price": 2082, "trend": "🔴 ▼"},
+    {"symbol": "SOLUSDT", "symbol_name": "SOL", "price": 87.93, "trend": "🔴 ▼"},
+    {"symbol": "XAUUSDT", "symbol_name": "GOLD", "price": 2950, "trend": "🟢 ▲"},
+    {"symbol": "TSLAUSDT", "symbol_name": "TSLA", "price": 178.50, "trend": "🟢 ▲"},
+    {"symbol": "SPXUSDT", "symbol_name": "SPX", "price": 5620, "trend": "🔴 ▼"},
+    {"symbol": "NDXUSDT", "symbol_name": "NDX", "price": 19450, "trend": "🟢 ▲"}
+  ],
+  "open_positions": [
+    {"symbol": "BTCUSDT", "symbol_name": "BTC", "direction": "LONG", "entry": 70500, "current": 70680, "tp": 72100, "sl": 69800, "unrealized_pct": 0.26, "unrealized_pnl": 12.50},
+    {"symbol": "ETHUSDT", "symbol_name": "ETH", "direction": "SHORT", "entry": 2130, "current": 2082, "tp": 2030, "sl": 2187, "unrealized_pct": 2.25, "unrealized_pnl": 98.20},
+    {"symbol": "XAUUSDT", "symbol_name": "GOLD", "direction": "SHORT", "entry": 2960, "current": 2950, "tp": 2920, "sl": 2970, "unrealized_pct": 0.34, "unrealized_pnl": 8.20},
+    {"symbol": "TSLAUSDT", "symbol_name": "TSLA", "direction": "LONG", "entry": 175, "current": 178.50, "tp": 185, "sl": 170, "unrealized_pct": 2.0, "unrealized_pnl": 74.10}
+  ],
+  "closed_trades": [
+    {"symbol": "SOLUSDT", "symbol_name": "SOL", "direction": "LONG", "result": "SL_HIT", "pnl": "-219.77", "pnl_pct": "-2.20", "exit_time": "2026-03-13 22:00"},
+    {"symbol": "ETHUSDT", "symbol_name": "ETH", "direction": "LONG", "result": "SL_HIT", "pnl": "-219.53", "pnl_pct": "-2.20", "exit_time": "2026-03-13 17:00"},
+    {"symbol": "BTCUSDT", "symbol_name": "BTC", "direction": "SHORT", "result": "TP_HIT", "pnl": "+380.50", "pnl_pct": "+3.81", "exit_time": "2026-03-14 04:00"}
+  ],
+  "stats": {
+    "total": 7,
+    "open": 4,
+    "wins": 1,
+    "losses": 2,
+    "win_rate": 33.3,
+    "total_pnl": -58.80
+  }
+}
