@@ -1,22 +1,22 @@
 {
-  "scan_time": "15 Mar 2026 \u00b7 15:00 UTC",
+  "scan_time": "15 Mar 2026 \u00b7 15:21 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 71593.06,
+      "price": 71513.87,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2095.8,
+      "price": 2092.69,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 87.97,
+      "price": 87.93,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -61,44 +61,44 @@
       "symbol_name": "ETH",
       "direction": "SHORT",
       "entry": 2088.97,
-      "current": 2095.8,
+      "current": 2092.69,
       "tp": 2010.7,
       "sl": 2128.1,
-      "unrealized_pct": -0.33,
-      "unrealized_pnl": -34.91
+      "unrealized_pct": -0.18,
+      "unrealized_pnl": -19.01
     },
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 71211.95,
-      "current": 71593.06,
+      "current": 71513.87,
       "tp": 72161.3,
       "sl": 70737.28,
-      "unrealized_pct": 0.54,
-      "unrealized_pnl": 160.58
+      "unrealized_pct": 0.42,
+      "unrealized_pnl": 127.21
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 88.3,
-      "current": 87.97,
+      "current": 87.93,
       "tp": 86.62,
       "sl": 89.14,
-      "unrealized_pct": 0.37,
-      "unrealized_pnl": 78.8
+      "unrealized_pct": 0.42,
+      "unrealized_pnl": 88.35
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2097.4,
-      "current": 2095.8,
+      "current": 2092.69,
       "tp": 2132.84,
       "sl": 2079.68,
-      "unrealized_pct": -0.08,
-      "unrealized_pnl": -18.06
+      "unrealized_pct": -0.22,
+      "unrealized_pnl": -53.17
     }
   ],
   "closed_trades": [
@@ -146,5 +146,56 @@
     "losses": 3,
     "win_rate": 0.0,
     "total_pnl": -686.02
-  }
+  },
+  "signal_radar": [
+    {
+      "symbol": "BTCUSDT",
+      "name": "BTC",
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "name": "ETH",
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "name": "SOL",
+      "trend": -1,
+      "proximity": 55,
+      "note": "Trend active \u00b7 Near order block"
+    },
+    {
+      "symbol": "XAUUSDT",
+      "name": "GOLD",
+      "trend": -1,
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+    },
+    {
+      "symbol": "TSLAUSDT",
+      "name": "TSLA",
+      "trend": -1,
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+    },
+    {
+      "symbol": "SPXUSDT",
+      "name": "SPX",
+      "trend": -1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+    },
+    {
+      "symbol": "NDXUSDT",
+      "name": "NDX",
+      "trend": 0,
+      "proximity": 20,
+      "note": "Volume confirmed"
+    }
+  ]
 }
