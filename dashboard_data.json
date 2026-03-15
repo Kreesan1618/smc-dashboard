@@ -1,22 +1,22 @@
 {
-  "scan_time": "15 Mar 2026 \u00b7 13:00 UTC",
+  "scan_time": "15 Mar 2026 \u00b7 14:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 71625.47,
+      "price": 71598.23,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2110.22,
+      "price": 2098.16,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 88.3,
+      "price": 87.8,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -61,44 +61,33 @@
       "symbol_name": "ETH",
       "direction": "SHORT",
       "entry": 2088.97,
-      "current": 2110.22,
+      "current": 2098.16,
       "tp": 2010.7,
       "sl": 2128.1,
-      "unrealized_pct": -1.02,
-      "unrealized_pnl": -108.6
+      "unrealized_pct": -0.44,
+      "unrealized_pnl": -46.97
     },
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 71211.95,
-      "current": 71625.47,
+      "current": 71598.23,
       "tp": 72161.3,
       "sl": 70737.28,
-      "unrealized_pct": 0.58,
-      "unrealized_pnl": 174.23
+      "unrealized_pct": 0.54,
+      "unrealized_pnl": 162.76
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 88.3,
-      "current": 88.3,
+      "current": 87.8,
       "tp": 86.62,
       "sl": 89.14,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "entry": 2107.91,
-      "current": 2110.22,
-      "tp": 2143.85,
-      "sl": 2089.94,
-      "unrealized_pct": 0.11,
-      "unrealized_pnl": 25.71
+      "unrealized_pct": 0.57,
+      "unrealized_pnl": 119.39
     }
   ],
   "closed_trades": [
@@ -125,14 +114,26 @@
       "pnl_pct": "-2.2",
       "scan_time": "2026-03-13 17:00:38",
       "exit_time": "2026-03-13 22:00"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "symbol_name": "ETH",
+      "direction": "LONG",
+      "result": "SL_HIT",
+      "entry": "2107.91",
+      "exit_price": "2089.94",
+      "pnl": "-246.72",
+      "pnl_pct": "-2.47",
+      "scan_time": "2026-03-15 06:00:33",
+      "exit_time": "2026-03-15 13:00"
     }
   ],
   "stats": {
-    "total": 7,
+    "total": 8,
     "open": 5,
     "wins": 0,
-    "losses": 2,
+    "losses": 3,
     "win_rate": 0.0,
-    "total_pnl": -439.3
+    "total_pnl": -686.02
   }
 }
