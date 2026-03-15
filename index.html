@@ -97,13 +97,39 @@ tr:hover td{background:var(--card-hover)}
 .radar-status{font-size:10px;font-family:var(--mono);color:var(--muted)}
 .radar-status b{color:var(--white)}
 
-/* Asset Performance */
-.perf-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-bottom:32px}
-.perf-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:14px 16px}
-.perf-name{font-size:13px;font-weight:700;font-family:var(--mono);margin-bottom:10px}
-.perf-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
-.perf-period{font-size:10px;color:var(--muted);font-family:var(--mono)}
-.perf-val{font-size:12px;font-weight:600;font-family:var(--mono)}
+/* Trending coins */
+.trending-row{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid rgba(30,45,61,0.5);font-family:var(--mono);font-size:13px}
+.trending-row:last-child{border-bottom:none}
+.trending-row:hover{background:var(--card-hover)}
+.trending-left{display:flex;align-items:center;gap:10px}
+.trending-rank{font-size:11px;color:var(--muted);width:20px}
+.trending-img{width:24px;height:24px;border-radius:50%}
+.trending-name{font-weight:600}
+.trending-sym{font-size:11px;color:var(--muted)}
+
+/* Liquidation bar */
+.liq-wrap{padding:20px}
+.liq-bar-outer{display:flex;height:36px;border-radius:8px;overflow:hidden;margin-bottom:12px}
+.liq-long{background:var(--green);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700;color:#000;transition:width .5s}
+.liq-short{background:var(--red);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700;color:#fff;transition:width .5s}
+.liq-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.liq-stat{background:var(--bg2);border-radius:8px;padding:12px;text-align:center}
+.liq-stat-label{font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase}
+.liq-stat-val{font-size:18px;font-weight:700;font-family:var(--mono);margin-top:4px}
+
+/* Econ calendar */
+.econ-row{display:flex;align-items:center;gap:12px;padding:12px 20px;border-bottom:1px solid rgba(30,45,61,0.5);font-family:var(--mono);font-size:12px}
+.econ-row:last-child{border-bottom:none}
+.econ-row:hover{background:var(--card-hover)}
+.econ-impact{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.econ-impact.high{background:var(--red)}.econ-impact.medium{background:var(--amber)}.econ-impact.low{background:var(--muted)}
+.econ-time{color:var(--muted);min-width:70px;font-size:11px}
+.econ-event{flex:1;font-weight:500;color:var(--white)}
+.econ-country{color:var(--muted);font-size:11px}
+.econ-vals{display:flex;gap:12px;font-size:11px}
+.econ-actual{color:var(--white);font-weight:600}
+.econ-forecast{color:var(--muted)}
+.econ-previous{color:var(--muted2)}
 
 .filters{display:flex;gap:8px;flex-wrap:wrap}
 .filter-btn{font-size:11px;font-family:var(--mono);padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;transition:all .2s}
@@ -115,7 +141,7 @@ tr:hover td{background:var(--card-hover)}
 .history-scroll::-webkit-scrollbar{width:6px}.history-scroll::-webkit-scrollbar-track{background:var(--bg2)}.history-scroll::-webkit-scrollbar-thumb{background:var(--border-light);border-radius:3px}
 .history-summary{display:flex;gap:16px;padding:12px 20px;background:var(--bg2);border-bottom:1px solid var(--border);font-size:12px;font-family:var(--mono);color:var(--muted);flex-wrap:wrap}
 .footer{text-align:center;padding:24px 0;color:var(--muted2);font-size:11px;font-family:var(--mono)}
-@media(max-width:768px){.top-row{grid-template-columns:1fr}.price-grid,.radar-grid,.perf-grid{grid-template-columns:repeat(2,1fr)}.fg-row{grid-template-columns:1fr}th,td{padding:10px 12px;font-size:11px}.stat-value{font-size:22px}.card-header{flex-direction:column;align-items:flex-start}}
+@media(max-width:768px){.top-row{grid-template-columns:1fr}.price-grid,.radar-grid{grid-template-columns:repeat(2,1fr)}.fg-row{grid-template-columns:1fr}th,td{padding:10px 12px;font-size:11px}.stat-value{font-size:22px}.card-header{flex-direction:column;align-items:flex-start}[style*="grid-template-columns: 1fr 1fr"]{grid-template-columns:1fr !important}}
 </style>
 </head>
 <body>
@@ -137,7 +163,18 @@ tr:hover td{background:var(--card-hover)}
     <div class="stat-card"><div class="stat-label">Realised P&L</div><div class="stat-value" id="realised">--</div><div class="stat-sub" id="total-trades">--</div></div>
   </div>
 
-  <!-- 1. Fear & Greed -->
+  <!-- 1. Market Prices -->
+  <div class="section-title">Market prices <span style="font-size:10px;color:var(--green);font-weight:400;letter-spacing:0">● LIVE</span></div>
+  <div class="price-grid" id="prices"><div class="loading"><div class="spinner"></div> Loading...</div></div>
+
+  <!-- 2. Open Positions -->
+  <div class="section-title">Open positions <span style="font-size:10px;color:var(--green);font-weight:400;letter-spacing:0">● LIVE P&L</span></div>
+  <div class="card-wrap">
+    <div class="card-header"><div class="card-title">Active Trades</div><div class="badge" id="pos-count">0</div></div>
+    <div id="positions-body"><div class="empty-state">No open positions</div></div>
+  </div>
+
+  <!-- 3. Fear & Greed -->
   <div class="section-title">BTC Fear & Greed</div>
   <div class="fg-row">
     <div class="fg-gauge-card">
@@ -157,26 +194,36 @@ tr:hover td{background:var(--card-hover)}
     <div class="fg-chart-wrap"><canvas id="fg-chart"></canvas></div>
   </div>
 
-  <!-- 2. Market Prices -->
-  <div class="section-title">Market prices <span style="font-size:10px;color:var(--green);font-weight:400;letter-spacing:0">● LIVE</span></div>
-  <div class="price-grid" id="prices"><div class="loading"><div class="spinner"></div> Loading...</div></div>
-
-  <!-- 3. Open Positions -->
-  <div class="section-title">Open positions <span style="font-size:10px;color:var(--green);font-weight:400;letter-spacing:0">● LIVE P&L</span></div>
-  <div class="card-wrap">
-    <div class="card-header"><div class="card-title">Active Trades</div><div class="badge" id="pos-count">0</div></div>
-    <div id="positions-body"><div class="empty-state">No open positions</div></div>
-  </div>
-
   <!-- 4. Signal Radar -->
   <div class="section-title">Signal radar</div>
   <div class="radar-grid" id="radar"><div class="loading"><div class="spinner"></div> Waiting for scan data...</div></div>
 
-  <!-- 5. Asset Performance -->
-  <div class="section-title">Asset performance</div>
-  <div class="perf-grid" id="perf"><div class="loading"><div class="spinner"></div> Loading...</div></div>
+  <!-- 5. Trending Coins + BTC Liquidations side by side -->
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px">
+    <div>
+      <div class="section-title">Trending coins</div>
+      <div class="card-wrap" style="margin-bottom:0">
+        <div class="card-header"><div class="card-title">Volume Spikes</div><div class="badge">CoinGecko</div></div>
+        <div id="trending"><div class="loading"><div class="spinner"></div> Loading...</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="section-title">BTC Liquidations 24H</div>
+      <div class="card-wrap" style="margin-bottom:0">
+        <div class="card-header"><div class="card-title">Long vs Short</div><div class="badge">Binance</div></div>
+        <div id="liquidations"><div class="loading"><div class="spinner"></div> Loading...</div></div>
+      </div>
+    </div>
+  </div>
 
-  <!-- 6. Trade History -->
+  <!-- 6. Economic Calendar -->
+  <div class="section-title">Economic calendar</div>
+  <div class="card-wrap">
+    <div class="card-header"><div class="card-title">Upcoming Events</div><div class="badge">Finnhub</div></div>
+    <div id="econ-cal"><div class="loading"><div class="spinner"></div> Loading...</div></div>
+  </div>
+
+  <!-- 7. Trade History -->
   <div class="section-title">Trade history</div>
   <div class="card-wrap">
     <div class="card-header">
@@ -240,35 +287,118 @@ function loadFG(){fetch('https://api.alternative.me/fng/?limit=30').then(r=>r.js
       y:{min:0,max:100,ticks:{color:'#4a5568',font:{size:9,family:'JetBrains Mono'}},grid:{color:'#1e2d3d'}}}}})}).catch(()=>{})}
 loadFG();
 
-// Asset Performance (Binance 24hr + 7d calc from klines)
-function loadPerf(){
-  const cryptos=['BTCUSDT','ETHUSDT','SOLUSDT'];
-  const names={BTCUSDT:'BTC',ETHUSDT:'ETH',SOLUSDT:'SOL',XAUUSDT:'GOLD',TSLAUSDT:'TSLA',SPXUSDT:'SPX',NDXUSDT:'NDX'};
-  const el=document.getElementById('perf');
-  // Fetch 24h tickers from Binance
-  fetch('https://data-api.binance.vision/api/v3/ticker/24hr?symbols=["BTCUSDT","ETHUSDT","SOLUSDT"]')
-    .then(r=>r.json()).then(data=>{
-      let html='';
-      data.forEach(t=>{
-        const pct24=parseFloat(t.priceChangePercent);
-        const c24=pct24>=0?'var(--green)':'var(--red)';
-        html+=`<div class="perf-card"><div class="perf-name">${names[t.symbol]||t.symbol}</div>
-          <div class="perf-row"><span class="perf-period">24H</span><span class="perf-val" style="color:${c24}">${pct24>=0?'+':''}${pct24.toFixed(2)}%</span></div>
-          <div class="perf-row"><span class="perf-period">Price</span><span class="perf-val" style="color:var(--white)">${fP(parseFloat(t.lastPrice))}</span></div>
-          <div class="perf-row"><span class="perf-period">High</span><span class="perf-val" style="color:var(--muted)">${fP(parseFloat(t.highPrice))}</span></div>
-          <div class="perf-row"><span class="perf-period">Low</span><span class="perf-val" style="color:var(--muted)">${fP(parseFloat(t.lowPrice))}</span></div></div>`;
-      });
-      // Add TradFi from scanner data if available
-      if(dashData&&dashData.market_status){
-        dashData.market_status.filter(m=>!cryptos.includes(m.symbol)).forEach(m=>{
-          html+=`<div class="perf-card"><div class="perf-name">${m.symbol_name}</div>
-            <div class="perf-row"><span class="perf-period">Price</span><span class="perf-val" style="color:var(--white)">${fP(m.price)}</span></div>
-            <div class="perf-row"><span class="perf-period">Trend</span><span class="perf-val" style="color:${(m.trend||'').includes('▲')?'var(--green)':'var(--red)'}">${(m.trend||'').includes('▲')?'Bullish':'Bearish'}</span></div></div>`;
-        });
-      }
-      el.innerHTML=html;
-    }).catch(()=>{el.innerHTML='<div class="empty-state">Could not load performance data</div>'});
+// ── Trending Coins (CoinGecko) ──
+function loadTrending(){
+  fetch('https://api.coingecko.com/api/v3/search/trending').then(r=>r.json()).then(d=>{
+    const coins=d.coins||[];
+    if(!coins.length){document.getElementById('trending').innerHTML='<div class="empty-state">No trending data</div>';return}
+    document.getElementById('trending').innerHTML=coins.slice(0,7).map((c,i)=>{
+      const coin=c.item;
+      const pct=coin.data&&coin.data.price_change_percentage_24h&&coin.data.price_change_percentage_24h.usd;
+      const pctVal=pct?parseFloat(pct):0;
+      const pctCol=pctVal>=0?'var(--green)':'var(--red)';
+      const price=coin.data&&coin.data.price?'$'+parseFloat(coin.data.price).toLocaleString('en-US',{maximumFractionDigits:6}):'--';
+      return`<div class="trending-row">
+        <div class="trending-left">
+          <span class="trending-rank">#${i+1}</span>
+          <img class="trending-img" src="${coin.thumb}" alt="" onerror="this.style.display='none'">
+          <div><div class="trending-name">${coin.name}</div><div class="trending-sym">${coin.symbol}</div></div>
+        </div>
+        <div style="text-align:right">
+          <div style="font-family:var(--mono);font-size:13px;color:var(--white)">${price}</div>
+          ${pct?`<div style="font-family:var(--mono);font-size:11px;color:${pctCol}">${pctVal>=0?'+':''}${pctVal.toFixed(1)}%</div>`:''}
+        </div>
+      </div>`;
+    }).join('');
+  }).catch(()=>{document.getElementById('trending').innerHTML='<div class="empty-state">Could not load trending</div>'});
 }
+loadTrending();
+
+// ── BTC Liquidations (Binance Long/Short Ratio) ──
+function loadLiquidations(){
+  const el=document.getElementById('liquidations');
+  // Fetch BTC long/short ratio from Binance
+  Promise.all([
+    fetch('https://fapi.binance.com/futures/data/globalLongShortAccountRatio?symbol=BTCUSDT&period=1d&limit=1').then(r=>r.json()).catch(()=>null),
+    fetch('https://fapi.binance.com/futures/data/takerlongshortRatio?symbol=BTCUSDT&period=1d&limit=1').then(r=>r.json()).catch(()=>null)
+  ]).then(([acctData, takerData])=>{
+    // Try account ratio first, fallback to taker
+    let longPct=50, shortPct=50, longRatio=1, shortRatio=1;
+    const data = acctData && acctData[0] ? acctData[0] : (takerData && takerData[0] ? takerData[0] : null);
+
+    if(data){
+      longRatio = parseFloat(data.longAccount || data.buyVol || 0.5);
+      shortRatio = parseFloat(data.shortAccount || data.sellVol || 0.5);
+      const total = longRatio + shortRatio;
+      longPct = Math.round((longRatio / total) * 100);
+      shortPct = 100 - longPct;
+    }
+
+    el.innerHTML=`<div class="liq-wrap">
+      <div class="liq-bar-outer">
+        <div class="liq-long" style="width:${longPct}%">${longPct}% Long</div>
+        <div class="liq-short" style="width:${shortPct}%">${shortPct}% Short</div>
+      </div>
+      <div class="liq-stats">
+        <div class="liq-stat">
+          <div class="liq-stat-label">Longs</div>
+          <div class="liq-stat-val" style="color:var(--green)">${longPct}%</div>
+        </div>
+        <div class="liq-stat">
+          <div class="liq-stat-label">Shorts</div>
+          <div class="liq-stat-val" style="color:var(--red)">${shortPct}%</div>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:10px;font-size:10px;color:var(--muted);font-family:var(--mono)">
+        ${longPct>shortPct?'Market is leaning LONG — potential short squeeze':'Market is leaning SHORT — potential long squeeze'}
+      </div>
+    </div>`;
+  }).catch(()=>{
+    // Fallback if Binance futures blocked
+    el.innerHTML='<div class="liq-wrap"><div class="empty-state">Liquidation data unavailable from this location</div></div>';
+  });
+}
+loadLiquidations();
+
+// ── Economic Calendar (Finnhub) ──
+function loadEconCal(){
+  const el=document.getElementById('econ-cal');
+  const now=new Date();
+  const from=now.toISOString().split('T')[0];
+  const to=new Date(now.getTime()+7*86400000).toISOString().split('T')[0];
+  fetch(`https://finnhub.io/api/v1/calendar/economic?from=${from}&to=${to}&token=${FK}`)
+    .then(r=>r.json()).then(d=>{
+      const events=(d.economicCalendar||[])
+        .filter(e=>e.impact&&e.impact!=='low')
+        .sort((a,b)=>new Date(a.time||a.event)-new Date(b.time||b.event))
+        .slice(0,12);
+      if(!events.length){el.innerHTML='<div class="empty-state">No upcoming high-impact events</div>';return}
+      el.innerHTML=events.map(e=>{
+        const imp=e.impact==='high'?'high':e.impact==='medium'?'medium':'low';
+        const dt=new Date(e.time||e.event);
+        const timeStr=dt.toLocaleDateString('en',{weekday:'short',month:'short',day:'numeric'})+' '+dt.toLocaleTimeString('en',{hour:'2-digit',minute:'2-digit',hour12:false});
+        const now2=new Date();
+        const diff=dt-now2;
+        let countdown='';
+        if(diff>0&&diff<86400000*2){
+          const hrs=Math.floor(diff/3600000);const mins=Math.floor((diff%3600000)/60000);
+          countdown=`<span style="color:var(--amber);font-size:10px;margin-left:6px">${hrs}h ${mins}m</span>`;
+        }
+        return`<div class="econ-row">
+          <span class="econ-impact ${imp}"></span>
+          <span class="econ-time">${timeStr}${countdown}</span>
+          <span class="econ-event">${e.event||'--'}</span>
+          <span class="econ-country">${e.country||''}</span>
+          <div class="econ-vals">
+            ${e.actual?`<span class="econ-actual">A: ${e.actual}</span>`:''}
+            ${e.estimate?`<span class="econ-forecast">E: ${e.estimate}</span>`:''}
+            ${e.prev?`<span class="econ-previous">P: ${e.prev}</span>`:''}
+          </div>
+        </div>`;
+      }).join('');
+    }).catch(()=>{el.innerHTML='<div class="empty-state">Could not load economic calendar</div>'});
+}
+loadEconCal();
 
 // Signal Radar
 function renderRadar(){
@@ -352,7 +482,6 @@ function render(data){
         <td style="min-width:100px"><div class="progress-wrap"><div class="progress-fill" id="prog-${id}" style="width:${pct}%;background:${progCol}"></div></div><div class="progress-labels"><span>SL</span><span>TP</span></div></td></tr>`}).join('')}</tbody></table>`}
 
   renderRadar();
-  loadPerf();
   renderHistory('all');
   recalc();
 }
