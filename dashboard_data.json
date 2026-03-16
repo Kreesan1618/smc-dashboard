@@ -1,28 +1,28 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 20:33 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 21:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 74032.22,
+      "price": 74209.85,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2332.92,
+      "price": 2346.56,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 95.89,
+      "price": 95.72,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5022.0,
+      "price": 5015.0,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -50,22 +50,22 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2288.79,
-      "current": 2332.92,
+      "current": 2346.56,
       "tp": 2366.61,
       "sl": 2249.88,
-      "unrealized_pct": 1.93,
-      "unrealized_pnl": 226.82
+      "unrealized_pct": 2.52,
+      "unrealized_pnl": 296.93
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 95.21,
-      "current": 95.89,
+      "current": 95.72,
       "tp": 98.47,
       "sl": 93.58,
-      "unrealized_pct": 0.71,
-      "unrealized_pnl": 83.49
+      "unrealized_pct": 0.54,
+      "unrealized_pnl": 62.62
     }
   ],
   "closed_trades": [
@@ -215,8 +215,8 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "ETHUSDT",
@@ -229,8 +229,8 @@
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Structure break"
     },
     {
       "symbol": "XAUUSDT",
