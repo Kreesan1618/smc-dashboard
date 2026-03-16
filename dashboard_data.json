@@ -1,28 +1,28 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 20:00 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 20:04 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73972.7,
+      "price": 73941.85,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2331.79,
+      "price": 2325.83,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 95.19,
+      "price": 95.24,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5016.10009765625,
+      "price": 5020.0,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -50,11 +50,22 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2288.79,
-      "current": 2331.79,
+      "current": 2325.83,
       "tp": 2366.61,
       "sl": 2249.88,
-      "unrealized_pct": 1.88,
-      "unrealized_pnl": 221.02
+      "unrealized_pct": 1.62,
+      "unrealized_pnl": 190.38
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "LONG",
+      "entry": 95.21,
+      "current": 95.24,
+      "tp": 98.47,
+      "sl": 93.58,
+      "unrealized_pct": 0.03,
+      "unrealized_pnl": 3.68
     }
   ],
   "closed_trades": [
