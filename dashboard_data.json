@@ -1,46 +1,46 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 19:00 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 20:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73868.33,
+      "price": 73972.7,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2320.94,
+      "price": 2331.79,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 94.31,
+      "price": 95.19,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5020.7001953125,
+      "price": 5016.10009765625,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "TSLAUSDT",
       "symbol_name": "TSLA",
-      "price": 397.0799865722656,
+      "price": 395.489990234375,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SPXUSDT",
       "symbol_name": "SPX",
-      "price": 6707.64013671875,
+      "price": 6699.85009765625,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "NDXUSDT",
       "symbol_name": "NDX",
-      "price": 24693.322265625,
+      "price": 24655.982421875,
       "trend": "\u26aa \u2014"
     }
   ],
@@ -50,11 +50,11 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2288.79,
-      "current": 2320.94,
+      "current": 2331.79,
       "tp": 2366.61,
       "sl": 2249.88,
-      "unrealized_pct": 1.4,
-      "unrealized_pnl": 165.25
+      "unrealized_pct": 1.88,
+      "unrealized_pnl": 221.02
     }
   ],
   "closed_trades": [
@@ -180,8 +180,8 @@
     }
   ],
   "stats": {
-    "total": 11,
-    "open": 1,
+    "total": 12,
+    "open": 2,
     "wins": 5,
     "losses": 5,
     "win_rate": 50.0,
@@ -199,22 +199,22 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Structure break"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": 1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "XAUUSDT",
       "name": "GOLD",
       "trend": -1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "TSLAUSDT",
@@ -227,8 +227,8 @@
       "symbol": "SPXUSDT",
       "name": "SPX",
       "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "NDXUSDT",
