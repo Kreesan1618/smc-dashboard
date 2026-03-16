@@ -1,56 +1,50 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 13:00 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 14:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73854.46,
+      "price": 74071.1,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2278.59,
+      "price": 2287.48,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.78,
+      "price": 93.69,
       "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "XAUUSDT",
+      "symbol_name": "GOLD",
+      "price": 5032.0,
+      "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "TSLAUSDT",
       "symbol_name": "TSLA",
-      "price": 391.1700134277344,
+      "price": 400.29998779296875,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SPXUSDT",
       "symbol_name": "SPX",
-      "price": 6631.8798828125,
+      "price": 6712.33984375,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "NDXUSDT",
       "symbol_name": "NDX",
-      "price": 24379.767578125,
+      "price": 24686.771484375,
       "trend": "\u26aa \u2014"
     }
   ],
-  "open_positions": [
-    {
-      "symbol": "SPXUSDT",
-      "symbol_name": "SPX",
-      "direction": "SHORT",
-      "entry": 6633.59,
-      "current": 6631.8798828125,
-      "tp": 6534.61,
-      "sl": 6683.08,
-      "unrealized_pct": 0.03,
-      "unrealized_pnl": 6.91
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "symbol": "ETHUSDT",
@@ -75,6 +69,18 @@
       "pnl_pct": "-2.2",
       "scan_time": "2026-03-13 17:00:38",
       "exit_time": "2026-03-13 22:00"
+    },
+    {
+      "symbol": "SPXUSDT",
+      "symbol_name": "SPX",
+      "direction": "SHORT",
+      "result": "SL_HIT",
+      "entry": "6633.59",
+      "exit_price": "6683.08",
+      "pnl": "-253.81",
+      "pnl_pct": "-2.54",
+      "scan_time": "2026-03-13 22:50:32",
+      "exit_time": "2026-03-16 13:30"
     },
     {
       "symbol": "ETHUSDT",
@@ -174,12 +180,12 @@
     }
   ],
   "stats": {
-    "total": 11,
+    "total": 12,
     "open": 1,
     "wins": 5,
-    "losses": 5,
-    "win_rate": 50.0,
-    "total_pnl": 612.3499999999999
+    "losses": 6,
+    "win_rate": 45.45454545454545,
+    "total_pnl": 358.53999999999996
   },
   "signal_radar": [
     {
@@ -193,8 +199,8 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "SOLUSDT",
@@ -204,11 +210,18 @@
       "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
+      "symbol": "XAUUSDT",
+      "name": "GOLD",
+      "trend": -1,
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
+    },
+    {
       "symbol": "TSLAUSDT",
       "name": "TSLA",
       "trend": -1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Structure break"
     },
     {
       "symbol": "SPXUSDT",
