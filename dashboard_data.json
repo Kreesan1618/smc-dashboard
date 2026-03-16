@@ -1,28 +1,28 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 20:04 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 20:33 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73941.85,
+      "price": 74032.22,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2325.83,
+      "price": 2332.92,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 95.24,
+      "price": 95.89,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5020.0,
+      "price": 5022.0,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -50,25 +50,37 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2288.79,
-      "current": 2325.83,
+      "current": 2332.92,
       "tp": 2366.61,
       "sl": 2249.88,
-      "unrealized_pct": 1.62,
-      "unrealized_pnl": 190.38
+      "unrealized_pct": 1.93,
+      "unrealized_pnl": 226.82
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 95.21,
-      "current": 95.24,
+      "current": 95.89,
       "tp": 98.47,
       "sl": 93.58,
-      "unrealized_pct": 0.03,
-      "unrealized_pnl": 3.68
+      "unrealized_pct": 0.71,
+      "unrealized_pnl": 83.49
     }
   ],
   "closed_trades": [
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "LONG",
+      "result": "TP_HIT",
+      "entry": "72006.57",
+      "exit_price": "73730.80",
+      "pnl": "239.45",
+      "pnl_pct": "2.39",
+      "scan_time": "2026-03-12 12:00:31",
+      "exit_time": "2026-03-12 18:00"
+    },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
@@ -191,12 +203,12 @@
     }
   ],
   "stats": {
-    "total": 12,
+    "total": 13,
     "open": 2,
-    "wins": 5,
+    "wins": 6,
     "losses": 5,
-    "win_rate": 50.0,
-    "total_pnl": 612.3499999999999
+    "win_rate": 54.54545454545454,
+    "total_pnl": 851.8
   },
   "signal_radar": [
     {
