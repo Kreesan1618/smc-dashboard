@@ -57,7 +57,7 @@ table{width:100%;border-collapse:collapse}th{font-size:11px;color:var(--muted);f
 <div class="ctn">
   <div class="hdr">
     <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">ATR SL + Volume Filter · 1H</div></div></div>
-    <div class="hdr-r"><div class="hdr-time" id="last-update">Loading...</div><div class="live-b"><span class="live-d"></span><span id="live-label">Connecting...</span></div><div class="cd" id="countdown">Next scan in --:--</div></div>
+    <div class="hdr-r"><div class="hdr-time" id="last-update">Loading...</div><div class="live-b"><span class="live-d"></span><span id="live-label">Connecting...</span> <button onclick="loadData()" style="background:none;border:1px solid var(--border);color:var(--muted);font-family:var(--mono);font-size:10px;padding:2px 8px;border-radius:4px;cursor:pointer;margin-left:8px" onmouseover="this.style.borderColor='var(--green)';this.style.color='var(--green)'" onmouseout="this.style.borderColor='var(--border)';this.style.color='var(--muted)'">↻ Refresh</button></div><div class="cd" id="countdown">Next scan in --:--</div></div>
   </div>
   <div class="sess" id="sessions"></div>
   <div class="top3">
@@ -123,13 +123,15 @@ table{width:100%;border-collapse:collapse}th{font-size:11px;color:var(--muted);f
     <div class="hsu" id="history-summary"></div>
     <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="8" class="es">No closed trades yet</td></tr></tbody></table></div>
   </div>
-  <div class="ft">SMC Scanner · Crypto via Binance WS · Stocks via Finnhub WS · Whales via Blockchain.com<br>Data by <a href="https://clankapp.com" style="color:var(--muted)">ClankApp</a> · Educational purposes only · Not financial advice</div>
+  <div class="ft">SMC Scanner v10 · Crypto via Binance WS · Data via Bybit · Whales via Blockchain.com<br>Educational purposes only · Not financial advice</div>
 </div>
 
 <script>
-const DU='dashboard_data.json',FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
+const DU_RAW='https://raw.githubusercontent.com/Kreesan1618/smc-dashboard/main/dashboard_data.json';
+const DU_LOCAL='dashboard_data.json';
+const FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
 let D=null,LP={},AC=[],PP={},LST='',fgC=null;
-const BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt'},BF={XAUUSDT:'xauusdt'},FM={TSLA:'TSLAUSDT',SPY:'SPXUSDT',QQQ:'NDXUSDT'};
+const BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt'};
 function fPF(p){p=+p;return p>=1000?'$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):'$'+p.toFixed(2)}
 function fP(p){p=+p;return p>=10000?'$'+(p/1000).toFixed(1)+'K':p>=1000?'$'+p.toLocaleString('en-US',{maximumFractionDigits:0}):'$'+p.toFixed(2)}
 function fPnl(p){p=+p;return(p>=0?'+':'')+'$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
@@ -239,8 +241,6 @@ loadSR();
 
 // ── WebSockets ──
 function cBS(){const ws=new WebSocket('wss://stream.binance.com:9443/stream?streams='+Object.values(BS).map(s=>s+'@ticker').join('/'));ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.data&&m.data.s){const s=m.data.s,p=+m.data.c;PP[s]=LP[s]||p;LP[s]=p;fl(s,p);rc()}};ws.onclose=()=>setTimeout(cBS,3e3);ws.onerror=()=>ws.close();ws.onopen=()=>uL()}
-function cBF(){const ws=new WebSocket('wss://fstream.binance.com/stream?streams='+Object.values(BF).map(s=>s+'@ticker').join('/'));ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.data&&m.data.s){const s=m.data.s,p=+m.data.c;PP[s]=LP[s]||p;LP[s]=p;fl(s,p);rc()}};ws.onclose=()=>setTimeout(cBF,3e3);ws.onerror=()=>ws.close()}
-function cFH(){const ws=new WebSocket('wss://ws.finnhub.io?token='+FK);ws.onopen=()=>{Object.keys(FM).forEach(s=>ws.send(JSON.stringify({type:'subscribe',symbol:s})));uL()};ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.type==='trade'&&m.data){const l={};m.data.forEach(t=>l[t.s]=t.p);Object.entries(l).forEach(([f,p])=>{const o=FM[f];if(o){PP[o]=LP[o]||p;LP[o]=p;fl(o,p);rc()}})}};ws.onclose=()=>setTimeout(cFH,3e3);ws.onerror=()=>ws.close()}
 function uL(){document.getElementById('live-label').textContent=Object.keys(LP).length+' feeds live'}
 function fl(s,p){const el=document.getElementById('price-'+s);if(!el)return;el.textContent=fPF(p);el.classList.remove('fg','fr');if(p>(PP[s]||p))el.classList.add('fg');else if(p<(PP[s]||p))el.classList.add('fr');setTimeout(()=>el.classList.remove('fg','fr'),600);uL()}
 
@@ -255,8 +255,16 @@ if(ue){ue.textContent=fPnl(un);ue.className=un>=0?'pp':'pn'}
 const pb=document.getElementById('prog-'+id);if(pb){let pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));pb.style.width=pct+'%';pb.style.background=un>=0?'var(--green)':'var(--red)'}
 });if(any){const el=document.getElementById('unrealised');el.textContent=fPnl(tot);el.className='sv '+(tot>0?'g':tot<0?'r':'n')}}
 
-// Data load
-function loadData(){fetch(DU+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(d=>{if(d.scan_time!==LST){LST=d.scan_time;D=d;render(d)}}).catch(()=>{})}
+// Data load — try raw GitHub first (less caching), fallback to local
+function loadData(){
+  fetch(DU_RAW+'?t='+Date.now(),{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw new Error();return r.json()})
+    .then(processData)
+    .catch(()=>{
+      fetch(DU_LOCAL+'?t='+Date.now(),{cache:'no-store'}).then(r=>r.json()).then(processData).catch(()=>{})
+    })
+}
+function processData(d){if(d.scan_time!==LST){LST=d.scan_time;D=d;render(d);document.getElementById('last-update').textContent='Scanner: '+d.scan_time+' ✓'}}
 
 function render(data){
 document.getElementById('last-update').textContent='Scanner: '+(data.scan_time||'--');
@@ -270,8 +278,8 @@ document.getElementById('win-rate').textContent='Win rate: '+(st.win_rate||0).to
 const re=document.getElementById('realised'),rp=st.total_pnl||0;re.textContent=fPnl(rp);re.className='sv '+(rp>0?'g':rp<0?'r':'n');
 document.getElementById('total-trades').textContent=(st.total||0)+' total trades';
 
-document.getElementById('prices').innerHTML=(data.market_status||[]).map(x=>{const b=(x.trend||'').includes('▲');const lp=LP[x.symbol]||x.price;const src=x.symbol in BS||x.symbol in BF?'Binance':'Finnhub';
-return`<div class="pc ${b?'bu':'be'}"><div class="p-s">${x.symbol_name} <span class="td ${b?'bu':'be'}"></span></div><div class="pv" id="price-${x.symbol}">${fPF(lp)}</div><div class="p-src">${src} WS</div></div>`}).join('');
+document.getElementById('prices').innerHTML=(data.market_status||[]).map(x=>{const b=(x.trend||'').includes('▲');const lp=LP[x.symbol]||x.price;
+return`<div class="pc ${b?'bu':'be'}"><div class="p-s">${x.symbol_name} <span class="td ${b?'bu':'be'}"></span></div><div class="pv" id="price-${x.symbol}">${fPF(lp)}</div><div class="p-src">Binance WS</div></div>`}).join('');
 
 document.getElementById('pos-count').textContent=pos.length;
 const pb=document.getElementById('pos-body');
@@ -302,7 +310,7 @@ return`<tr><td style="color:var(--muted);font-size:12px">${t.exit_time||'--'}</t
 document.getElementById('filters').addEventListener('click',e=>{if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(b=>b.classList.remove('ac'));e.target.classList.add('ac');renderHistory(e.target.dataset.filter)});
 document.getElementById('export-btn').addEventListener('click',()=>{if(!AC.length)return;const rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(t=>rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||'']));const csv=rows.map(r=>r.join(',')).join('\n');const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
 
-loadData();setInterval(loadData,60000);cBS();cBF();cFH();
+loadData();setInterval(loadData,15000);cBS();
 </script>
 </body>
 </html>
