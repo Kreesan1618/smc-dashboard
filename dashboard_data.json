@@ -1,50 +1,62 @@
 {
-  "scan_time": "16 Mar 2026 \u00b7 14:00 UTC",
+  "scan_time": "16 Mar 2026 \u00b7 15:47 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 74071.1,
+      "price": 73605.53,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2287.48,
+      "price": 2287.51,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.69,
+      "price": 93.93,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5032.0,
+      "price": 5003.7001953125,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "TSLAUSDT",
       "symbol_name": "TSLA",
-      "price": 400.29998779296875,
+      "price": 400.4200134277344,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SPXUSDT",
       "symbol_name": "SPX",
-      "price": 6712.33984375,
+      "price": 6711.56005859375,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "NDXUSDT",
       "symbol_name": "NDX",
-      "price": 24686.771484375,
+      "price": 24713.810546875,
       "trend": "\u26aa \u2014"
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "ETHUSDT",
+      "symbol_name": "ETH",
+      "direction": "LONG",
+      "entry": 2288.79,
+      "current": 2287.51,
+      "tp": 2366.61,
+      "sl": 2249.88,
+      "unrealized_pct": -0.06,
+      "unrealized_pnl": -6.58
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "ETHUSDT",
@@ -220,8 +232,8 @@
       "symbol": "TSLAUSDT",
       "name": "TSLA",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "SPXUSDT",
