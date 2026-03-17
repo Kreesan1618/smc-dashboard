@@ -1,47 +1,47 @@
 {
-  "scan_time": "17 Mar 2026 \u00b7 13:00 UTC",
+  "scan_time": "17 Mar 2026 \u00b7 14:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73744.68,
+      "price": 73583.6,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2314.52,
+      "price": 2325.85,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.39,
+      "price": 93.72,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5017.5,
+      "price": 5026.7998046875,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "TSLAUSDT",
       "symbol_name": "TSLA",
-      "price": 395.489990234375,
+      "price": 397.7231140136719,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SPXUSDT",
       "symbol_name": "SPX",
-      "price": 6699.85009765625,
-      "trend": "\ud83d\udd34 \u25bc"
+      "price": 6745.97021484375,
+      "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "NDXUSDT",
       "symbol_name": "NDX",
-      "price": 24655.982421875,
-      "trend": "\u26aa \u2014"
+      "price": 24853.087890625,
+      "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
   "open_positions": [
@@ -50,11 +50,11 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 74036.74,
-      "current": 73744.68,
+      "current": 73583.6,
       "tp": 76083.23,
       "sl": 73013.49,
-      "unrealized_pct": -0.39,
-      "unrealized_pnl": -57.09
+      "unrealized_pct": -0.61,
+      "unrealized_pnl": -88.57
     }
   ],
   "closed_trades": [
@@ -228,8 +228,8 @@
     }
   ],
   "stats": {
-    "total": 15,
-    "open": 1,
+    "total": 16,
+    "open": 2,
     "wins": 7,
     "losses": 7,
     "win_rate": 50.0,
@@ -240,22 +240,22 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 30,
-      "note": "Trend active"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "XAUUSDT",
@@ -274,9 +274,9 @@
     {
       "symbol": "SPXUSDT",
       "name": "SPX",
-      "trend": -1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "trend": 0,
+      "proximity": 20,
+      "note": "Volume confirmed"
     },
     {
       "symbol": "NDXUSDT",
