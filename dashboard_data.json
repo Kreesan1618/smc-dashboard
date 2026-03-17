@@ -1,46 +1,46 @@
 {
-  "scan_time": "17 Mar 2026 \u00b7 14:00 UTC",
+  "scan_time": "17 Mar 2026 \u00b7 15:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73583.6,
+      "price": 74537.81,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2325.85,
+      "price": 2347.83,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.72,
+      "price": 94.68,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5026.7998046875,
+      "price": 5023.7001953125,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "TSLAUSDT",
       "symbol_name": "TSLA",
-      "price": 397.7231140136719,
+      "price": 399.17999267578125,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SPXUSDT",
       "symbol_name": "SPX",
-      "price": 6745.97021484375,
+      "price": 6741.330078125,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "NDXUSDT",
       "symbol_name": "NDX",
-      "price": 24853.087890625,
+      "price": 24851.1640625,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -50,11 +50,22 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 74036.74,
-      "current": 73583.6,
+      "current": 74537.81,
       "tp": 76083.23,
       "sl": 73013.49,
-      "unrealized_pct": -0.61,
-      "unrealized_pnl": -88.57
+      "unrealized_pct": 0.68,
+      "unrealized_pnl": 97.94
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "LONG",
+      "entry": 93.8,
+      "current": 94.68,
+      "tp": 96.9,
+      "sl": 92.25,
+      "unrealized_pct": 0.94,
+      "unrealized_pnl": 113.37
     }
   ],
   "closed_trades": [
@@ -268,22 +279,22 @@
       "symbol": "TSLAUSDT",
       "name": "TSLA",
       "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "SPXUSDT",
       "name": "SPX",
-      "trend": 0,
-      "proximity": 20,
-      "note": "Volume confirmed"
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "NDXUSDT",
       "name": "NDX",
-      "trend": 0,
-      "proximity": 20,
-      "note": "Volume confirmed"
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     }
   ]
 }
