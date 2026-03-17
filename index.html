@@ -123,7 +123,7 @@ table{width:100%;border-collapse:collapse}th{font-size:11px;color:var(--muted);f
     <div class="hsu" id="history-summary"></div>
     <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="8" class="es">No closed trades yet</td></tr></tbody></table></div>
   </div>
-  <div class="ft">SMC Scanner v10 · Crypto via Binance WS · Data via Bybit · Whales via Blockchain.com<br>Educational purposes only · Not financial advice</div>
+  <div class="ft">SMC Scanner v10 · Live prices via Bybit WS · Whales via Blockchain.com<br>Educational purposes only · Not financial advice</div>
 </div>
 
 <script>
@@ -131,7 +131,7 @@ const DU_RAW='https://raw.githubusercontent.com/Kreesan1618/smc-dashboard/main/d
 const DU_LOCAL='dashboard_data.json';
 const FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
 let D=null,LP={},AC=[],PP={},LST='',fgC=null;
-const BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt'};
+const BS={BTCUSDT:'BTCUSDT',ETHUSDT:'ETHUSDT',SOLUSDT:'SOLUSDT',BNBUSDT:'BNBUSDT',DOGEUSDT:'DOGEUSDT'};
 function fPF(p){p=+p;return p>=1000?'$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}):'$'+p.toFixed(2)}
 function fP(p){p=+p;return p>=10000?'$'+(p/1000).toFixed(1)+'K':p>=1000?'$'+p.toLocaleString('en-US',{maximumFractionDigits:0}):'$'+p.toFixed(2)}
 function fPnl(p){p=+p;return(p>=0?'+':'')+'$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})}
@@ -201,10 +201,13 @@ return`<div class="wh-row"><div class="wh-icon ${icon}">${emoji}</div><div class
 }).catch(()=>{el.innerHTML='<div class="es">Could not load whale data</div>'})}
 loadWhales();setInterval(loadWhales,120000);
 
-// ── BTC S/R Map (VWAP + key levels from Binance 1h klines) ──
+// ── BTC S/R Map (VWAP + key levels from Bybit 1h klines) ──
 function loadSR(){
 const el=document.getElementById('sr-map');
-fetch('https://data-api.binance.vision/api/v3/klines?symbol=BTCUSDT&interval=1h&limit=168').then(r=>r.json()).then(klines=>{
+fetch('https://api.bybit.com/v5/market/kline?category=spot&symbol=BTCUSDT&interval=60&limit=168').then(r=>r.json()).then(resp=>{
+const raw=resp.result&&resp.result.list||[];if(!raw.length){el.innerHTML='<div class="es">No data</div>';return}
+// Bybit returns [timestamp,open,high,low,close,volume,turnover] newest first — reverse
+const klines=raw.reverse();
 if(!klines.length){el.innerHTML='<div class="es">No data</div>';return}
 // Calculate VWAP
 let cumTPV=0,cumVol=0;const closes=[],volumes=[],highs=[],lows=[];
@@ -239,8 +242,23 @@ html+='</div>';el.innerHTML=html;
 }).catch(()=>{el.innerHTML='<div class="es">Could not calculate S/R</div>'})}
 loadSR();
 
-// ── WebSockets ──
-function cBS(){const ws=new WebSocket('wss://stream.binance.com:9443/stream?streams='+Object.values(BS).map(s=>s+'@ticker').join('/'));ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.data&&m.data.s){const s=m.data.s,p=+m.data.c;PP[s]=LP[s]||p;LP[s]=p;fl(s,p);rc()}};ws.onclose=()=>setTimeout(cBS,3e3);ws.onerror=()=>ws.close();ws.onopen=()=>uL()}
+// ── WebSockets (Bybit) ──
+function cBS(){
+// Bybit public spot ticker WS
+const ws=new WebSocket('wss://stream.bybit.com/v5/public/spot');
+ws.onopen=()=>{
+  ws.send(JSON.stringify({"op":"subscribe","args":Object.keys(BS).map(s=>"tickers."+s)}));
+  uL();
+};
+ws.onmessage=e=>{
+  const m=JSON.parse(e.data);
+  if(m.topic&&m.topic.startsWith('tickers.')&&m.data){
+    const s=m.data.symbol,p=parseFloat(m.data.lastPrice);
+    if(s&&p){PP[s]=LP[s]||p;LP[s]=p;fl(s,p);rc()}
+  }
+};
+ws.onclose=()=>setTimeout(cBS,3e3);ws.onerror=()=>ws.close();
+}
 function uL(){document.getElementById('live-label').textContent=Object.keys(LP).length+' feeds live'}
 function fl(s,p){const el=document.getElementById('price-'+s);if(!el)return;el.textContent=fPF(p);el.classList.remove('fg','fr');if(p>(PP[s]||p))el.classList.add('fg');else if(p<(PP[s]||p))el.classList.add('fr');setTimeout(()=>el.classList.remove('fg','fr'),600);uL()}
 
@@ -279,7 +297,7 @@ const re=document.getElementById('realised'),rp=st.total_pnl||0;re.textContent=f
 document.getElementById('total-trades').textContent=(st.total||0)+' total trades';
 
 document.getElementById('prices').innerHTML=(data.market_status||[]).map(x=>{const b=(x.trend||'').includes('▲');const lp=LP[x.symbol]||x.price;
-return`<div class="pc ${b?'bu':'be'}"><div class="p-s">${x.symbol_name} <span class="td ${b?'bu':'be'}"></span></div><div class="pv" id="price-${x.symbol}">${fPF(lp)}</div><div class="p-src">Binance WS</div></div>`}).join('');
+return`<div class="pc ${b?'bu':'be'}"><div class="p-s">${x.symbol_name} <span class="td ${b?'bu':'be'}"></span></div><div class="pv" id="price-${x.symbol}">${fPF(lp)}</div><div class="p-src">Bybit WS</div></div>`}).join('');
 
 document.getElementById('pos-count').textContent=pos.length;
 const pb=document.getElementById('pos-body');
