@@ -1,28 +1,28 @@
 {
-  "scan_time": "17 Mar 2026 \u00b7 10:00 UTC",
+  "scan_time": "17 Mar 2026 \u00b7 11:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73916.86,
+      "price": 73741.93,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2315.86,
+      "price": 2313.35,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.98,
+      "price": 93.56,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "XAUUSDT",
       "symbol_name": "GOLD",
-      "price": 5017.0,
+      "price": 5003.39990234375,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -50,11 +50,11 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 74036.74,
-      "current": 73916.86,
+      "current": 73741.93,
       "tp": 76083.23,
       "sl": 73013.49,
-      "unrealized_pct": -0.16,
-      "unrealized_pnl": -23.43
+      "unrealized_pct": -0.4,
+      "unrealized_pnl": -57.62
     }
   ],
   "closed_trades": [
@@ -240,15 +240,15 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "SOLUSDT",
@@ -261,8 +261,8 @@
       "symbol": "XAUUSDT",
       "name": "GOLD",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Near order block"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "TSLAUSDT",
