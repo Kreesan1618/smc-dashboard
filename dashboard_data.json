@@ -1,34 +1,34 @@
 {
-  "scan_time": "18 Mar 2026 \u00b7 03:00 UTC",
+  "scan_time": "18 Mar 2026 \u00b7 04:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 74343.95,
+      "price": 74470.02,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2331.71,
+      "price": 2341.71,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 94.99,
+      "price": 95.1,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 671.81,
+      "price": 673.68,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.1009,
+      "price": 0.10118,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
@@ -38,22 +38,33 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 74036.74,
-      "current": 74343.95,
+      "current": 74470.02,
       "tp": 76083.23,
       "sl": 73013.49,
-      "unrealized_pct": 0.41,
-      "unrealized_pnl": 60.05
+      "unrealized_pct": 0.59,
+      "unrealized_pnl": 84.69
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 93.8,
-      "current": 94.99,
+      "current": 95.1,
       "tp": 96.9,
       "sl": 92.25,
-      "unrealized_pct": 1.27,
-      "unrealized_pnl": 153.31
+      "unrealized_pct": 1.39,
+      "unrealized_pnl": 167.48
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "symbol_name": "DOGE",
+      "direction": "SHORT",
+      "entry": 0.10116,
+      "current": 0.10116,
+      "tp": 0.09773,
+      "sl": 0.102875,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0
     }
   ],
   "closed_trades": [
@@ -239,8 +250,8 @@
     }
   ],
   "stats": {
-    "total": 17,
-    "open": 2,
+    "total": 18,
+    "open": 3,
     "wins": 7,
     "losses": 8,
     "win_rate": 46.666666666666664,
@@ -258,8 +269,8 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 30,
-      "note": "Trend active"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
@@ -279,8 +290,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     }
   ]
 }
