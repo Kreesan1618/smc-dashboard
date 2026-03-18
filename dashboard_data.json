@@ -1,61 +1,38 @@
 {
-  "scan_time": "18 Mar 2026 \u00b7 14:00 UTC",
+  "scan_time": "18 Mar 2026 \u00b7 15:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 72127.33,
+      "price": 71110.65,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2235.07,
+      "price": 2184.61,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 90.33,
+      "price": 88.86,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 657.24,
+      "price": 647.54,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09568,
+      "price": 0.09428,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
-  "open_positions": [
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "entry": 72952.85,
-      "current": 72127.33,
-      "tp": 71382.48,
-      "sl": 73738.03,
-      "unrealized_pct": 1.13,
-      "unrealized_pnl": 210.27
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "entry": 92.0,
-      "current": 90.33,
-      "tp": 89.2173,
-      "sl": 93.3913,
-      "unrealized_pct": 1.82,
-      "unrealized_pnl": 240.05
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "symbol": "BTCUSDT",
@@ -296,15 +273,39 @@
       "pnl_pct": "-2.48",
       "scan_time": "2026-03-18 11:00:31",
       "exit_time": "2026-03-18 12:00"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "SHORT",
+      "result": "TP_HIT",
+      "entry": "72952.85",
+      "exit_price": "71382.48",
+      "pnl": "363.24",
+      "pnl_pct": "3.63",
+      "scan_time": "2026-03-18 12:00:33",
+      "exit_time": "2026-03-18 14:00"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "SHORT",
+      "result": "TP_HIT",
+      "entry": "92.0",
+      "exit_price": "89.22",
+      "pnl": "373.95",
+      "pnl_pct": "3.74",
+      "scan_time": "2026-03-18 12:00:34",
+      "exit_time": "2026-03-18 14:00"
     }
   ],
   "stats": {
     "total": 22,
-    "open": 2,
-    "wins": 9,
+    "open": 0,
+    "wins": 11,
     "losses": 11,
-    "win_rate": 45.0,
-    "total_pnl": 585.6099999999999
+    "win_rate": 50.0,
+    "total_pnl": 1322.8
   },
   "signal_radar": [
     {
