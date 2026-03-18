@@ -1,90 +1,68 @@
 {
-  "scan_time": "18 Mar 2026 \u00b7 11:00 UTC",
+  "scan_time": "18 Mar 2026 \u00b7 12:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73935.88,
-      "trend": "\ud83d\udfe2 \u25b2"
+      "price": 72874.0,
+      "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2312.44,
-      "trend": "\ud83d\udfe2 \u25b2"
+      "price": 2265.19,
+      "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 93.84,
-      "trend": "\ud83d\udfe2 \u25b2"
+      "price": 91.7,
+      "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 672.49,
-      "trend": "\ud83d\udfe2 \u25b2"
+      "price": 661.01,
+      "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09919,
+      "price": 0.09674,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
   "open_positions": [
     {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "entry": 74036.74,
-      "current": 73935.88,
-      "tp": 76083.23,
-      "sl": 73013.49,
-      "unrealized_pct": -0.14,
-      "unrealized_pnl": -19.71
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "entry": 93.8,
-      "current": 93.84,
-      "tp": 96.9,
-      "sl": 92.25,
-      "unrealized_pct": 0.04,
-      "unrealized_pnl": 5.15
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "direction": "SHORT",
-      "entry": 0.10116,
-      "current": 0.09919,
-      "tp": 0.09773,
-      "sl": 0.102875,
-      "unrealized_pct": 1.95,
-      "unrealized_pnl": 229.76
-    },
-    {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
       "direction": "SHORT",
       "entry": 671.96,
-      "current": 672.49,
+      "current": 661.01,
       "tp": 659.8274,
       "sl": 678.0263,
-      "unrealized_pct": -0.08,
-      "unrealized_pnl": -17.47
+      "unrealized_pct": 1.63,
+      "unrealized_pnl": 361.01
     },
     {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "LONG",
-      "entry": 672.44,
-      "current": 672.44,
-      "tp": 683.6764,
-      "sl": 666.8218,
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "SHORT",
+      "entry": 72952.85,
+      "current": 72952.85,
+      "tp": 71382.48,
+      "sl": 73738.03,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "SHORT",
+      "entry": 92.0,
+      "current": 92.0,
+      "tp": 89.2173,
+      "sl": 93.3913,
       "unrealized_pct": 0.0,
       "unrealized_pnl": 0.0
     }
@@ -259,6 +237,30 @@
       "exit_time": "2026-03-17 05:00"
     },
     {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "LONG",
+      "result": "SL_HIT",
+      "entry": "74036.74",
+      "exit_price": "73013.49",
+      "pnl": "-228.74",
+      "pnl_pct": "-2.29",
+      "scan_time": "2026-03-17 06:00:31",
+      "exit_time": "2026-03-18 11:00"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "LONG",
+      "result": "SL_HIT",
+      "entry": "93.8",
+      "exit_price": "92.25",
+      "pnl": "-223.65",
+      "pnl_pct": "-2.24",
+      "scan_time": "2026-03-17 14:00:36",
+      "exit_time": "2026-03-18 11:00"
+    },
+    {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
       "direction": "SHORT",
@@ -269,42 +271,66 @@
       "pnl_pct": "-2.2",
       "scan_time": "2026-03-17 16:32:37",
       "exit_time": "2026-03-17 22:00"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "symbol_name": "DOGE",
+      "direction": "SHORT",
+      "result": "TP_HIT",
+      "entry": "0.10116",
+      "exit_price": "0.09773",
+      "pnl": "376.84",
+      "pnl_pct": "3.77",
+      "scan_time": "2026-03-18 04:00:28",
+      "exit_time": "2026-03-18 11:00"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "direction": "LONG",
+      "result": "SL_HIT",
+      "entry": "672.44",
+      "exit_price": "666.82",
+      "pnl": "-247.68",
+      "pnl_pct": "-2.48",
+      "scan_time": "2026-03-18 11:00:31",
+      "exit_time": "2026-03-18 12:00"
     }
   ],
   "stats": {
-    "total": 20,
-    "open": 5,
-    "wins": 7,
-    "losses": 8,
-    "win_rate": 46.666666666666664,
-    "total_pnl": 552.75
+    "total": 22,
+    "open": 3,
+    "wins": 8,
+    "losses": 11,
+    "win_rate": 42.10526315789473,
+    "total_pnl": 229.5199999999999
   },
   "signal_radar": [
     {
       "symbol": "BTCUSDT",
       "name": "BTC",
-      "trend": 1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Near order block"
+      "trend": -1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
-      "trend": 1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "trend": -1,
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
-      "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "trend": -1,
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "BNBUSDT",
       "name": "BNB",
-      "trend": 1,
+      "trend": -1,
       "proximity": 100,
       "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
@@ -312,8 +338,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     }
   ]
 }
