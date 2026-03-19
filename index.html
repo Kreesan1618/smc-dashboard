@@ -64,10 +64,11 @@ table{width:100%;border-collapse:collapse}
 .ms-item{text-align:center;flex:1}
 
 /* Bottom grid (Win Rate + Trending under trade history) */
-.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px;border-top:1px solid var(--border)}
-.bottom-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden}
-.bottom-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--border)}
-.bottom-title{font-size:13px;font-weight:700;color:var(--white);font-family:var(--font)}
+.bottom-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.bottom-card{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:all .4s}
+.bottom-card:hover{border-color:var(--border-hover)}
+.bottom-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border)}
+.bottom-title{font-size:14px;font-weight:700;color:var(--white)}
 @media(max-width:768px){.bottom-grid{grid-template-columns:1fr}}
 
 .ft{text-align:center;padding:24px 0;font-size:10px;grid-column:1/-1}
@@ -370,17 +371,18 @@ tr:hover td{background:var(--card-hover)}
     <div class="st">Open positions <span class="live-tag">● LIVE P&L</span></div>
     <div class="cw"><div class="ch"><div class="ct">Active Trades</div><div class="badge" id="pos-count">0</div></div><div id="pos-body"><div class="es">No open positions</div></div></div>
 
+    <!-- Win Rate + Trending side by side -->
+    <div class="bottom-grid">
+      <div class="bottom-card"><div class="bottom-head"><span class="bottom-title">Win Rate by Asset</span><span class="sb-badge" id="wra-total">--</span></div><div id="wra-body"><div class="es">Waiting for data...</div></div></div>
+      <div class="bottom-card"><div class="bottom-head"><span class="bottom-title">Trending</span><span class="sb-badge">CoinGecko</span></div><div class="sb-body" id="trending"><div class="ld"><div class="sp"></div> Loading...</div></div></div>
+    </div>
+
     <div class="st">Trade history</div>
     <div class="cw">
       <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><div class="flt" id="filters"><button class="fb ac" data-filter="all">All</button><button class="fb" data-filter="win">Wins</button><button class="fb" data-filter="loss">Losses</button><button class="fb" data-filter="long">Long</button><button class="fb" data-filter="short">Short</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
       <div class="collapse-body" id="history-collapse">
         <div class="hsu" id="history-summary"></div>
         <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="8" class="es">No closed trades yet</td></tr></tbody></table></div>
-        <!-- Win Rate + Trending side by side -->
-        <div class="bottom-grid">
-          <div class="bottom-card"><div class="bottom-head"><span class="bottom-title">Win Rate by Asset</span><span class="sb-badge" id="wra-total">--</span></div><div id="wra-body"><div class="es">Waiting for data...</div></div></div>
-          <div class="bottom-card"><div class="bottom-head"><span class="bottom-title">Trending</span><span class="sb-badge">CoinGecko</span></div><div class="sb-body" id="trending"><div class="ld"><div class="sp"></div> Loading...</div></div></div>
-        </div>
       </div>
     </div>
   </div>
@@ -413,11 +415,6 @@ tr:hover td{background:var(--card-hover)}
       <div id="mtf-heatmap"><div class="ld"><div class="sp"></div> Scanning...</div></div>
     </div>
 
-    <!-- Trending -->
-    <div class="sb-section">
-      <div class="sb-head"><div class="sb-title">Trending</div><div class="sb-badge">CoinGecko</div></div>
-      <div class="sb-body" id="trending"><div class="ld"><div class="sp"></div> Loading...</div></div>
-    </div>
   </div>
 
   <div class="ft">SMC Scanner v15 · Live prices via Binance WS · Whales via Blockchain.com · Educational purposes only · Not financial advice</div>
