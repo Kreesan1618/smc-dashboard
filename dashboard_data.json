@@ -1,34 +1,34 @@
 {
-  "scan_time": "21 Mar 2026 \u00b7 01:00 UTC",
+  "scan_time": "21 Mar 2026 \u00b7 02:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 70708.64,
+      "price": 70494.16,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2153.78,
+      "price": 2147.7,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 90.03,
+      "price": 89.86,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 642.07,
+      "price": 640.6,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09435,
+      "price": 0.09401,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
@@ -38,11 +38,11 @@
       "symbol_name": "DOGE",
       "direction": "SHORT",
       "entry": 0.09426,
-      "current": 0.09435,
+      "current": 0.09401,
       "tp": 0.091684,
       "sl": 0.095548,
-      "unrealized_pct": -0.1,
-      "unrealized_pnl": -13.97,
+      "unrealized_pct": 0.27,
+      "unrealized_pnl": 38.81,
       "entry_time": "2026-03-20 02:00:32"
     },
     {
@@ -50,11 +50,11 @@
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 89.37,
-      "current": 90.03,
+      "current": 89.86,
       "tp": 86.9594,
       "sl": 90.5753,
-      "unrealized_pct": -0.74,
-      "unrealized_pnl": -109.52,
+      "unrealized_pct": -0.55,
+      "unrealized_pnl": -81.31,
       "entry_time": "2026-03-20 08:00:27"
     },
     {
@@ -62,11 +62,11 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2141.21,
-      "current": 2153.78,
+      "current": 2147.7,
       "tp": 2206.92,
       "sl": 2108.36,
-      "unrealized_pct": 0.59,
-      "unrealized_pnl": 76.52,
+      "unrealized_pct": 0.3,
+      "unrealized_pnl": 39.51,
       "entry_time": "2026-03-20 10:00:27"
     },
     {
@@ -74,11 +74,11 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 69863.84,
-      "current": 70708.64,
+      "current": 70494.16,
       "tp": 71505.17,
       "sl": 69043.17,
-      "unrealized_pct": 1.21,
-      "unrealized_pnl": 205.88,
+      "unrealized_pct": 0.9,
+      "unrealized_pnl": 153.61,
       "entry_time": "2026-03-20 14:00:31"
     }
   ],
@@ -428,8 +428,8 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Near order block"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "SOLUSDT",
