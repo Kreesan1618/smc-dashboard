@@ -342,7 +342,7 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i"><svg width="44" height="44" viewBox="0 0 120 140"><path d="M60 6 L110 24 L110 72 C110 100 86 120 60 134 C34 120 10 100 10 72 L10 24 Z" fill="#0d1117" stroke="#34d399" stroke-width="3"/><path d="M60 16 L100 32 L100 70 C100 94 80 112 60 124 C40 112 20 94 20 70 L20 32 Z" fill="none" stroke="#34d399" stroke-width="1" opacity="0.25"/><path d="M42 40 L42 96 M42 68 L76 40 M52 76 L76 96" fill="none" stroke="#34d399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="48" r="5" fill="#34d399"/><circle cx="86" cy="48" r="10" fill="none" stroke="#34d399" stroke-width="1" opacity="0.4"/></svg></div><div><div class="logo-t">KREEZ V ANALYTICS</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H · 11 Coins</div></div></div>
+  <div class="logo"><div class="logo-i"><svg width="44" height="44" viewBox="0 0 120 140"><path d="M60 6 L110 24 L110 72 C110 100 86 120 60 134 C34 120 10 100 10 72 L10 24 Z" fill="#0d1117" stroke="#34d399" stroke-width="3"/><path d="M60 16 L100 32 L100 70 C100 94 80 112 60 124 C40 112 20 94 20 70 L20 32 Z" fill="none" stroke="#34d399" stroke-width="1" opacity="0.25"/><path d="M42 40 L42 96 M42 68 L76 40 M52 76 L76 96" fill="none" stroke="#34d399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="48" r="5" fill="#34d399"/><circle cx="86" cy="48" r="10" fill="none" stroke="#34d399" stroke-width="1" opacity="0.4"/></svg></div><div><div class="logo-t">KREEZ V ANALYTICS</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H · 15 Coins</div></div></div>
   <div class="nav-center">
     <div class="nav-stat"><div class="ns-label">Balance</div><div class="ns-val g" id="balance">--</div><div class="ns-sub" id="return-pct">--</div></div>
     <div class="nav-stat"><div class="ns-label">Equity</div><div class="ns-val g" id="equity">--</div><div class="ns-sub" id="margin-info">--</div></div>
@@ -490,7 +490,7 @@ var DU_LOCAL='dashboard_data.json';
 var FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
 var D=null,LP={},AC=[],PP={},LST='',fgC=null;
 var VOL={}; // symbol -> 24h quote volume
-var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt',XRPUSDT:'xrpusdt',LINKUSDT:'linkusdt',AVAXUSDT:'avaxusdt',SUIUSDT:'suiusdt',ADAUSDT:'adausdt',NEARUSDT:'nearusdt'};
+var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt',XRPUSDT:'xrpusdt',LINKUSDT:'linkusdt',AVAXUSDT:'avaxusdt',SUIUSDT:'suiusdt',ADAUSDT:'adausdt',NEARUSDT:'nearusdt',ZECUSDT:'zecusdt',TRXUSDT:'trxusdt',TAOUSDT:'taousdt',PAXGUSDT:'paxgusdt'};
 var SR_LEVELS=[]; // stored for alert checking
 
 function fPF(p){p=+p;if(p>=1000)return '$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});if(p>=1)return '$'+p.toFixed(2);if(p>=0.01)return '$'+p.toFixed(4);return '$'+p.toFixed(6)}
@@ -588,7 +588,7 @@ html+='</div>';el.innerHTML=html;
 loadSR();setInterval(loadSR,300000); // refresh S/R every 5 min
 
 // ═══ NEW: Multi-TF Confluence Heatmap ═══
-var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'SOLUSDT',n:'SOL'},{s:'BNBUSDT',n:'BNB'},{s:'DOGEUSDT',n:'DOGE'},{s:'XRPUSDT',n:'XRP'},{s:'LINKUSDT',n:'LINK'},{s:'AVAXUSDT',n:'AVAX'},{s:'SUIUSDT',n:'SUI'},{s:'ADAUSDT',n:'ADA'},{s:'NEARUSDT',n:'NEAR'}];
+var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'SOLUSDT',n:'SOL'},{s:'BNBUSDT',n:'BNB'},{s:'DOGEUSDT',n:'DOGE'},{s:'XRPUSDT',n:'XRP'},{s:'LINKUSDT',n:'LINK'},{s:'AVAXUSDT',n:'AVAX'},{s:'SUIUSDT',n:'SUI'},{s:'ADAUSDT',n:'ADA'},{s:'NEARUSDT',n:'NEAR'},{s:'ZECUSDT',n:'ZEC'},{s:'TRXUSDT',n:'TRX'},{s:'TAOUSDT',n:'TAO'},{s:'PAXGUSDT',n:'PAXG'}];
 var MTF_TFS=['1h','4h','1d'];
 
 function calcEMA(closes,period){
