@@ -1,94 +1,15 @@
 {
-  "scan_time": "22 Mar 2026 \u00b7 14:30 UTC",
-  "market_status": [
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "price": 68855.33,
-      "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "price": 2081.5,
-      "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "price": 87.46,
-      "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "price": 631.08,
-      "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "price": 0.09164,
-      "trend": "\ud83d\udd34 \u25bc"
-    }
-  ],
-  "open_positions": [
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "entry": 68700.02,
-      "current": 68700.02,
-      "tp": 63655.97,
-      "sl": 71222.04,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0
-    }
-  ],
+  "scan_time": "Waiting for first scan...",
+  "market_status": [],
+  "open_positions": [],
   "closed_trades": [],
   "stats": {
-    "total": 1,
+    "total": 0,
     "open": 0,
     "wins": 0,
     "losses": 0,
     "win_rate": 0,
     "total_pnl": 0
   },
-  "signal_radar": [
-    {
-      "symbol": "BTCUSDT",
-      "name": "BTC",
-      "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 40"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "name": "ETH",
-      "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 32"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "name": "SOL",
-      "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "name": "BNB",
-      "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "name": "DOGE",
-      "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 36 \u00b7 Near VWAP"
-    }
-  ]
+  "signal_radar": []
 }
