@@ -342,8 +342,10 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i">V6</div><div><div class="logo-t">V6 SCANNER</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H</div></div></div>
+  <div class="logo"><div class="logo-i">V6</div><div><div class="logo-t">V6 SCANNER</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H · 11 Coins</div></div></div>
   <div class="nav-center">
+    <div class="nav-stat"><div class="ns-label">Balance</div><div class="ns-val g" id="balance">--</div><div class="ns-sub" id="return-pct">--</div></div>
+    <div class="nav-stat"><div class="ns-label">Equity</div><div class="ns-val g" id="equity">--</div><div class="ns-sub" id="margin-info">--</div></div>
     <div class="nav-stat"><div class="ns-label">Unrealised</div><div class="ns-val g" id="unrealised">--</div><div class="ns-sub" id="open-count">--</div></div>
     <div class="nav-stat"><div class="ns-label">Record</div><div class="ns-val n" id="record">--</div><div class="ns-sub" id="win-rate">--</div></div>
     <div class="nav-stat"><div class="ns-label">Realised</div><div class="ns-val g" id="realised">--</div><div class="ns-sub" id="total-trades">--</div></div>
@@ -358,6 +360,8 @@ tr:hover td{background:var(--card-hover)}
 
 <!-- Mobile Stats (visible only on smaller screens) -->
 <div class="mobile-stats"><div class="mobile-stats-inner">
+  <div class="ms-item"><div class="ms-label">Balance</div><div class="ms-val g" id="m-balance">--</div><div class="ms-sub" id="m-return-pct">--</div></div>
+  <div class="ms-item"><div class="ms-label">Equity</div><div class="ms-val g" id="m-equity">--</div><div class="ms-sub" id="m-margin-info">--</div></div>
   <div class="ms-item"><div class="ms-label">Unrealised</div><div class="ms-val g" id="m-unrealised">--</div><div class="ms-sub" id="m-open-count">--</div></div>
   <div class="ms-item"><div class="ms-label">Record</div><div class="ms-val n" id="m-record">--</div><div class="ms-sub" id="m-win-rate">--</div></div>
   <div class="ms-item"><div class="ms-label">Realised</div><div class="ms-val g" id="m-realised">--</div><div class="ms-sub" id="m-total-trades">--</div></div>
@@ -367,6 +371,9 @@ tr:hover td{background:var(--card-hover)}
   <div class="main-col">
     <div class="st">Assets <span class="live-tag">● LIVE PRICES + SIGNAL</span></div>
     <div class="asset-grid" id="prices"><div class="ld"><div class="sp"></div> Loading...</div></div>
+
+    <!-- Equity Curve -->
+    <div class="cw" style="margin-bottom:12px"><div class="ch"><div class="ct">Equity Curve</div><span class="sb-badge" id="eq-return">--</span></div><canvas id="equity-chart" height="120" style="width:100%;display:block"></canvas><div style="display:flex;justify-content:space-between;padding:4px 12px 8px;font-size:10px;color:var(--muted);font-family:var(--mono)"><span id="eq-start">--</span><span id="eq-dd">Max DD: --</span><span id="eq-end">--</span></div></div>
 
     <div class="st">Open positions <span class="live-tag">● LIVE P&L</span></div>
     <div class="cw"><div class="ch"><div class="ct">Active Trades</div><div class="badge" id="pos-count">0</div></div><div id="pos-body"><div class="es">No open positions</div></div></div>
@@ -483,7 +490,7 @@ var DU_LOCAL='dashboard_data.json';
 var FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
 var D=null,LP={},AC=[],PP={},LST='',fgC=null;
 var VOL={}; // symbol -> 24h quote volume
-var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt'};
+var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt',XRPUSDT:'xrpusdt',LINKUSDT:'linkusdt',AVAXUSDT:'avaxusdt',SUIUSDT:'suiusdt',ADAUSDT:'adausdt',NEARUSDT:'nearusdt'};
 var SR_LEVELS=[]; // stored for alert checking
 
 function fPF(p){p=+p;if(p>=1000)return '$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});if(p>=1)return '$'+p.toFixed(2);if(p>=0.01)return '$'+p.toFixed(4);return '$'+p.toFixed(6)}
@@ -581,7 +588,7 @@ html+='</div>';el.innerHTML=html;
 loadSR();setInterval(loadSR,300000); // refresh S/R every 5 min
 
 // ═══ NEW: Multi-TF Confluence Heatmap ═══
-var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'SOLUSDT',n:'SOL'},{s:'BNBUSDT',n:'BNB'},{s:'DOGEUSDT',n:'DOGE'}];
+var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'SOLUSDT',n:'SOL'},{s:'BNBUSDT',n:'BNB'},{s:'DOGEUSDT',n:'DOGE'},{s:'XRPUSDT',n:'XRP'},{s:'LINKUSDT',n:'LINK'},{s:'AVAXUSDT',n:'AVAX'},{s:'SUIUSDT',n:'SUI'},{s:'ADAUSDT',n:'ADA'},{s:'NEARUSDT',n:'NEAR'}];
 var MTF_TFS=['1h','4h','1d'];
 
 function calcEMA(closes,period){
@@ -706,6 +713,21 @@ document.getElementById('record').textContent=(st.wins||0)+'W·'+(st.losses||0)+
 document.getElementById('win-rate').textContent='WR '+(st.win_rate||0).toFixed(0)+'%';
 var re=document.getElementById('realised'),rp=st.total_pnl||0;re.textContent=fPnl(rp);re.className='ns-val '+(rp>0?'g':rp<0?'r':'n');
 document.getElementById('total-trades').textContent=(st.total||0)+' trades';
+// Portfolio stats
+var pf=data.portfolio||{};
+var bal=pf.balance||0,eq=pf.equity||0,retPct=pf.return_pct||0,mu2=pf.margin_used||0,avl=pf.available||0,mdd=pf.max_drawdown||0;
+var bEl=document.getElementById('balance');if(bEl){bEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});bEl.className='ns-val '+(retPct>=0?'g':'r')}
+var rpEl=document.getElementById('return-pct');if(rpEl)rpEl.textContent=(retPct>=0?'+':'')+retPct.toFixed(1)+'%';
+var eEl=document.getElementById('equity');if(eEl){eEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});eEl.className='ns-val '+(eq>=bal?'g':'r')}
+var miEl=document.getElementById('margin-info');if(miEl)miEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0})+' | '+pf.leverage+'x';
+// Mobile portfolio
+var mbEl=document.getElementById('m-balance');if(mbEl){mbEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});mbEl.className='ms-val '+(retPct>=0?'g':'r')}
+var mrpEl=document.getElementById('m-return-pct');if(mrpEl)mrpEl.textContent=(retPct>=0?'+':'')+retPct.toFixed(1)+'%';
+var meEl=document.getElementById('m-equity');if(meEl){meEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});meEl.className='ms-val '+(eq>=bal?'g':'r')}
+var mmiEl=document.getElementById('m-margin-info');if(mmiEl)mmiEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0});
+// Equity curve chart
+var curve=data.equity_curve||[];
+if(curve.length>1){renderEquityCurve(curve,pf)}
 // Mirror to mobile stats
 var mu=document.getElementById('m-unrealised');mu.textContent=fPnl(tu);mu.className='ms-val '+(tu>0?'g':tu<0?'r':'n');
 document.getElementById('m-open-count').textContent=pos.length+' open';
@@ -727,10 +749,10 @@ document.getElementById('prices').innerHTML=(data.market_status||[]).map(functio
 document.getElementById('pos-count').textContent=pos.length;
 var pb=document.getElementById('pos-body');
 if(!pos.length){pb.innerHTML='<div class="es">No open positions</div>'}
-else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>TP / SL</th><th>Time</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;
+else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>Margin</th><th>TP / SL</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;
 var pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));var progCol=p.unrealized_pnl>=0?'var(--accent)':'var(--red)';
-var timeStr=fDuration(getEntryTime(p)||data.scan_time||null);
-return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td class="tit">'+timeStr+'</td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
+var marg=p.margin?'$'+p.margin.toLocaleString(undefined,{maximumFractionDigits:0}):'--';
+return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td style="color:var(--muted);font-family:var(--mono);font-size:11px">'+marg+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
 
 renderHistory('all');renderWinRateByAsset(AC);rc();
 }
@@ -747,6 +769,38 @@ function makeDonut(pct,idx){
     +'<text x="'+cx+'" y="'+(cy+4)+'" text-anchor="middle" font-size="12" font-weight="700" font-family="var(--mono)" fill="var(--white)">'+pct+'%</text></svg>';
 }
 
+function renderEquityCurve(curve,pf){
+var canvas=document.getElementById('equity-chart');if(!canvas)return;
+var ctx=canvas.getContext('2d');var W=canvas.offsetWidth;var H=120;
+canvas.width=W*2;canvas.height=H*2;ctx.scale(2,2);
+ctx.clearRect(0,0,W,H);
+var vals=curve.map(function(c){return c.equity});
+var mn=Math.min.apply(null,vals);var mx=Math.max.apply(null,vals);
+var startCap=pf.starting_capital||10000;
+mn=Math.min(mn,startCap);mx=Math.max(mx,startCap);
+var range=mx-mn||1;var pad=8;var cW=W-pad*2;var cH=H-pad*2;
+// Fill gradient
+var grad=ctx.createLinearGradient(0,0,0,H);
+var last=vals[vals.length-1];var isUp=last>=startCap;
+grad.addColorStop(0,isUp?'rgba(52,211,153,0.15)':'rgba(244,63,94,0.15)');
+grad.addColorStop(1,'rgba(0,0,0,0)');
+ctx.beginPath();ctx.moveTo(pad,H);
+for(var i=0;i<vals.length;i++){var x=pad+(i/(vals.length-1))*cW;var y=pad+cH-(vals[i]-mn)/range*cH;if(i===0)ctx.lineTo(x,y);ctx.lineTo(x,y)}
+ctx.lineTo(pad+cW,H);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+// Line
+ctx.beginPath();
+for(var i=0;i<vals.length;i++){var x=pad+(i/(vals.length-1))*cW;var y=pad+cH-(vals[i]-mn)/range*cH;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}
+ctx.strokeStyle=isUp?'#34d399':'#f43f5e';ctx.lineWidth=1.5;ctx.stroke();
+// Starting capital line
+var sy=pad+cH-(startCap-mn)/range*cH;
+ctx.beginPath();ctx.moveTo(pad,sy);ctx.lineTo(pad+cW,sy);
+ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
+// Labels
+var eqRet=document.getElementById('eq-return');if(eqRet){var rp=pf.return_pct||0;eqRet.textContent=(rp>=0?'+':'')+rp.toFixed(1)+'%';eqRet.style.color=rp>=0?'#34d399':'#f43f5e'}
+var eqStart=document.getElementById('eq-start');if(eqStart&&curve.length>0)eqStart.textContent=curve[0].dt||'';
+var eqEnd=document.getElementById('eq-end');if(eqEnd&&curve.length>0)eqEnd.textContent='$'+last.toLocaleString(undefined,{maximumFractionDigits:0});
+var eqDD=document.getElementById('eq-dd');if(eqDD)eqDD.textContent='Max DD: '+(pf.max_drawdown||0).toFixed(1)+'%';
+}
 function renderWinRateByAsset(trades){
   var el=document.getElementById('wra-body');
   if(!trades||!trades.length){el.innerHTML='<div class="es">No trades yet</div>';document.getElementById('wra-total').textContent='--';return}
