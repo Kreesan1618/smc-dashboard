@@ -1,563 +1,94 @@
 {
-  "scan_time": "22 Mar 2026 \u00b7 14:00 UTC",
+  "scan_time": "22 Mar 2026 \u00b7 14:30 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 68746.01,
+      "price": 68855.33,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2079.65,
+      "price": 2081.5,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 87.38,
+      "price": 87.46,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 630.63,
+      "price": 631.08,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09141,
+      "price": 0.09164,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
-  "open_positions": [],
-  "closed_trades": [
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "72006.57",
-      "exit_price": "73730.80",
-      "pnl": "239.45",
-      "pnl_pct": "2.39",
-      "scan_time": "2026-03-12 12:00:31",
-      "exit_time": "2026-03-12 18:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "2128.01",
-      "exit_price": "2085.34",
-      "pnl": "-219.77",
-      "pnl_pct": "-2.2",
-      "scan_time": "2026-03-13 16:00:34",
-      "exit_time": "2026-03-13 22:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "89.61",
-      "exit_price": "87.77",
-      "pnl": "-219.53",
-      "pnl_pct": "-2.2",
-      "scan_time": "2026-03-13 17:00:38",
-      "exit_time": "2026-03-13 22:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "2088.97",
-      "exit_price": "2128.1",
-      "pnl": "-221.53",
-      "pnl_pct": "-2.22",
-      "scan_time": "2026-03-13 23:00:31",
-      "exit_time": "2026-03-15 20:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "71211.95",
-      "exit_price": "72161.3",
-      "pnl": "339.59",
-      "pnl_pct": "3.4",
-      "scan_time": "2026-03-15 00:00:32",
-      "exit_time": "2026-03-15 21:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "88.3",
-      "exit_price": "89.14",
-      "pnl": "-242.94",
-      "pnl_pct": "-2.43",
-      "scan_time": "2026-03-15 03:00:34",
-      "exit_time": "2026-03-15 21:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "2107.91",
-      "exit_price": "2089.94",
-      "pnl": "-246.72",
-      "pnl_pct": "-2.47",
-      "scan_time": "2026-03-15 06:00:33",
-      "exit_time": "2026-03-15 13:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "2097.4",
-      "exit_price": "2132.84",
-      "pnl": "352.3",
-      "pnl_pct": "3.52",
-      "scan_time": "2026-03-15 14:00:28",
-      "exit_time": "2026-03-15 20:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "2129.05",
-      "exit_price": "2172.42",
-      "pnl": "360.32",
-      "pnl_pct": "3.6",
-      "scan_time": "2026-03-15 21:00:30",
-      "exit_time": "2026-03-15 22:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "72109.58",
-      "exit_price": "73174.41",
-      "pnl": "345.42",
-      "pnl_pct": "3.45",
-      "scan_time": "2026-03-15 22:00:32",
-      "exit_time": "2026-03-15 23:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "90.0",
-      "exit_price": "92.1",
-      "pnl": "365.21",
-      "pnl_pct": "3.65",
-      "scan_time": "2026-03-15 22:00:32",
-      "exit_time": "2026-03-15 23:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "TP_HIT",
-      "entry": "2288.79",
-      "exit_price": "2366.61",
-      "pnl": "376.06",
-      "pnl_pct": "3.76",
-      "scan_time": "2026-03-16 14:00:38",
-      "exit_time": "2026-03-16 21:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "95.21",
-      "exit_price": "93.58",
-      "pnl": "-223.31",
-      "pnl_pct": "-2.23",
-      "scan_time": "2026-03-16 20:00:35",
-      "exit_time": "2026-03-17 04:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "74884.67",
-      "exit_price": "73962.46",
-      "pnl": "-232.28",
-      "pnl_pct": "-2.32",
-      "scan_time": "2026-03-17 00:00:34",
-      "exit_time": "2026-03-17 05:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "74036.74",
-      "exit_price": "73013.49",
-      "pnl": "-228.74",
-      "pnl_pct": "-2.29",
-      "scan_time": "2026-03-17 06:00:31",
-      "exit_time": "2026-03-18 11:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "93.8",
-      "exit_price": "92.25",
-      "pnl": "-223.65",
-      "pnl_pct": "-2.24",
-      "scan_time": "2026-03-17 14:00:36",
-      "exit_time": "2026-03-18 11:00"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "0.09967",
-      "exit_price": "0.101732",
-      "pnl": "-219.52",
-      "pnl_pct": "-2.2",
-      "scan_time": "2026-03-17 16:32:37",
-      "exit_time": "2026-03-17 22:00"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "0.10116",
-      "exit_price": "0.09773",
-      "pnl": "376.84",
-      "pnl_pct": "3.77",
-      "scan_time": "2026-03-18 04:00:28",
-      "exit_time": "2026-03-18 11:00"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "671.96",
-      "exit_price": "659.83",
-      "pnl": "356.09",
-      "pnl_pct": "3.56",
-      "scan_time": "2026-03-18 05:00:27",
-      "exit_time": "2026-03-18 12:00"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "672.44",
-      "exit_price": "666.82",
-      "pnl": "-247.68",
-      "pnl_pct": "-2.48",
-      "scan_time": "2026-03-18 11:00:31",
-      "exit_time": "2026-03-18 12:00"
-    },
+  "open_positions": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
       "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "72952.85",
-      "exit_price": "71382.48",
-      "pnl": "363.24",
-      "pnl_pct": "3.63",
-      "scan_time": "2026-03-18 12:00:33",
-      "exit_time": "2026-03-18 14:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "92.0",
-      "exit_price": "89.22",
-      "pnl": "373.95",
-      "pnl_pct": "3.74",
-      "scan_time": "2026-03-18 12:00:34",
-      "exit_time": "2026-03-18 14:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "2132.45",
-      "exit_price": "2168.22",
-      "pnl": "-224.08",
-      "pnl_pct": "-2.24",
-      "scan_time": "2026-03-19 13:00:30",
-      "exit_time": "2026-03-20 08:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "88.11",
-      "exit_price": "89.48",
-      "pnl": "-225.94",
-      "pnl_pct": "-2.26",
-      "scan_time": "2026-03-19 13:00:31",
-      "exit_time": "2026-03-20 01:00"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "638.67",
-      "exit_price": "644.88",
-      "pnl": "-241.33",
-      "pnl_pct": "-2.41",
-      "scan_time": "2026-03-19 13:00:31",
-      "exit_time": "2026-03-20 03:00"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "0.09426",
-      "exit_price": "0.091684",
-      "pnl": "371.06",
-      "pnl_pct": "3.71",
-      "scan_time": "2026-03-20 02:00:32",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "70854.66",
-      "exit_price": "70055.01",
-      "pnl": "-235.24",
-      "pnl_pct": "-2.35",
-      "scan_time": "2026-03-20 08:00:27",
-      "exit_time": "2026-03-20 13:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "89.37",
-      "exit_price": "90.58",
-      "pnl": "-229.86",
-      "pnl_pct": "-2.3",
-      "scan_time": "2026-03-20 08:00:27",
-      "exit_time": "2026-03-21 02:00"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "644.1",
-      "exit_price": "638.39",
-      "pnl": "-244.94",
-      "pnl_pct": "-2.45",
-      "scan_time": "2026-03-20 08:00:27",
-      "exit_time": "2026-03-20 13:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "2141.21",
-      "exit_price": "2108.36",
-      "pnl": "-225.85",
-      "pnl_pct": "-2.26",
-      "scan_time": "2026-03-20 10:00:27",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "69863.84",
-      "exit_price": "69043.17",
-      "pnl": "-233.85",
-      "pnl_pct": "-2.34",
-      "scan_time": "2026-03-20 14:00:31",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "LONG",
-      "result": "SL_HIT",
-      "entry": "90.12",
-      "exit_price": "89.1",
-      "pnl": "-235.06",
-      "pnl_pct": "-2.35",
-      "scan_time": "2026-03-21 08:00:28",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "89.82",
-      "exit_price": "88.13",
-      "pnl": "358.0",
-      "pnl_pct": "3.58",
-      "scan_time": "2026-03-21 16:00:32",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "70301.66",
-      "exit_price": "69319.44",
-      "pnl": "343.14",
-      "pnl_pct": "3.43",
-      "scan_time": "2026-03-21 17:00:30",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "SHORT",
-      "result": "TP_HIT",
-      "entry": "2146.65",
-      "exit_price": "2111.12",
-      "pnl": "352.09",
-      "pnl_pct": "3.52",
-      "scan_time": "2026-03-21 17:00:30",
-      "exit_time": "2026-03-21 23:00"
-    },
-    {
-      "symbol": "ETHUSDT",
-      "symbol_name": "ETH",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "2084.87",
-      "exit_price": "2106.82",
-      "pnl": "-238.22",
-      "pnl_pct": "-2.38",
-      "scan_time": "2026-03-22 00:00:33",
-      "exit_time": "2026-03-22 02:00"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "87.56",
-      "exit_price": "88.51",
-      "pnl": "-236.88",
-      "pnl_pct": "-2.37",
-      "scan_time": "2026-03-22 00:00:33",
-      "exit_time": "2026-03-22 03:00"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "630.7",
-      "exit_price": "634.95",
-      "pnl": "-259.55",
-      "pnl_pct": "-2.6",
-      "scan_time": "2026-03-22 00:00:33",
-      "exit_time": "2026-03-22 02:00"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "0.09135",
-      "exit_price": "0.092401",
-      "pnl": "-234.99",
-      "pnl_pct": "-2.35",
-      "scan_time": "2026-03-22 00:00:34",
-      "exit_time": "2026-03-22 03:00"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "result": "SL_HIT",
-      "entry": "68217.95",
-      "exit_price": "68798.94",
-      "pnl": "-247.17",
-      "pnl_pct": "-2.47",
-      "scan_time": "2026-03-22 12:00:27",
-      "exit_time": "2026-03-22 13:00"
+      "entry": 68700.02,
+      "current": 68700.02,
+      "tp": 63655.97,
+      "sl": 71222.04,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0
     }
   ],
+  "closed_trades": [],
   "stats": {
-    "total": 40,
+    "total": 1,
     "open": 0,
-    "wins": 15,
-    "losses": 25,
-    "win_rate": 37.5,
-    "total_pnl": -565.8700000000002
+    "wins": 0,
+    "losses": 0,
+    "win_rate": 0,
+    "total_pnl": 0
   },
   "signal_radar": [
     {
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 75,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 40"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 75,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 32"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 100,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
     },
     {
       "symbol": "BNBUSDT",
       "name": "BNB",
       "trend": -1,
       "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
     },
     {
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 100,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 36 \u00b7 Near VWAP"
     }
   ]
 }
