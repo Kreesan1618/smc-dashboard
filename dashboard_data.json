@@ -1,94 +1,94 @@
 {
-  "scan_time": "22 Mar 2026 \u00b7 21:14 UTC",
+  "scan_time": "22 Mar 2026 \u00b7 22:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 67740.28,
+      "price": 67793.4,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2038.95,
+      "price": 2043.99,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 85.87,
+      "price": 85.88,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 624.31,
+      "price": 625.22,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.08963,
+      "price": 0.08976,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "XRPUSDT",
       "symbol_name": "XRP",
-      "price": 1.3778,
+      "price": 1.3786,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "LINKUSDT",
       "symbol_name": "LINK",
-      "price": 8.63,
+      "price": 8.65,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "AVAXUSDT",
       "symbol_name": "AVAX",
-      "price": 8.93,
+      "price": 8.96,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SUIUSDT",
       "symbol_name": "SUI",
-      "price": 0.9001,
+      "price": 0.8998,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ADAUSDT",
       "symbol_name": "ADA",
-      "price": 0.2498,
+      "price": 0.2499,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "NEARUSDT",
       "symbol_name": "NEAR",
-      "price": 1.273,
+      "price": 1.277,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ZECUSDT",
       "symbol_name": "ZEC",
-      "price": 215.52,
+      "price": 216.15,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "TRXUSDT",
       "symbol_name": "TRX",
-      "price": 0.3164,
+      "price": 0.3138,
       "trend": "\ud83d\udfe2\u25b2"
     },
     {
       "symbol": "TAOUSDT",
       "symbol_name": "TAO",
-      "price": 263.8,
+      "price": 262.6,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
-      "price": 4487.56,
+      "price": 4480.52,
       "trend": "\ud83d\udd34\u25bc"
     }
   ],
@@ -178,35 +178,35 @@
       "name": "NEAR",
       "trend": -1,
       "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 32 \u00b7 Near VWAP"
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 37 \u00b7 Near VWAP"
     },
     {
       "symbol": "ZECUSDT",
       "name": "ZEC",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 36 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "VWAP aligned \u00b7 EMA stacked"
     },
     {
       "symbol": "TRXUSDT",
       "name": "TRX",
       "trend": 1,
-      "proximity": 50,
-      "note": "VWAP aligned \u00b7 EMA stacked"
+      "proximity": 75,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "TAOUSDT",
       "name": "TAO",
       "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "VWAP aligned \u00b7 EMA stacked"
     },
     {
       "symbol": "PAXGUSDT",
       "name": "PAXG",
       "trend": -1,
       "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 46 \u00b7 Near VWAP"
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 33 \u00b7 Near VWAP"
     }
   ],
   "portfolio": {
@@ -225,6 +225,13 @@
   "equity_curve": [
     {
       "dt": "2026-03-22 21:14",
+      "equity": 10000,
+      "balance": 10000,
+      "open_pos": 0,
+      "margin_used": 0
+    },
+    {
+      "dt": "2026-03-22 22:00",
       "equity": 10000,
       "balance": 10000,
       "open_pos": 0,
