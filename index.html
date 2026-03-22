@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMC Scanner — Live Dashboard</title>
+<title>V6 Scanner — Live Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
@@ -342,7 +342,7 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">ATR SL + Volume Filter · 1H</div></div></div>
+  <div class="logo"><div class="logo-i">V6</div><div><div class="logo-t">V6 SCANNER</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H</div></div></div>
   <div class="nav-center">
     <div class="nav-stat"><div class="ns-label">Unrealised</div><div class="ns-val g" id="unrealised">--</div><div class="ns-sub" id="open-count">--</div></div>
     <div class="nav-stat"><div class="ns-label">Record</div><div class="ns-val n" id="record">--</div><div class="ns-sub" id="win-rate">--</div></div>
@@ -417,7 +417,7 @@ tr:hover td{background:var(--card-hover)}
 
   </div>
 
-  <div class="ft">SMC Scanner v15 · Live prices via Binance WS · Whales via Blockchain.com · Educational purposes only · Not financial advice</div>
+  <div class="ft">V6 Scanner v11 · VWAP+EMA+RSI · 2H · Live prices via Binance WS<br>Educational purposes only · Not financial advice</div>
 </div>
 <script>
 /* ═══ Collapsible Trade History ═══ */
@@ -775,7 +775,7 @@ hb.innerHTML=d.map(function(t){var iw=t.result==='TP_HIT',pnl=+t.pnl||0,pct=+t.p
 return '<tr><td style="color:var(--muted);font-size:11px">'+(t.exit_time||'--')+'</td><td style="font-weight:600">'+(t.symbol_name||'--')+'</td><td class="'+(t.direction==='LONG'?'dl':'ds')+'">'+t.direction+'</td><td>'+(t.entry?fP(t.entry):'--')+'</td><td>'+(t.exit_price?fP(t.exit_price):'--')+'</td><td class="'+(iw?'rw':'rl')+'">'+(iw?'TP Hit':'SL Hit')+'</td><td class="'+(pnl>=0?'pp':'pn')+'">'+fPnl(pnl)+'</td><td class="'+(pct>=0?'pp':'pn')+'">'+(pct>=0?'+':'')+pct.toFixed(2)+'%</td></tr>'}).join('')}
 
 document.getElementById('filters').addEventListener('click',function(e){if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');renderHistory(e.target.dataset.filter)});
-document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
+document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='v6_trades.csv';a.click()});
 
 loadData();setInterval(loadData,15000);cBS();
 </script>
