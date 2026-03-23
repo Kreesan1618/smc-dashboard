@@ -715,15 +715,19 @@ var re=document.getElementById('realised'),rp=st.total_pnl||0;re.textContent=fPn
 document.getElementById('total-trades').textContent=(st.total||0)+' trades';
 // Portfolio stats
 var pf=data.portfolio||{};
-var bal=pf.balance||0,eq=pf.equity||0,retPct=pf.return_pct||0,mu2=pf.margin_used||0,avl=pf.available||0,mdd=pf.max_drawdown||0;
-var bEl=document.getElementById('balance');if(bEl){bEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});bEl.className='ns-val '+(retPct>=0?'g':'r')}
-var rpEl=document.getElementById('return-pct');if(rpEl)rpEl.textContent=(retPct>=0?'+':'')+retPct.toFixed(1)+'%';
-var eEl=document.getElementById('equity');if(eEl){eEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});eEl.className='ns-val '+(eq>=bal?'g':'r')}
+var bal=pf.balance||0,mu2=pf.margin_used||0,avl=pf.available||0,mdd=pf.max_drawdown||0;
+var startCap=pf.starting_capital||10000;
+var eq=bal+tu;
+var balRetPct=((bal-startCap)/startCap*100);
+var eqRetPct=((eq-startCap)/startCap*100);
+var bEl=document.getElementById('balance');if(bEl){bEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});bEl.className='ns-val '+(balRetPct>=0?'g':'r')}
+var rpEl=document.getElementById('return-pct');if(rpEl)rpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
+var eEl=document.getElementById('equity');if(eEl){eEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});eEl.className='ns-val '+(eqRetPct>=0?'g':'r')}
 var miEl=document.getElementById('margin-info');if(miEl)miEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0})+' | '+pf.leverage+'x';
 // Mobile portfolio
-var mbEl=document.getElementById('m-balance');if(mbEl){mbEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});mbEl.className='ms-val '+(retPct>=0?'g':'r')}
-var mrpEl=document.getElementById('m-return-pct');if(mrpEl)mrpEl.textContent=(retPct>=0?'+':'')+retPct.toFixed(1)+'%';
-var meEl=document.getElementById('m-equity');if(meEl){meEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});meEl.className='ms-val '+(eq>=bal?'g':'r')}
+var mbEl=document.getElementById('m-balance');if(mbEl){mbEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});mbEl.className='ms-val '+(balRetPct>=0?'g':'r')}
+var mrpEl=document.getElementById('m-return-pct');if(mrpEl)mrpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
+var meEl=document.getElementById('m-equity');if(meEl){meEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});meEl.className='ms-val '+(eqRetPct>=0?'g':'r')}
 var mmiEl=document.getElementById('m-margin-info');if(mmiEl)mmiEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0});
 // Equity curve chart
 var curve=data.equity_curve||[];
