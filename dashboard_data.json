@@ -1,76 +1,76 @@
 {
-  "scan_time": "23 Mar 2026 \u00b7 04:00 UTC",
+  "scan_time": "23 Mar 2026 \u00b7 05:37 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 68114.21,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 68819.58,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2054.07,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 2068.35,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 86.49,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 87.21,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 626.87,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 631.37,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09073,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 0.09087,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "XRPUSDT",
       "symbol_name": "XRP",
-      "price": 1.3827,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 1.3934,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "LINKUSDT",
       "symbol_name": "LINK",
-      "price": 8.71,
-      "trend": "\ud83d\udd34\u25bc"
+      "price": 8.77,
+      "trend": "\u26aa\u2014"
     },
     {
       "symbol": "AVAXUSDT",
       "symbol_name": "AVAX",
-      "price": 9.11,
+      "price": 9.15,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "SUIUSDT",
       "symbol_name": "SUI",
-      "price": 0.91,
+      "price": 0.9157,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ADAUSDT",
       "symbol_name": "ADA",
-      "price": 0.2514,
+      "price": 0.2524,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "NEARUSDT",
       "symbol_name": "NEAR",
-      "price": 1.286,
+      "price": 1.284,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "ZECUSDT",
       "symbol_name": "ZEC",
-      "price": 220.47,
+      "price": 224.59,
       "trend": "\u26aa\u2014"
     },
     {
@@ -82,34 +82,46 @@
     {
       "symbol": "TAOUSDT",
       "symbol_name": "TAO",
-      "price": 274.2,
+      "price": 279.4,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
-      "price": 4378.95,
+      "price": 4350.94,
       "trend": "\ud83d\udd34\u25bc"
     }
   ],
   "open_positions": [
     {
+      "symbol": "XRPUSDT",
+      "symbol_name": "XRP",
+      "direction": "SHORT",
+      "entry": 1.3848,
+      "current": 1.3934,
+      "tp": 1.2427,
+      "sl": 1.4558,
+      "margin": 390.08,
+      "unrealized_pct": -0.62,
+      "unrealized_pnl": -24.23
+    },
+    {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
       "direction": "SHORT",
       "entry": 68074.6,
-      "current": 68074.6,
+      "current": 68819.58,
       "tp": 61762.56,
-      "sl": 71230.62,
+      "sl": 71238.62,
       "margin": 414.57,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0
+      "unrealized_pct": -1.09,
+      "unrealized_pnl": -45.37
     }
   ],
   "closed_trades": [],
   "stats": {
     "total": 2,
-    "open": 0,
+    "open": 2,
     "wins": 0,
     "losses": 0,
     "win_rate": 0,
@@ -223,28 +235,21 @@
     }
   ],
   "portfolio": {
-    "balance": 9609.92,
-    "equity": 9609.92,
+    "balance": 10000.0,
+    "equity": 9930.4,
     "starting_capital": 10000.0,
-    "margin_used": 414.57,
-    "available": 8780.78,
+    "margin_used": 804.65,
+    "available": 8390.7,
     "leverage": 10,
     "max_positions": 10,
-    "open_count": 1,
+    "open_count": 2,
     "peak_balance": 10000,
-    "max_drawdown": 3.9,
-    "return_pct": -3.9
+    "max_drawdown": 8.74,
+    "return_pct": -0.7
   },
   "equity_curve": [
     {
       "dt": "2026-03-22 21:14",
-      "equity": 10000,
-      "balance": 10000,
-      "open_pos": 0,
-      "margin_used": 0
-    },
-    {
-      "dt": "2026-03-22 22:00",
       "equity": 10000,
       "balance": 10000,
       "open_pos": 0,
@@ -258,18 +263,18 @@
       "margin_used": 390.08
     },
     {
-      "dt": "2026-03-23 02:00",
-      "equity": 9609.92,
-      "balance": 9609.92,
-      "open_pos": 0,
-      "margin_used": 0
+      "dt": "2026-03-23 04:00",
+      "equity": 10000.0,
+      "balance": 9195.35,
+      "open_pos": 2,
+      "margin_used": 804.65
     },
     {
-      "dt": "2026-03-23 04:00",
-      "equity": 9609.92,
-      "balance": 9609.92,
-      "open_pos": 1,
-      "margin_used": 414.57
+      "dt": "2026-03-23 05:37",
+      "equity": 9930.4,
+      "balance": 10000.0,
+      "open_pos": 2,
+      "margin_used": 804.65
     }
   ]
 }
