@@ -1,94 +1,94 @@
 {
-  "scan_time": "23 Mar 2026 \u00b7 05:37 UTC",
+  "scan_time": "23 Mar 2026 \u00b7 06:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 68819.58,
+      "price": 68863.24,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2068.35,
+      "price": 2067.42,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 87.21,
+      "price": 87.11,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 631.37,
+      "price": 631.6,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09087,
+      "price": 0.09088,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "XRPUSDT",
       "symbol_name": "XRP",
-      "price": 1.3934,
+      "price": 1.3899,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "LINKUSDT",
       "symbol_name": "LINK",
-      "price": 8.77,
+      "price": 8.76,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "AVAXUSDT",
       "symbol_name": "AVAX",
-      "price": 9.15,
+      "price": 9.16,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "SUIUSDT",
       "symbol_name": "SUI",
-      "price": 0.9157,
+      "price": 0.914,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ADAUSDT",
       "symbol_name": "ADA",
-      "price": 0.2524,
+      "price": 0.2523,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "NEARUSDT",
       "symbol_name": "NEAR",
-      "price": 1.284,
+      "price": 1.283,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "ZECUSDT",
       "symbol_name": "ZEC",
-      "price": 224.59,
+      "price": 224.78,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "TRXUSDT",
       "symbol_name": "TRX",
-      "price": 0.3086,
-      "trend": "\u26aa\u2014"
+      "price": 0.3087,
+      "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "TAOUSDT",
       "symbol_name": "TAO",
-      "price": 279.4,
-      "trend": "\u26aa\u2014"
+      "price": 275.8,
+      "trend": "\ud83d\udfe2\u25b2"
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
-      "price": 4350.94,
+      "price": 4322.0,
       "trend": "\ud83d\udd34\u25bc"
     }
   ],
@@ -98,24 +98,24 @@
       "symbol_name": "XRP",
       "direction": "SHORT",
       "entry": 1.3848,
-      "current": 1.3934,
+      "current": 1.3899,
       "tp": 1.2427,
       "sl": 1.4558,
       "margin": 390.08,
-      "unrealized_pct": -0.62,
-      "unrealized_pnl": -24.23
+      "unrealized_pct": -0.37,
+      "unrealized_pnl": -14.37
     },
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
       "direction": "SHORT",
       "entry": 68074.6,
-      "current": 68819.58,
+      "current": 68863.24,
       "tp": 61762.56,
       "sl": 71238.62,
       "margin": 414.57,
-      "unrealized_pct": -1.09,
-      "unrealized_pnl": -45.37
+      "unrealized_pct": -1.16,
+      "unrealized_pnl": -48.03
     }
   ],
   "closed_trades": [],
@@ -132,64 +132,64 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 40 \u00b7 Near VWAP"
+      "proximity": 25,
+      "note": "EMA stacked"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 35 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 41 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "BNBUSDT",
       "name": "BNB",
       "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 47 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "XRPUSDT",
       "name": "XRP",
       "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "LINKUSDT",
       "name": "LINK",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "AVAXUSDT",
       "name": "AVAX",
       "trend": -1,
-      "proximity": 50,
-      "note": "EMA stacked \u00b7 Near VWAP"
+      "proximity": 25,
+      "note": "EMA stacked"
     },
     {
       "symbol": "SUIUSDT",
       "name": "SUI",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 39 \u00b7 Near VWAP"
+      "proximity": 75,
+      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "ADAUSDT",
@@ -202,15 +202,15 @@
       "symbol": "NEARUSDT",
       "name": "NEAR",
       "trend": -1,
-      "proximity": 75,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "EMA stacked \u00b7 Near VWAP"
     },
     {
       "symbol": "ZECUSDT",
       "name": "ZEC",
       "trend": -1,
-      "proximity": 50,
-      "note": "EMA stacked \u00b7 Near VWAP"
+      "proximity": 25,
+      "note": "EMA stacked"
     },
     {
       "symbol": "TRXUSDT",
@@ -236,16 +236,16 @@
   ],
   "portfolio": {
     "balance": 10000.0,
-    "equity": 9930.4,
+    "equity": 9937.6,
     "starting_capital": 10000.0,
     "margin_used": 804.65,
-    "available": 8390.7,
+    "available": 9195.35,
     "leverage": 10,
     "max_positions": 10,
     "open_count": 2,
     "peak_balance": 10000,
     "max_drawdown": 8.74,
-    "return_pct": -0.7
+    "return_pct": -0.62
   },
   "equity_curve": [
     {
@@ -272,6 +272,13 @@
     {
       "dt": "2026-03-23 05:37",
       "equity": 9930.4,
+      "balance": 10000.0,
+      "open_pos": 2,
+      "margin_used": 804.65
+    },
+    {
+      "dt": "2026-03-23 06:00",
+      "equity": 9937.6,
       "balance": 10000.0,
       "open_pos": 2,
       "margin_used": 804.65
