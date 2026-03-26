@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kreez V Analytics — Live Dashboard</title>
+<title>SMC Scanner — Live Dashboard</title>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
@@ -25,17 +25,14 @@ body::before{z-index:0}body::after{z-index:0}
 .se-d{width:7px;height:7px;border-radius:50%;flex-shrink:0}
 .command-center{max-width:1600px;margin:0 auto;padding:20px 28px;display:grid;grid-template-columns:1fr 340px;gap:20px;position:relative;z-index:1}
 .main-col{min-width:0}
-.asset-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-bottom:16px}
-.asset-card{position:relative;overflow:hidden;transition:all .3s;cursor:default;background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px}
-.asset-card:hover{border-color:var(--border-hover)}
-.asset-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px}
-.asset-card.bu::after{background:linear-gradient(90deg,#34d399,transparent)}
-.asset-card.be::after{background:linear-gradient(90deg,#f43f5e,transparent)}
-.ac-row1{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
-.ac-sym{font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.5px}
-.ac-badge{font-size:9px;font-weight:700;padding:1px 6px;border-radius:4px;font-family:var(--mono)}
-.ac-badge.up{color:#34d399;background:rgba(52,211,153,0.1)}.ac-badge.dn{color:#f43f5e;background:rgba(244,63,94,0.08)}
-.ac-price{font-size:15px;font-weight:800;font-family:var(--mono);color:var(--white)}
+.asset-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px}
+.asset-card{position:relative;overflow:hidden;transition:all .4s;cursor:default}
+.asset-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.ac-head{display:flex;justify-content:space-between;align-items:center}
+.ac-spark{opacity:.6}.ac-spark svg{width:100%;height:100%;display:block}
+.ac-signal{display:flex;align-items:center;justify-content:space-between}
+.ac-sig-bar{flex:1;overflow:hidden}
+.ac-sig-fill{height:100%;transition:width .5s}
 table{width:100%;border-collapse:collapse}
 .intel-col{display:flex;flex-direction:column;gap:12px;min-width:0}
 .sb-panel{display:none}.sb-panel.active{display:block}
@@ -79,7 +76,7 @@ table{width:100%;border-collapse:collapse}
 .sp{width:14px;height:14px;border:2px solid;border-radius:50%;animation:spin .8s linear infinite}
 
 @media(max-width:1100px){.command-center{grid-template-columns:1fr;max-width:900px}.intel-col{display:grid;grid-template-columns:1fr 1fr;gap:12px}.nav-center{display:none}.mobile-stats{display:block}}
-@media(max-width:768px){.asset-grid{grid-template-columns:repeat(3,1fr)}.intel-col{grid-template-columns:1fr}.topnav-inner{flex-wrap:wrap;gap:8px}}
+@media(max-width:768px){.asset-grid{grid-template-columns:repeat(2,1fr)}.intel-col{grid-template-columns:1fr}.topnav-inner{flex-wrap:wrap;gap:8px}}
 </style>
 
 <!-- ═══ EMERALD GLASS THEME ═══ -->
@@ -89,7 +86,7 @@ body{background:#040d0a;color:#c8e6dc;font-family:'Manrope',sans-serif}
 body::before{background:radial-gradient(1px 1px at 10% 15%,rgba(110,231,183,0.3),transparent),radial-gradient(1px 1px at 45% 10%,rgba(16,185,129,0.25),transparent),radial-gradient(1px 1px at 75% 25%,rgba(16,185,129,0.3),transparent),radial-gradient(1px 1px at 25% 75%,rgba(16,185,129,0.15),transparent),radial-gradient(1px 1px at 55% 65%,rgba(16,185,129,0.2),transparent),radial-gradient(1.5px 1.5px at 20% 55%,rgba(255,255,255,0.07),transparent),radial-gradient(1.5px 1.5px at 70% 80%,rgba(255,255,255,0.06),transparent),radial-gradient(ellipse at 25% 15%,rgba(16,185,129,0.06) 0%,transparent 45%),radial-gradient(ellipse at 75% 85%,rgba(16,185,129,0.04) 0%,transparent 40%)}
 body::after{background:none}
 .topnav{background:rgba(4,13,10,0.8);border-bottom:1px solid var(--border)}
-.logo-i{width:44px;height:44px;border-radius:0;background:transparent;display:flex;align-items:center;justify-content:center;box-shadow:none;overflow:visible}
+.logo-i{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg,#10b981,#6ee7b7);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:17px;color:#040d0a;font-family:var(--mono);box-shadow:0 4px 20px rgba(16,185,129,0.25)}
 .logo-t{font-size:16px;font-weight:800;color:var(--white)}
 .logo-s{font-size:10px;color:var(--muted);font-family:var(--mono)}
 .nav-stat{padding:8px 18px;border:1px solid var(--border);border-radius:12px;background:var(--card);backdrop-filter:blur(12px);text-align:center;transition:all .3s}
@@ -110,15 +107,21 @@ body::after{background:none}
 .st{font-size:14px;font-weight:700;color:var(--white);margin-bottom:14px;display:flex;align-items:center;gap:12px}
 .st::after{content:'';flex:1;height:1px;background:var(--border)}
 .live-tag{font-size:10px;font-weight:500;color:var(--accent);font-family:var(--mono)}
-.asset-card{background:var(--card);border:0.5px solid var(--border);border-radius:10px;padding:10px 12px;transition:all .3s;position:relative;overflow:hidden}
-.asset-card:hover{border-color:var(--border-hover)}
+.asset-card{background:var(--card);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:20px;padding:22px;transition:all .4s}
+.asset-card:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:0 0 30px -8px rgba(16,185,129,0.15)}
 .asset-card.bu::before{background:linear-gradient(90deg,#10b981,#6ee7b7,transparent)}
 .asset-card.be::before{background:linear-gradient(90deg,#f43f5e,#fb923c,transparent)}
 .ac-head{margin-bottom:8px}
 .ac-sym{font-size:15px;font-weight:800;color:var(--white)}
-.ac-price{font-size:15px;font-weight:800;font-family:var(--mono);color:var(--white)}
-.ac-chg{font-size:10px;font-family:var(--mono);font-weight:600}
-.ac-chg.up{color:#34d399}.ac-chg.dn{color:#f43f5e}
+.ac-badge-chg{font-size:9px;font-family:var(--mono);font-weight:700;padding:2px 8px;border-radius:6px}
+.ac-badge-chg.up{color:#34d399;background:rgba(52,211,153,0.1)}
+.ac-badge-chg.dn{color:#f43f5e;background:rgba(244,63,94,0.08)}
+.ac-price{font-size:24px;font-weight:800;font-family:var(--mono);color:var(--white)}
+.ac-vol{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:4px}
+.ac-spark{height:40px;margin-top:12px}
+.ac-signal{margin-top:14px;border-top:1px solid var(--border);padding-top:12px}
+.ac-sig-label{font-size:10px;color:var(--muted);font-weight:600}
+.ac-sig-bar{height:6px;background:var(--muted2);border-radius:3px;margin:0 10px}
 .ac-sig-fill{border-radius:3px}
 .ac-sig-val{font-size:13px;font-weight:800;color:var(--white);font-family:var(--mono);min-width:30px;text-align:right}
 .cw{background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:20px;overflow:hidden;margin-bottom:24px;transition:all .4s}
@@ -218,7 +221,7 @@ tr:hover td{background:var(--card-hover)}
 [data-theme="hud"] body::before{background:linear-gradient(rgba(0,220,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(0,220,255,0.015) 1px,transparent 1px),radial-gradient(ellipse at 30% 10%,rgba(0,220,255,0.04) 0%,transparent 50%);background-size:60px 60px,60px 60px,100% 100%}
 [data-theme="hud"] body::after{opacity:.025;background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,220,255,0.15) 2px,rgba(0,220,255,0.15) 4px);z-index:9998}
 [data-theme="hud"] .topnav{background:rgba(2,8,16,0.9);border-bottom:1px solid var(--border)}
-[data-theme="hud"] .logo-i{width:44px;height:44px;border-radius:0;background:transparent;border:none;box-shadow:none;display:flex;align-items:center;justify-content:center}
+[data-theme="hud"] .logo-i{width:40px;height:40px;border-radius:4px;background:transparent;border:1.5px solid var(--accent);color:var(--accent);text-shadow:0 0 12px var(--accent-glow);font-family:'Orbitron',sans-serif;font-size:16px;font-weight:800;box-shadow:none;display:flex;align-items:center;justify-content:center}
 [data-theme="hud"] .logo-t{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;letter-spacing:4px;color:var(--accent);text-shadow:0 0 20px var(--accent-glow)}
 [data-theme="hud"] .logo-s{font-family:'Share Tech Mono',monospace;font-size:10px;color:var(--muted);letter-spacing:2px}
 [data-theme="hud"] .nav-stat{padding:8px 18px;border:1px solid var(--border);border-radius:2px;background:var(--card);text-align:center}
@@ -230,19 +233,18 @@ tr:hover td{background:var(--card-hover)}
 [data-theme="hud"] .live-d::after{content:'';position:absolute;inset:2px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent-glow)}
 [data-theme="hud"] .st{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:4px;color:var(--accent);text-shadow:0 0 10px var(--accent-glow);text-transform:uppercase}
 [data-theme="hud"] .live-tag{font-family:'Share Tech Mono',monospace;color:var(--accent)}
-[data-theme="hud"] .asset-card{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:10px 12px;position:relative;overflow:hidden}
-[data-theme="hud"] .asset-card:hover{box-shadow:0 0 20px rgba(0,220,255,0.15)}
-[data-theme="hud"] .ac-sym{font-family:"Orbitron",sans-serif;font-size:9px;letter-spacing:2px;color:var(--accent)}
-[data-theme="hud"] .ac-price{font-family:"Orbitron",sans-serif;font-size:14px;font-weight:700;color:var(--white)}
-
-
-
-
-
-
-
-
-
+[data-theme="hud"] .asset-card{background:var(--card);border:1px solid var(--border);border-radius:2px;padding:20px;backdrop-filter:blur(8px)}
+[data-theme="hud"] .asset-card:hover{box-shadow:0 0 20px rgba(0,220,255,0.15),0 0 60px rgba(0,220,255,0.05)}
+[data-theme="hud"] .asset-card.bu::before{background:linear-gradient(90deg,var(--accent),transparent)}
+[data-theme="hud"] .asset-card.be::before{background:linear-gradient(90deg,var(--red),transparent)}
+/* HUD corner brackets */
+[data-theme="hud"] .asset-card::after{content:'';position:absolute;top:-1px;right:-1px;width:14px;height:14px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);pointer-events:none;z-index:2}
+[data-theme="hud"] .ac-sym{font-family:'Orbitron',sans-serif;font-size:12px;letter-spacing:3px;color:var(--accent);text-shadow:0 0 8px var(--accent-glow)}
+[data-theme="hud"] .ac-price{font-family:'Orbitron',sans-serif;font-size:22px;font-weight:700;color:var(--white);text-shadow:0 0 12px rgba(0,220,255,0.15)}
+[data-theme="hud"] .ac-sig-label{font-family:'Orbitron',sans-serif;font-size:8px;letter-spacing:2px;color:var(--muted)}
+[data-theme="hud"] .ac-sig-bar{height:3px;background:var(--muted2);border-radius:0;margin:0 8px}
+[data-theme="hud"] .ac-sig-fill{border-radius:0}
+[data-theme="hud"] .ac-sig-val{font-family:'Orbitron',sans-serif;font-size:11px}
 [data-theme="hud"] .cw{border-radius:2px;background:var(--card);border:1px solid var(--border)}
 [data-theme="hud"] .cw::after{content:'';position:absolute;top:-1px;right:-1px;width:14px;height:14px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);pointer-events:none;z-index:2}
 [data-theme="hud"] .cw{position:relative}
@@ -279,16 +281,16 @@ tr:hover td{background:var(--card-hover)}
 [data-theme="nebula"] body::before{background:radial-gradient(ellipse at 20% 0%,rgba(168,85,247,0.08) 0%,transparent 50%),radial-gradient(ellipse at 80% 20%,rgba(244,114,182,0.05) 0%,transparent 40%),radial-gradient(ellipse at 50% 100%,rgba(56,189,248,0.04) 0%,transparent 40%)}
 [data-theme="nebula"] body::after{background:none}
 [data-theme="nebula"] .topnav{background:rgba(15,10,30,0.85);border-bottom:1px solid var(--border)}
-[data-theme="nebula"] .logo-i{width:44px;height:44px;background:transparent;border-radius:0;box-shadow:none}
+[data-theme="nebula"] .logo-i{background:linear-gradient(135deg,#a855f7,#f472b6,#fb923c);color:#fff;border-radius:14px;box-shadow:0 4px 20px rgba(168,85,247,0.3)}
 [data-theme="nebula"] .logo-t{font-size:16px;font-weight:800;background:linear-gradient(135deg,#a855f7,#f472b6,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 [data-theme="nebula"] .nav-stat{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:8px 18px;text-align:center}
 [data-theme="nebula"] .ns-val.g{color:#34d399}[data-theme="nebula"] .ns-val.r{color:#f43f5e}
 [data-theme="nebula"] .live-b{background:rgba(52,211,153,0.08);border:1px solid rgba(52,211,153,0.15);border-radius:20px;padding:6px 14px;color:#34d399}
 [data-theme="nebula"] .live-d{background:#34d399;box-shadow:0 0 8px rgba(52,211,153,0.5)}
-[data-theme="nebula"] .asset-card{background:var(--card);border:0.5px solid var(--border);border-radius:12px;padding:10px 12px;position:relative;overflow:hidden}
+[data-theme="nebula"] .asset-card{background:var(--card);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:18px;padding:22px}
 [data-theme="nebula"] .asset-card:hover{box-shadow:0 0 30px -8px rgba(168,85,247,0.2)}
-[data-theme="nebula"] .asset-card.bu::after{background:linear-gradient(90deg,#34d399,#38bdf8,transparent)}
-[data-theme="nebula"] .asset-card.be::after{background:linear-gradient(90deg,#f43f5e,#fb923c,transparent)}
+[data-theme="nebula"] .asset-card.bu::before{background:linear-gradient(90deg,#34d399,#38bdf8,transparent)}
+[data-theme="nebula"] .asset-card.be::before{background:linear-gradient(90deg,#f43f5e,#fb923c,transparent)}
 [data-theme="nebula"] .ac-badge-chg.up{color:#34d399;background:rgba(52,211,153,0.1)}
 [data-theme="nebula"] .ac-badge-chg.dn{color:#f43f5e;background:rgba(244,63,94,0.08)}
 [data-theme="nebula"] .ac-sig-bar{height:6px;background:var(--muted2);border-radius:3px;margin:0 10px}
@@ -312,16 +314,16 @@ tr:hover td{background:var(--card-hover)}
 [data-theme="quantix"] body::before{background:radial-gradient(ellipse at 30% 20%,rgba(139,92,246,0.06) 0%,transparent 50%),radial-gradient(ellipse at 70% 80%,rgba(139,92,246,0.04) 0%,transparent 45%)}
 [data-theme="quantix"] body::after{background:none}
 [data-theme="quantix"] .topnav{background:rgba(14,14,20,0.88);border-bottom:1px solid var(--border)}
-[data-theme="quantix"] .logo-i{width:44px;height:44px;background:transparent;border-radius:0;box-shadow:none}
+[data-theme="quantix"] .logo-i{background:linear-gradient(135deg,#8b5cf6,#6d28d9);color:#fff;border-radius:14px;box-shadow:0 4px 24px rgba(139,92,246,0.25)}
 [data-theme="quantix"] .logo-t{font-size:18px;font-weight:800;color:var(--white)}
 [data-theme="quantix"] .nav-stat{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:10px 22px;text-align:center}
 [data-theme="quantix"] .ns-val.g{color:#22c55e}[data-theme="quantix"] .ns-val.r{color:#ef4444}
 [data-theme="quantix"] .live-b{background:rgba(34,197,94,0.08);border:1px solid rgba(34,197,94,0.15);border-radius:24px;padding:7px 16px;color:#22c55e}
 [data-theme="quantix"] .live-d{background:#22c55e;box-shadow:0 0 8px rgba(34,197,94,0.4)}
-[data-theme="quantix"] .asset-card{background:var(--card);border:0.5px solid var(--border);border-radius:14px;padding:10px 12px;position:relative;overflow:hidden}
+[data-theme="quantix"] .asset-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:24px}
 [data-theme="quantix"] .asset-card:hover{box-shadow:0 0 40px -10px rgba(139,92,246,0.12)}
-[data-theme="quantix"] .asset-card.bu::after{background:linear-gradient(90deg,#22c55e,#86efac,transparent)}
-[data-theme="quantix"] .asset-card.be::after{background:linear-gradient(90deg,#ef4444,#fca5a5,transparent)}
+[data-theme="quantix"] .asset-card.bu::before{background:linear-gradient(90deg,#22c55e,#86efac,transparent)}
+[data-theme="quantix"] .asset-card.be::before{background:linear-gradient(90deg,#ef4444,#fca5a5,transparent)}
 [data-theme="quantix"] .ac-badge-chg.up{color:#22c55e;background:rgba(34,197,94,0.08)}
 [data-theme="quantix"] .ac-badge-chg.dn{color:#ef4444;background:rgba(239,68,68,0.06)}
 [data-theme="quantix"] .ac-sig-bar{height:6px;background:var(--muted2);border-radius:3px;margin:0 10px}
@@ -340,10 +342,8 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i"><svg width="44" height="44" viewBox="0 0 120 140"><path d="M60 6 L110 24 L110 72 C110 100 86 120 60 134 C34 120 10 100 10 72 L10 24 Z" fill="#0d1117" stroke="#34d399" stroke-width="3"/><path d="M60 16 L100 32 L100 70 C100 94 80 112 60 124 C40 112 20 94 20 70 L20 32 Z" fill="none" stroke="#34d399" stroke-width="1" opacity="0.25"/><path d="M42 40 L42 96 M42 68 L76 40 M52 76 L76 96" fill="none" stroke="#34d399" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="86" cy="48" r="5" fill="#34d399"/><circle cx="86" cy="48" r="10" fill="none" stroke="#34d399" stroke-width="1" opacity="0.4"/></svg></div><div><div class="logo-t">KREEZ V ANALYTICS</div><div class="logo-s">VWAP + EMA + RSI · Structural SL/TP · 2H · 15 Coins</div></div></div>
+  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">ATR SL + Volume Filter · 1H</div></div></div>
   <div class="nav-center">
-    <div class="nav-stat"><div class="ns-label">Balance</div><div class="ns-val g" id="balance">--</div><div class="ns-sub" id="return-pct">--</div></div>
-    <div class="nav-stat"><div class="ns-label">Equity</div><div class="ns-val g" id="equity">--</div><div class="ns-sub" id="margin-info">--</div></div>
     <div class="nav-stat"><div class="ns-label">Unrealised</div><div class="ns-val g" id="unrealised">--</div><div class="ns-sub" id="open-count">--</div></div>
     <div class="nav-stat"><div class="ns-label">Record</div><div class="ns-val n" id="record">--</div><div class="ns-sub" id="win-rate">--</div></div>
     <div class="nav-stat"><div class="ns-label">Realised</div><div class="ns-val g" id="realised">--</div><div class="ns-sub" id="total-trades">--</div></div>
@@ -358,8 +358,6 @@ tr:hover td{background:var(--card-hover)}
 
 <!-- Mobile Stats (visible only on smaller screens) -->
 <div class="mobile-stats"><div class="mobile-stats-inner">
-  <div class="ms-item"><div class="ms-label">Balance</div><div class="ms-val g" id="m-balance">--</div><div class="ms-sub" id="m-return-pct">--</div></div>
-  <div class="ms-item"><div class="ms-label">Equity</div><div class="ms-val g" id="m-equity">--</div><div class="ms-sub" id="m-margin-info">--</div></div>
   <div class="ms-item"><div class="ms-label">Unrealised</div><div class="ms-val g" id="m-unrealised">--</div><div class="ms-sub" id="m-open-count">--</div></div>
   <div class="ms-item"><div class="ms-label">Record</div><div class="ms-val n" id="m-record">--</div><div class="ms-sub" id="m-win-rate">--</div></div>
   <div class="ms-item"><div class="ms-label">Realised</div><div class="ms-val g" id="m-realised">--</div><div class="ms-sub" id="m-total-trades">--</div></div>
@@ -369,9 +367,6 @@ tr:hover td{background:var(--card-hover)}
   <div class="main-col">
     <div class="st">Assets <span class="live-tag">● LIVE PRICES + SIGNAL</span></div>
     <div class="asset-grid" id="prices"><div class="ld"><div class="sp"></div> Loading...</div></div>
-
-    <!-- Equity Curve -->
-    <div class="cw" style="margin-bottom:12px"><div class="ch"><div class="ct">Equity Curve</div><span class="sb-badge" id="eq-return">--</span></div><canvas id="equity-chart" height="120" style="width:100%;display:block"></canvas><div style="display:flex;justify-content:space-between;padding:4px 12px 8px;font-size:10px;color:var(--muted);font-family:var(--mono)"><span id="eq-start">--</span><span id="eq-dd">Max DD: --</span><span id="eq-end">--</span></div></div>
 
     <div class="st">Open positions <span class="live-tag">● LIVE P&L</span></div>
     <div class="cw"><div class="ch"><div class="ct">Active Trades</div><div class="badge" id="pos-count">0</div></div><div id="pos-body"><div class="es">No open positions</div></div></div>
@@ -422,7 +417,7 @@ tr:hover td{background:var(--card-hover)}
 
   </div>
 
-  <div class="ft">Kreez V Analytics · VWAP+EMA+RSI · 2H · Live prices via Binance WS<br>Educational purposes only · Not financial advice</div>
+  <div class="ft">SMC Scanner v15 · Live prices via Binance WS · Whales via Blockchain.com · Educational purposes only · Not financial advice</div>
 </div>
 <script>
 /* ═══ Collapsible Trade History ═══ */
@@ -488,7 +483,7 @@ var DU_LOCAL='dashboard_data.json';
 var FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
 var D=null,LP={},AC=[],PP={},LST='',fgC=null;
 var VOL={}; // symbol -> 24h quote volume
-var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt',XRPUSDT:'xrpusdt',LINKUSDT:'linkusdt',AVAXUSDT:'avaxusdt',SUIUSDT:'suiusdt',ADAUSDT:'adausdt',NEARUSDT:'nearusdt',ZECUSDT:'zecusdt',TRXUSDT:'trxusdt',TAOUSDT:'taousdt',PAXGUSDT:'paxgusdt'};
+var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',DOGEUSDT:'dogeusdt'};
 var SR_LEVELS=[]; // stored for alert checking
 
 function fPF(p){p=+p;if(p>=1000)return '$'+p.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});if(p>=1)return '$'+p.toFixed(2);if(p>=0.01)return '$'+p.toFixed(4);return '$'+p.toFixed(6)}
@@ -586,7 +581,7 @@ html+='</div>';el.innerHTML=html;
 loadSR();setInterval(loadSR,300000); // refresh S/R every 5 min
 
 // ═══ NEW: Multi-TF Confluence Heatmap ═══
-var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'SOLUSDT',n:'SOL'},{s:'BNBUSDT',n:'BNB'},{s:'DOGEUSDT',n:'DOGE'},{s:'XRPUSDT',n:'XRP'},{s:'LINKUSDT',n:'LINK'},{s:'AVAXUSDT',n:'AVAX'},{s:'SUIUSDT',n:'SUI'},{s:'ADAUSDT',n:'ADA'},{s:'NEARUSDT',n:'NEAR'},{s:'ZECUSDT',n:'ZEC'},{s:'TRXUSDT',n:'TRX'},{s:'TAOUSDT',n:'TAO'},{s:'PAXGUSDT',n:'PAXG'}];
+var MTF_SYMS=[{s:'BTCUSDT',n:'BTC'},{s:'ETHUSDT',n:'ETH'},{s:'DOGEUSDT',n:'DOGE'}];
 var MTF_TFS=['1h','4h','1d'];
 
 function calcEMA(closes,period){
@@ -677,59 +672,19 @@ function fl(s,p){
   var card=el.closest('.asset-card');
   if(card){card.classList.remove('tick-up','tick-down');void card.offsetWidth;
     if(p>(PP[s]||p))card.classList.add('tick-up');else if(p<(PP[s]||p))card.classList.add('tick-down')}
-  uL();
+  updateSparkline(s);uL();
 }
 
-var CLOSED_LIVE={};
-function rc(){if(!D||!D.open_positions)return;var tot=0,any=false;var closedThisTick=[];
+function rc(){if(!D||!D.open_positions)return;var tot=0,any=false;
 D.open_positions.forEach(function(p){var lp=LP[p.symbol];if(!lp)return;any=true;
-var id=p.symbol+'-'+p.direction;
-if(CLOSED_LIVE[id])return;
-var risk=Math.abs(p.entry-p.sl),qty=risk>0?(p.margin||200)*LEVERAGE_LIVE/p.entry:0;
-var up,un;
+var risk=Math.abs(p.entry-p.sl),qty=risk>0?200/risk:0;var up,un;
 if(p.direction==='LONG'){up=(lp-p.entry)/p.entry*100;un=(lp-p.entry)*qty}else{up=(p.entry-lp)/p.entry*100;un=(p.entry-lp)*qty}
-var hitTP=false,hitSL=false;
-if(p.direction==='LONG'){if(lp>=p.tp)hitTP=true;if(lp<=p.sl)hitSL=true}
-else{if(lp<=p.tp)hitTP=true;if(lp>=p.sl)hitSL=true}
-if(hitTP||hitSL){
-  var ex=hitTP?p.tp:p.sl;var res=hitTP?'TP_HIT':'SL_HIT';
-  var pnlRaw;if(p.direction==='LONG')pnlRaw=(ex-p.entry)*qty;else pnlRaw=(p.entry-ex)*qty;
-  var fees=(p.entry*qty*0.001)+(ex*qty*0.001);var net=pnlRaw-fees;
-  CLOSED_LIVE[id]={result:res,exit:ex,pnl:net,symbol:p.symbol_name||p.symbol,direction:p.direction};
-  var pf=D.portfolio||{};pf.balance=(pf.balance||10000)+(p.margin||0)+net;
-  D.portfolio=pf;
-  var row=document.getElementById('pos-row-'+id);
-  if(!row){var ne=document.getElementById('pos-now-'+id);if(ne){var tr=ne.closest('tr');if(tr){tr.style.opacity='0.4';tr.style.background=hitTP?'rgba(52,211,153,0.08)':'rgba(244,63,94,0.08)'}}}
-  var tag=hitTP?'🎯 TP HIT':'🛑 SL HIT';
-  closedThisTick.push({name:p.symbol_name||p.symbol,dir:p.direction,res:tag,pnl:net});
-  return;
-}
-tot+=un;
+tot+=un;var id=p.symbol+'-'+p.direction;
 var ne=document.getElementById('pos-now-'+id),pe=document.getElementById('pos-pct-'+id),ue=document.getElementById('pos-pnl-'+id);
 if(ne)ne.textContent=fPF(lp);if(pe){pe.textContent=(up>=0?'+':'')+up.toFixed(2)+'%';pe.className=up>=0?'pp':'pn'}
 if(ue){ue.textContent=fPnl(un);ue.className=un>=0?'pp':'pn'}
 var pb=document.getElementById('prog-'+id);if(pb){var pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));pb.style.width=pct+'%';pb.style.background=un>=0?'var(--accent)':'var(--red)'}
-});
-var closedPnl=0;Object.values(CLOSED_LIVE).forEach(function(c){closedPnl+=c.pnl});
-var pf=D.portfolio||{};var bal=pf.balance||0;var startCap=pf.starting_capital||10000;
-var liveEq=bal+tot;var liveEqRet=((liveEq-startCap)/startCap*100);
-var balRetPct=((bal-startCap)/startCap*100);
-var openCount=D.open_positions.length-Object.keys(CLOSED_LIVE).length;
-var el=document.getElementById('unrealised');if(el){el.textContent=fPnl(tot);el.className='ns-val '+(tot>0?'g':tot<0?'r':'n')}
-var mel=document.getElementById('m-unrealised');if(mel){mel.textContent=fPnl(tot);mel.className='ms-val '+(tot>0?'g':tot<0?'r':'n')}
-document.getElementById('open-count').textContent=openCount+' open';
-document.getElementById('m-open-count').textContent=openCount+' open';
-var eEl=document.getElementById('equity');if(eEl){eEl.textContent='$'+liveEq.toLocaleString(undefined,{maximumFractionDigits:0});eEl.className='ns-val '+(liveEqRet>=0?'g':'r')}
-var meEl=document.getElementById('m-equity');if(meEl){meEl.textContent='$'+liveEq.toLocaleString(undefined,{maximumFractionDigits:0});meEl.className='ms-val '+(liveEqRet>=0?'g':'r')}
-var bEl=document.getElementById('balance');if(bEl){bEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});bEl.className='ns-val '+(balRetPct>=0?'g':'r')}
-var mbEl=document.getElementById('m-balance');if(mbEl){mbEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});mbEl.className='ms-val '+(balRetPct>=0?'g':'r')}
-var rpEl=document.getElementById('return-pct');if(rpEl)rpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
-var mrpEl=document.getElementById('m-return-pct');if(mrpEl)mrpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
-var miEl=document.getElementById('margin-info');if(miEl){var mu2=0;D.open_positions.forEach(function(p){if(!CLOSED_LIVE[p.symbol+'-'+p.direction])mu2+=(p.margin||0)});miEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0})+' | '+(pf.leverage||10)+'x'}
-if(closedThisTick.length>0){closedThisTick.forEach(function(c){showToast(c.res+' '+c.name+' '+c.dir+' '+fPnl(c.pnl))})}
-}
-var LEVERAGE_LIVE=10;
-function showToast(msg){var t=document.createElement('div');t.style.cssText='position:fixed;top:20px;right:20px;background:var(--card);border:1px solid var(--border);padding:12px 20px;border-radius:8px;color:var(--white);font-family:var(--mono);font-size:13px;z-index:9999;animation:fadeIn .3s';t.textContent=msg;document.body.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transition='opacity .5s';setTimeout(function(){t.remove()},500)},5000)}
+});if(any){var el=document.getElementById('unrealised');el.textContent=fPnl(tot);el.className='ns-val '+(tot>0?'g':tot<0?'r':'n');var mel=document.getElementById('m-unrealised');mel.textContent=fPnl(tot);mel.className='ms-val '+(tot>0?'g':tot<0?'r':'n')}}
 
 // Data load
 function loadData(){
@@ -751,25 +706,6 @@ document.getElementById('record').textContent=(st.wins||0)+'W·'+(st.losses||0)+
 document.getElementById('win-rate').textContent='WR '+(st.win_rate||0).toFixed(0)+'%';
 var re=document.getElementById('realised'),rp=st.total_pnl||0;re.textContent=fPnl(rp);re.className='ns-val '+(rp>0?'g':rp<0?'r':'n');
 document.getElementById('total-trades').textContent=(st.total||0)+' trades';
-// Portfolio stats
-var pf=data.portfolio||{};
-var bal=pf.balance||0,mu2=pf.margin_used||0,avl=pf.available||0,mdd=pf.max_drawdown||0;
-var startCap=pf.starting_capital||10000;
-var eq=bal+tu;
-var balRetPct=((bal-startCap)/startCap*100);
-var eqRetPct=((eq-startCap)/startCap*100);
-var bEl=document.getElementById('balance');if(bEl){bEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});bEl.className='ns-val '+(balRetPct>=0?'g':'r')}
-var rpEl=document.getElementById('return-pct');if(rpEl)rpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
-var eEl=document.getElementById('equity');if(eEl){eEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});eEl.className='ns-val '+(eqRetPct>=0?'g':'r')}
-var miEl=document.getElementById('margin-info');if(miEl)miEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0})+' | '+pf.leverage+'x';
-// Mobile portfolio
-var mbEl=document.getElementById('m-balance');if(mbEl){mbEl.textContent='$'+bal.toLocaleString(undefined,{maximumFractionDigits:0});mbEl.className='ms-val '+(balRetPct>=0?'g':'r')}
-var mrpEl=document.getElementById('m-return-pct');if(mrpEl)mrpEl.textContent=(balRetPct>=0?'+':'')+balRetPct.toFixed(1)+'%';
-var meEl=document.getElementById('m-equity');if(meEl){meEl.textContent='$'+eq.toLocaleString(undefined,{maximumFractionDigits:0});meEl.className='ms-val '+(eqRetPct>=0?'g':'r')}
-var mmiEl=document.getElementById('m-margin-info');if(mmiEl)mmiEl.textContent='Margin $'+mu2.toLocaleString(undefined,{maximumFractionDigits:0});
-// Equity curve chart
-var curve=data.equity_curve||[];
-if(curve.length>1){renderEquityCurve(curve,pf)}
 // Mirror to mobile stats
 var mu=document.getElementById('m-unrealised');mu.textContent=fPnl(tu);mu.className='ms-val '+(tu>0?'g':tu<0?'r':'n');
 document.getElementById('m-open-count').textContent=pos.length+' open';
@@ -780,15 +716,21 @@ document.getElementById('m-total-trades').textContent=(st.total||0)+' trades';
 
 document.getElementById('prices').innerHTML=(data.market_status||[]).map(function(x){
   var b=(x.trend||'').indexOf('▲')!==-1;var lp=LP[x.symbol]||x.price;
-  return '<div class="asset-card '+(b?'bu':'be')+'"><div class="ac-row1"><span class="ac-sym">'+x.symbol_name+'</span><span class="ac-badge '+(b?'up':'dn')+'">'+(b?'▲':'▼')+'</span></div><div class="ac-price" id="price-'+x.symbol+'">'+fPF(lp)+'</div></div>'}).join('');
+  var sig=SIGNAL_MAP[x.symbol_name]||null;
+  var sigPct=sig?sig.proximity:0;var sigCol=sigPct>=70?'var(--accent)':sigPct>=40?'var(--amber)':'var(--muted2)';
+  var sigHtml='';
+  if(sig){sigHtml='<div class="ac-signal"><span class="ac-sig-label">Signal</span><div class="ac-sig-bar"><div class="ac-sig-fill" style="width:'+sigPct+'%;background:'+sigCol+'"></div></div><span class="ac-sig-val">'+sigPct+'%</span></div>'}
+  var vol=VOL[x.symbol]||0;
+  var volHtml='<div class="ac-vol">Vol '+fVol(vol)+'</div>';
+  return '<div class="asset-card '+(b?'bu':'be')+'"><div class="ac-head"><span class="ac-sym">'+x.symbol_name+'</span><span class="ac-badge-chg '+(b?'up':'dn')+'">'+(b?'▲':'▼')+'</span></div><div class="ac-price" id="price-'+x.symbol+'">'+fPF(lp)+'</div>'+volHtml+'<div class="ac-spark" id="spark-'+x.symbol+'">'+renderSparkSVG(x.symbol)+'</div>'+sigHtml+'</div>'}).join('');
 
 document.getElementById('pos-count').textContent=pos.length;
 var pb=document.getElementById('pos-body');
 if(!pos.length){pb.innerHTML='<div class="es">No open positions</div>'}
-else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>Margin</th><th>TP / SL</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;
+else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>TP / SL</th><th>Time</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;
 var pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));var progCol=p.unrealized_pnl>=0?'var(--accent)':'var(--red)';
-var marg=p.margin?'$'+p.margin.toLocaleString(undefined,{maximumFractionDigits:0}):'--';
-return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td style="color:var(--muted);font-family:var(--mono);font-size:11px">'+marg+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
+var timeStr=fDuration(getEntryTime(p)||data.scan_time||null);
+return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td class="tit">'+timeStr+'</td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
 
 renderHistory('all');renderWinRateByAsset(AC);rc();
 }
@@ -805,38 +747,6 @@ function makeDonut(pct,idx){
     +'<text x="'+cx+'" y="'+(cy+4)+'" text-anchor="middle" font-size="12" font-weight="700" font-family="var(--mono)" fill="var(--white)">'+pct+'%</text></svg>';
 }
 
-function renderEquityCurve(curve,pf){
-var canvas=document.getElementById('equity-chart');if(!canvas)return;
-var ctx=canvas.getContext('2d');var W=canvas.offsetWidth;var H=120;
-canvas.width=W*2;canvas.height=H*2;ctx.scale(2,2);
-ctx.clearRect(0,0,W,H);
-var vals=curve.map(function(c){return c.equity});
-var mn=Math.min.apply(null,vals);var mx=Math.max.apply(null,vals);
-var startCap=pf.starting_capital||10000;
-mn=Math.min(mn,startCap);mx=Math.max(mx,startCap);
-var range=mx-mn||1;var pad=8;var cW=W-pad*2;var cH=H-pad*2;
-// Fill gradient
-var grad=ctx.createLinearGradient(0,0,0,H);
-var last=vals[vals.length-1];var isUp=last>=startCap;
-grad.addColorStop(0,isUp?'rgba(52,211,153,0.15)':'rgba(244,63,94,0.15)');
-grad.addColorStop(1,'rgba(0,0,0,0)');
-ctx.beginPath();ctx.moveTo(pad,H);
-for(var i=0;i<vals.length;i++){var x=pad+(i/(vals.length-1))*cW;var y=pad+cH-(vals[i]-mn)/range*cH;if(i===0)ctx.lineTo(x,y);ctx.lineTo(x,y)}
-ctx.lineTo(pad+cW,H);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
-// Line
-ctx.beginPath();
-for(var i=0;i<vals.length;i++){var x=pad+(i/(vals.length-1))*cW;var y=pad+cH-(vals[i]-mn)/range*cH;if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y)}
-ctx.strokeStyle=isUp?'#34d399':'#f43f5e';ctx.lineWidth=1.5;ctx.stroke();
-// Starting capital line
-var sy=pad+cH-(startCap-mn)/range*cH;
-ctx.beginPath();ctx.moveTo(pad,sy);ctx.lineTo(pad+cW,sy);
-ctx.strokeStyle='rgba(255,255,255,0.15)';ctx.lineWidth=1;ctx.setLineDash([4,4]);ctx.stroke();ctx.setLineDash([]);
-// Labels
-var eqRet=document.getElementById('eq-return');if(eqRet){var rp=pf.return_pct||0;eqRet.textContent=(rp>=0?'+':'')+rp.toFixed(1)+'%';eqRet.style.color=rp>=0?'#34d399':'#f43f5e'}
-var eqStart=document.getElementById('eq-start');if(eqStart&&curve.length>0)eqStart.textContent=curve[0].dt||'';
-var eqEnd=document.getElementById('eq-end');if(eqEnd&&curve.length>0)eqEnd.textContent='$'+last.toLocaleString(undefined,{maximumFractionDigits:0});
-var eqDD=document.getElementById('eq-dd');if(eqDD)eqDD.textContent='Max DD: '+(pf.max_drawdown||0).toFixed(1)+'%';
-}
 function renderWinRateByAsset(trades){
   var el=document.getElementById('wra-body');
   if(!trades||!trades.length){el.innerHTML='<div class="es">No trades yet</div>';document.getElementById('wra-total').textContent='--';return}
@@ -865,7 +775,7 @@ hb.innerHTML=d.map(function(t){var iw=t.result==='TP_HIT',pnl=+t.pnl||0,pct=+t.p
 return '<tr><td style="color:var(--muted);font-size:11px">'+(t.exit_time||'--')+'</td><td style="font-weight:600">'+(t.symbol_name||'--')+'</td><td class="'+(t.direction==='LONG'?'dl':'ds')+'">'+t.direction+'</td><td>'+(t.entry?fP(t.entry):'--')+'</td><td>'+(t.exit_price?fP(t.exit_price):'--')+'</td><td class="'+(iw?'rw':'rl')+'">'+(iw?'TP Hit':'SL Hit')+'</td><td class="'+(pnl>=0?'pp':'pn')+'">'+fPnl(pnl)+'</td><td class="'+(pct>=0?'pp':'pn')+'">'+(pct>=0?'+':'')+pct.toFixed(2)+'%</td></tr>'}).join('')}
 
 document.getElementById('filters').addEventListener('click',function(e){if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');renderHistory(e.target.dataset.filter)});
-document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='v6_trades.csv';a.click()});
+document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
 
 loadData();setInterval(loadData,15000);cBS();
 </script>
