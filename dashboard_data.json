@@ -1,94 +1,94 @@
 {
-  "scan_time": "26 Mar 2026 \u00b7 16:00 UTC",
+  "scan_time": "26 Mar 2026 \u00b7 18:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 69016.18,
+      "price": 68560.13,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2069.43,
+      "price": 2052.86,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 87.49,
+      "price": 86.74,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 626.63,
+      "price": 626.14,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09094,
+      "price": 0.09104,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "XRPUSDT",
       "symbol_name": "XRP",
-      "price": 1.3606,
+      "price": 1.3545,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "LINKUSDT",
       "symbol_name": "LINK",
-      "price": 8.93,
+      "price": 8.87,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "AVAXUSDT",
       "symbol_name": "AVAX",
-      "price": 9.18,
+      "price": 9.06,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SUIUSDT",
       "symbol_name": "SUI",
-      "price": 0.9143,
+      "price": 0.9137,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ADAUSDT",
       "symbol_name": "ADA",
-      "price": 0.2561,
+      "price": 0.2546,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "NEARUSDT",
       "symbol_name": "NEAR",
-      "price": 1.221,
+      "price": 1.211,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ZECUSDT",
       "symbol_name": "ZEC",
-      "price": 220.68,
+      "price": 220.17,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "TRXUSDT",
       "symbol_name": "TRX",
-      "price": 0.3112,
+      "price": 0.3108,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "TAOUSDT",
       "symbol_name": "TAO",
-      "price": 337.7,
+      "price": 337.8,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
-      "price": 4440.4,
+      "price": 4389.4,
       "trend": "\ud83d\udd34\u25bc"
     }
   ],
@@ -98,24 +98,24 @@
       "symbol_name": "TRX",
       "direction": "LONG",
       "entry": 0.3103,
-      "current": 0.3112,
+      "current": 0.3108,
       "tp": 0.319,
       "sl": 0.302912,
       "margin": 788.25,
-      "unrealized_pct": 0.29,
-      "unrealized_pnl": 22.86
+      "unrealized_pct": 0.16,
+      "unrealized_pnl": 12.7
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
       "direction": "LONG",
       "entry": 4543.06,
-      "current": 4440.4,
+      "current": 4389.4,
       "tp": 5029.87,
       "sl": 4307.27,
       "margin": 361.6,
-      "unrealized_pct": -2.26,
-      "unrealized_pnl": -81.71
+      "unrealized_pct": -3.38,
+      "unrealized_pnl": -122.31
     }
   ],
   "closed_trades": [
@@ -309,13 +309,13 @@
       "symbol": "PAXGUSDT",
       "name": "PAXG",
       "trend": -1,
-      "proximity": 100,
-      "note": "VWAP aligned \u00b7 EMA stacked \u00b7 RSI 38 \u00b7 Near VWAP"
+      "proximity": 50,
+      "note": "VWAP aligned \u00b7 EMA stacked"
     }
   ],
   "portfolio": {
     "balance": 8790.34,
-    "equity": 8731.49,
+    "equity": 8680.73,
     "starting_capital": 10000.0,
     "margin_used": 1149.85,
     "available": 7640.49,
@@ -324,7 +324,7 @@
     "open_count": 2,
     "peak_balance": 10000,
     "max_drawdown": 36.88,
-    "return_pct": -12.69
+    "return_pct": -13.19
   },
   "equity_curve": [
     {
@@ -645,6 +645,13 @@
     {
       "dt": "2026-03-26 16:00",
       "equity": 8731.49,
+      "balance": 8790.34,
+      "open_pos": 2,
+      "margin_used": 1149.85
+    },
+    {
+      "dt": "2026-03-26 18:00",
+      "equity": 8680.73,
       "balance": 8790.34,
       "open_pos": 2,
       "margin_used": 1149.85
