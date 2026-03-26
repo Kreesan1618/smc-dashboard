@@ -1,94 +1,94 @@
 {
-  "scan_time": "26 Mar 2026 \u00b7 10:00 UTC",
+  "scan_time": "26 Mar 2026 \u00b7 12:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 69570.58,
+      "price": 69253.7,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2080.08,
+      "price": 2067.42,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 88.09,
+      "price": 87.51,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 629.93,
+      "price": 628.75,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09157,
+      "price": 0.09122,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "XRPUSDT",
       "symbol_name": "XRP",
-      "price": 1.3713,
+      "price": 1.3709,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "LINKUSDT",
       "symbol_name": "LINK",
-      "price": 8.96,
+      "price": 8.93,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "AVAXUSDT",
       "symbol_name": "AVAX",
-      "price": 9.27,
+      "price": 9.22,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "SUIUSDT",
       "symbol_name": "SUI",
-      "price": 0.9277,
+      "price": 0.9233,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ADAUSDT",
       "symbol_name": "ADA",
-      "price": 0.2573,
+      "price": 0.2571,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "NEARUSDT",
       "symbol_name": "NEAR",
-      "price": 1.22,
+      "price": 1.224,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "ZECUSDT",
       "symbol_name": "ZEC",
-      "price": 222.41,
+      "price": 220.61,
       "trend": "\ud83d\udd34\u25bc"
     },
     {
       "symbol": "TRXUSDT",
       "symbol_name": "TRX",
-      "price": 0.312,
+      "price": 0.3119,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "TAOUSDT",
       "symbol_name": "TAO",
-      "price": 334.9,
+      "price": 334.7,
       "trend": "\u26aa\u2014"
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
-      "price": 4426.81,
+      "price": 4429.29,
       "trend": "\ud83d\udd34\u25bc"
     }
   ],
@@ -98,24 +98,24 @@
       "symbol_name": "TRX",
       "direction": "LONG",
       "entry": 0.3103,
-      "current": 0.312,
+      "current": 0.3119,
       "tp": 0.319,
       "sl": 0.302912,
       "margin": 788.25,
-      "unrealized_pct": 0.55,
-      "unrealized_pnl": 43.18
+      "unrealized_pct": 0.52,
+      "unrealized_pnl": 40.64
     },
     {
       "symbol": "PAXGUSDT",
       "symbol_name": "PAXG",
       "direction": "LONG",
       "entry": 4543.06,
-      "current": 4426.81,
+      "current": 4429.29,
       "tp": 5029.87,
       "sl": 4307.27,
       "margin": 361.6,
-      "unrealized_pct": -2.56,
-      "unrealized_pnl": -92.53
+      "unrealized_pct": -2.5,
+      "unrealized_pnl": -90.55
     }
   ],
   "closed_trades": [
@@ -315,7 +315,7 @@
   ],
   "portfolio": {
     "balance": 8790.34,
-    "equity": 8740.99,
+    "equity": 8740.43,
     "starting_capital": 10000.0,
     "margin_used": 1149.85,
     "available": 7640.49,
@@ -324,7 +324,7 @@
     "open_count": 2,
     "peak_balance": 10000,
     "max_drawdown": 36.88,
-    "return_pct": -12.59
+    "return_pct": -12.6
   },
   "equity_curve": [
     {
@@ -624,6 +624,13 @@
     {
       "dt": "2026-03-26 10:00",
       "equity": 8740.99,
+      "balance": 8790.34,
+      "open_pos": 2,
+      "margin_used": 1149.85
+    },
+    {
+      "dt": "2026-03-26 12:00",
+      "equity": 8740.43,
       "balance": 8790.34,
       "open_pos": 2,
       "margin_used": 1149.85
