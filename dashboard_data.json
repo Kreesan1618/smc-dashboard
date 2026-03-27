@@ -1,42 +1,55 @@
 {
-  "scan_time": "26 Mar 2026 \u00b7 23:00 UTC",
+  "scan_time": "27 Mar 2026 \u00b7 00:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 68963.15,
+      "price": 68816.23,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2068.17,
+      "price": 2060.37,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 86.93,
+      "price": 86.51,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 630.28,
+      "price": 628.74,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09217,
+      "price": 0.09199,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "direction": "SHORT",
+      "entry": 628.86,
+      "current": 628.86,
+      "tp": 618.5792,
+      "sl": 634.0004,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0,
+      "entry_time": "2026-03-27 00:00:20"
+    }
+  ],
   "closed_trades": [],
   "stats": {
-    "total": 0,
-    "open": 0,
+    "total": 1,
+    "open": 1,
     "wins": 0,
     "losses": 0,
     "win_rate": 0,
@@ -61,22 +74,22 @@
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "BNBUSDT",
       "name": "BNB",
       "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 30,
+      "note": "Trend active"
     }
   ]
 }
