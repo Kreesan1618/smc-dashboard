@@ -1,63 +1,38 @@
 {
-  "scan_time": "27 Mar 2026 \u00b7 10:00 UTC",
+  "scan_time": "27 Mar 2026 \u00b7 11:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 67686.73,
+      "price": 66470.99,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2041.08,
+      "price": 1990.0,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 85.07,
+      "price": 82.95,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 619.82,
+      "price": 608.6,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09094,
+      "price": 0.08959,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
-  "open_positions": [
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "entry": 67920.5,
-      "current": 67686.73,
-      "tp": 66459.85,
-      "sl": 68650.83,
-      "unrealized_pct": 0.34,
-      "unrealized_pnl": 64.02,
-      "entry_time": "2026-03-27 09:00:29"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "direction": "SHORT",
-      "entry": 620.6,
-      "current": 619.82,
-      "tp": 609.8048,
-      "sl": 625.9976,
-      "unrealized_pct": 0.13,
-      "unrealized_pnl": 28.9,
-      "entry_time": "2026-03-27 09:00:29"
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "symbol": "BNBUSDT",
@@ -70,30 +45,54 @@
       "pnl_pct": "3.51",
       "scan_time": "2026-03-27 00:00:28",
       "exit_time": "2026-03-27 08:00"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "SHORT",
+      "result": "TP_HIT",
+      "entry": "67920.5",
+      "exit_price": "66459.85",
+      "pnl": "363.2",
+      "pnl_pct": "3.63",
+      "scan_time": "2026-03-27 09:00:29",
+      "exit_time": "2026-03-27 10:00"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "direction": "SHORT",
+      "result": "TP_HIT",
+      "entry": "620.6",
+      "exit_price": "609.8",
+      "pnl": "354.41",
+      "pnl_pct": "3.54",
+      "scan_time": "2026-03-27 09:00:29",
+      "exit_time": "2026-03-27 10:00"
     }
   ],
   "stats": {
     "total": 3,
-    "open": 2,
-    "wins": 1,
+    "open": 0,
+    "wins": 3,
     "losses": 0,
     "win_rate": 100.0,
-    "total_pnl": 351.46
+    "total_pnl": 1069.07
   },
   "signal_radar": [
     {
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": -1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": -1,
-      "proximity": 30,
-      "note": "Trend active"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
@@ -106,15 +105,15 @@
       "symbol": "BNBUSDT",
       "name": "BNB",
       "trend": -1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": -1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     }
   ]
 }
