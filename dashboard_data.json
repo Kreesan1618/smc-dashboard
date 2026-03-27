@@ -1,34 +1,34 @@
 {
-  "scan_time": "27 Mar 2026 \u00b7 09:00 UTC",
+  "scan_time": "27 Mar 2026 \u00b7 10:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 67891.05,
+      "price": 67686.73,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2047.31,
+      "price": 2041.08,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 85.08,
+      "price": 85.07,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 620.36,
+      "price": 619.82,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09176,
+      "price": 0.09094,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
@@ -38,24 +38,24 @@
       "symbol_name": "BTC",
       "direction": "SHORT",
       "entry": 67920.5,
-      "current": 67920.5,
+      "current": 67686.73,
       "tp": 66459.85,
       "sl": 68650.83,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-03-27 09:00:21"
+      "unrealized_pct": 0.34,
+      "unrealized_pnl": 64.02,
+      "entry_time": "2026-03-27 09:00:29"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
       "direction": "SHORT",
       "entry": 620.6,
-      "current": 620.6,
+      "current": 619.82,
       "tp": 609.8048,
       "sl": 625.9976,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-03-27 09:00:21"
+      "unrealized_pct": 0.13,
+      "unrealized_pnl": 28.9,
+      "entry_time": "2026-03-27 09:00:29"
     }
   ],
   "closed_trades": [
@@ -92,8 +92,8 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": -1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "SOLUSDT",
