@@ -1,38 +1,51 @@
 {
-  "scan_time": "28 Mar 2026 \u00b7 06:00 UTC",
+  "scan_time": "28 Mar 2026 \u00b7 07:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 66388.68,
+      "price": 66414.32,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 1994.97,
+      "price": 2001.42,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 82.79,
-      "trend": "\ud83d\udd34 \u25bc"
+      "price": 83.2,
+      "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 612.79,
+      "price": 613.79,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09038,
+      "price": 0.09034,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
-  "open_positions": [],
+  "open_positions": [
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "direction": "LONG",
+      "entry": 83.18,
+      "current": 83.18,
+      "tp": 85.1479,
+      "sl": 82.196,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0,
+      "entry_time": "2026-03-28 07:00:23"
+    }
+  ],
   "closed_trades": [
     {
       "symbol": "BNBUSDT",
@@ -72,8 +85,8 @@
     }
   ],
   "stats": {
-    "total": 3,
-    "open": 0,
+    "total": 4,
+    "open": 1,
     "wins": 3,
     "losses": 0,
     "win_rate": 100.0,
@@ -97,16 +110,16 @@
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
-      "trend": -1,
-      "proximity": 30,
-      "note": "Trend active"
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     },
     {
       "symbol": "BNBUSDT",
       "name": "BNB",
       "trend": -1,
-      "proximity": 30,
-      "note": "Trend active"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "DOGEUSDT",
