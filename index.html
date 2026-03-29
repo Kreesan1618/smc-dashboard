@@ -342,13 +342,15 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">ATR SL + Volume Filter · 1H</div></div></div>
+  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s" id="logo-sub">ATR SL + Volume Filter · 1H</div></div></div>
   <div class="nav-center">
     <div class="nav-stat"><div class="ns-label">Unrealised</div><div class="ns-val g" id="unrealised">--</div><div class="ns-sub" id="open-count">--</div></div>
     <div class="nav-stat"><div class="ns-label">Record</div><div class="ns-val n" id="record">--</div><div class="ns-sub" id="win-rate">--</div></div>
     <div class="nav-stat"><div class="ns-label">Realised</div><div class="ns-val g" id="realised">--</div><div class="ns-sub" id="total-trades">--</div></div>
+    <div class="nav-stat"><div class="ns-label">Equity</div><div class="ns-val n" id="equity-val">--</div><div class="ns-sub">2% risk/trade</div></div>
   </div>
   <div class="nav-right">
+    <div id="cooldown-badge" style="display:none;align-items:center;gap:6px;font-size:11px;font-family:var(--mono);color:var(--amber);background:rgba(251,191,36,0.08);border:1px solid rgba(251,191,36,0.2);border-radius:20px;padding:6px 14px"></div>
     <div><div class="live-b"><span class="live-d"></span><span id="live-label">Connecting...</span></div><div class="cd" id="countdown">--:--</div></div>
     <button class="refresh-btn" onclick="loadData()">↻</button>
     <div class="theme-dots"><div class="theme-dot active" data-theme="emerald"></div><div class="theme-dot" data-theme="hud"></div><div class="theme-dot" data-theme="nebula"></div><div class="theme-dot" data-theme="quantix"></div></div>
@@ -677,7 +679,7 @@ function fl(s,p){
 
 function rc(){if(!D||!D.open_positions)return;var tot=0,any=false;
 D.open_positions.forEach(function(p){var lp=LP[p.symbol];if(!lp)return;any=true;
-var risk=Math.abs(p.entry-p.sl),qty=risk>0?200/risk:0;var up,un;
+var risk=Math.abs(p.entry-p.sl),qty=risk>0?rpt/risk:0;var up,un;
 if(p.direction==='LONG'){up=(lp-p.entry)/p.entry*100;un=(lp-p.entry)*qty}else{up=(p.entry-lp)/p.entry*100;un=(p.entry-lp)*qty}
 tot+=un;var id=p.symbol+'-'+p.direction;
 var ne=document.getElementById('pos-now-'+id),pe=document.getElementById('pos-pct-'+id),ue=document.getElementById('pos-pnl-'+id);
@@ -697,6 +699,10 @@ function processData(d){if(d.scan_time!==LST){LST=d.scan_time;D=d;render(d)}}
 
 function render(data){
 var st=data.stats||{},pos=data.open_positions||[];AC=(data.closed_trades||[]).reverse();
+var ac=data.account||{},rpt=ac.risk_per_trade||200;
+var ls=document.getElementById('logo-sub');if(ls&&ac.rr)ls.textContent='1:'+ac.rr+' RR · ATR SL · VOL 1.0 · 1H';
+var eq=document.getElementById('equity-val');if(eq&&ac.current_equity){eq.textContent='$'+(ac.current_equity).toLocaleString('en-US',{maximumFractionDigits:0});eq.className='ns-val '+(ac.current_equity>=(10000)?'g':'r');}
+var cd=document.getElementById('cooldown-badge');if(cd){if(ac.cooldown_active){cd.style.display='flex';cd.textContent='⏸ COOLDOWN'}else{cd.style.display='none';}}
 (data.market_status||[]).forEach(function(m){if(!LP[m.symbol])LP[m.symbol]=m.price;addSparkTick(m.symbol,m.price)});
 if(data.signal_radar){data.signal_radar.forEach(function(r){SIGNAL_MAP[r.name]=r})}
 var tu=pos.reduce(function(s,p){return s+(p.unrealized_pnl||0)},0);
