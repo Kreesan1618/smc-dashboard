@@ -1,34 +1,34 @@
 {
-  "scan_time": "29 Mar 2026 \u00b7 20:00 UTC",
+  "scan_time": "29 Mar 2026 \u00b7 20:18 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 66366.97,
+      "price": 66562.25,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 1996.08,
+      "price": 1999.18,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 81.64,
+      "price": 81.86,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 609.19,
+      "price": 610.51,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09065,
+      "price": 0.09086,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
@@ -38,11 +38,11 @@
       "symbol_name": "ETH",
       "direction": "SHORT",
       "entry": 1987.09,
-      "current": 1996.08,
+      "current": 1999.18,
       "tp": 1928.53,
       "sl": 2003.82,
-      "unrealized_pct": -0.45,
-      "unrealized_pnl": -107.46,
+      "unrealized_pct": -0.61,
+      "unrealized_pnl": -144.51,
       "entry_time": "2026-03-29 14:00:31"
     },
     {
@@ -50,11 +50,11 @@
       "symbol_name": "DOGE",
       "direction": "SHORT",
       "entry": 0.09033,
-      "current": 0.09065,
+      "current": 0.09086,
       "tp": 0.087141,
       "sl": 0.091241,
-      "unrealized_pct": -0.35,
-      "unrealized_pnl": -70.23,
+      "unrealized_pct": -0.59,
+      "unrealized_pnl": -116.32,
       "entry_time": "2026-03-29 14:00:31"
     },
     {
@@ -62,11 +62,11 @@
       "symbol_name": "BNB",
       "direction": "SHORT",
       "entry": 609.28,
-      "current": 609.19,
+      "current": 610.51,
       "tp": 597.2513,
       "sl": 612.7168,
-      "unrealized_pct": 0.01,
-      "unrealized_pnl": 5.24,
+      "unrealized_pct": -0.2,
+      "unrealized_pnl": -71.58,
       "entry_time": "2026-03-29 15:00:30"
     },
     {
@@ -74,11 +74,11 @@
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 81.56,
-      "current": 81.64,
+      "current": 81.86,
       "tp": 78.5528,
       "sl": 82.4192,
-      "unrealized_pct": -0.1,
-      "unrealized_pnl": -18.62,
+      "unrealized_pct": -0.37,
+      "unrealized_pnl": -69.83,
       "entry_time": "2026-03-29 18:00:28"
     }
   ],
@@ -131,7 +131,14 @@
   "account": {
     "current_equity": 10000.0,
     "risk_per_trade": 200.0,
-    "rr": 3.5,
+    "rr": "Per-sym",
+    "symbol_rr": {
+      "BTCUSDT": 4.0,
+      "ETHUSDT": 2.5,
+      "SOLUSDT": 4.0,
+      "BNBUSDT": 3.5,
+      "DOGEUSDT": 2.5
+    },
     "consec_losses": 0,
     "cooldown_active": false,
     "cooldown_until": ""
