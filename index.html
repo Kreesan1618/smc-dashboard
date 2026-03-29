@@ -483,7 +483,7 @@ var SIGNAL_MAP={};
 var DU_RAW='https://raw.githubusercontent.com/Kreesan1618/smc-dashboard/main/dashboard_data.json';
 var DU_LOCAL='dashboard_data.json';
 var FK='d6radcpr01qr194lv65gd6radcpr01qr194lv660';
-var D=null,LP={},AC=[],PP={},LST='',fgC=null;
+var D=null,LP={},AC=[],PP={},LST='',fgC=null,rpt=200;
 var VOL={}; // symbol -> 24h quote volume
 var BS={BTCUSDT:'btcusdt',ETHUSDT:'ethusdt',SOLUSDT:'solusdt',BNBUSDT:'bnbusdt',DOGEUSDT:'dogeusdt'};
 var SR_LEVELS=[]; // stored for alert checking
@@ -699,8 +699,8 @@ function processData(d){if(d.scan_time!==LST){LST=d.scan_time;D=d;render(d)}}
 
 function render(data){
 var st=data.stats||{},pos=data.open_positions||[];AC=(data.closed_trades||[]).reverse();
-var ac=data.account||{},rpt=ac.risk_per_trade||200;
-var ls=document.getElementById('logo-sub');if(ls&&ac.rr)ls.textContent='1:'+ac.rr+' RR · ATR SL · VOL 1.0 · 1H';
+var ac=data.account||{};rpt=ac.risk_per_trade||200;
+var ls=document.getElementById('logo-sub');if(ls)ls.textContent=(ac.rr||'Per-sym')+' RR · ATR SL · VOL 1.0 · 1H';
 var eq=document.getElementById('equity-val');if(eq&&ac.current_equity){eq.textContent='$'+(ac.current_equity).toLocaleString('en-US',{maximumFractionDigits:0});eq.className='ns-val '+(ac.current_equity>=(10000)?'g':'r');}
 var cd=document.getElementById('cooldown-badge');if(cd){if(ac.cooldown_active){cd.style.display='flex';cd.textContent='⏸ COOLDOWN'}else{cd.style.display='none';}}
 (data.market_status||[]).forEach(function(m){if(!LP[m.symbol])LP[m.symbol]=m.price;addSparkTick(m.symbol,m.price)});
