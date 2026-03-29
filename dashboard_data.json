@@ -1,6 +1,37 @@
 {
-  "scan_time": "Awaiting first scan...",
-  "market_status": [],
+  "scan_time": "29 Mar 2026 \u00b7 09:10 UTC",
+  "market_status": [
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "price": 66673.48,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "symbol_name": "ETH",
+      "price": 2003.13,
+      "trend": "\ud83d\udd34 \u25bc"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "price": 82.39,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "price": 613.6,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "symbol_name": "DOGE",
+      "price": 0.09103,
+      "trend": "\ud83d\udfe2 \u25b2"
+    }
+  ],
   "open_positions": [],
   "closed_trades": [],
   "stats": {
@@ -11,10 +42,46 @@
     "win_rate": 0,
     "total_pnl": 0
   },
-  "signal_radar": [],
+  "signal_radar": [
+    {
+      "symbol": "BTCUSDT",
+      "name": "BTC",
+      "trend": 1,
+      "proximity": 80,
+      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+    },
+    {
+      "symbol": "ETHUSDT",
+      "name": "ETH",
+      "trend": -1,
+      "proximity": 30,
+      "note": "Trend active"
+    },
+    {
+      "symbol": "SOLUSDT",
+      "name": "SOL",
+      "trend": 1,
+      "proximity": 55,
+      "note": "Trend active \u00b7 Near order block"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "name": "BNB",
+      "trend": 1,
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "name": "DOGE",
+      "trend": 1,
+      "proximity": 80,
+      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+    }
+  ],
   "account": {
-    "current_equity": 10000,
-    "risk_per_trade": 200,
+    "current_equity": 10000.0,
+    "risk_per_trade": 200.0,
     "rr": 3.5,
     "consec_losses": 0,
     "cooldown_active": false,
