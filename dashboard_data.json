@@ -1,34 +1,34 @@
 {
-  "scan_time": "29 Mar 2026 \u00b7 23:00 UTC",
+  "scan_time": "30 Mar 2026 \u00b7 00:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 65889.77,
+      "price": 66066.26,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 1975.68,
+      "price": 1985.46,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 81.03,
+      "price": 81.55,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 604.86,
+      "price": 606.33,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.08994,
+      "price": 0.09052,
       "trend": "\ud83d\udd34 \u25bc"
     }
   ],
@@ -38,11 +38,11 @@
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 81.56,
-      "current": 81.03,
+      "current": 81.55,
       "tp": 78.5528,
       "sl": 82.4192,
-      "unrealized_pct": 0.65,
-      "unrealized_pnl": 123.37,
+      "unrealized_pct": 0.01,
+      "unrealized_pnl": 2.33,
       "entry_time": "2026-03-29 18:00:28"
     },
     {
@@ -50,36 +50,36 @@
       "symbol_name": "BTC",
       "direction": "SHORT",
       "entry": 65860.31,
-      "current": 65860.31,
+      "current": 66066.26,
       "tp": 63518.15,
       "sl": 66445.85,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-03-29 23:00:19"
+      "unrealized_pct": -0.31,
+      "unrealized_pnl": -67.19,
+      "entry_time": "2026-03-29 23:00:28"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
       "direction": "SHORT",
       "entry": 1973.99,
-      "current": 1973.99,
+      "current": 1985.46,
       "tp": 1917.45,
       "sl": 1996.61,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-03-29 23:00:19"
+      "unrealized_pct": -0.58,
+      "unrealized_pnl": -96.88,
+      "entry_time": "2026-03-29 23:00:28"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
       "direction": "SHORT",
       "entry": 604.32,
-      "current": 604.32,
+      "current": 606.33,
       "tp": 588.1734,
       "sl": 608.9333,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-03-29 23:00:19"
+      "unrealized_pct": -0.33,
+      "unrealized_pnl": -83.23,
+      "entry_time": "2026-03-29 23:00:29"
     }
   ],
   "closed_trades": [
@@ -166,8 +166,8 @@
     }
   ],
   "account": {
-    "current_equity": 9551.92,
-    "risk_per_trade": 191.04,
+    "current_equity": 10213.3,
+    "risk_per_trade": 204.27,
     "rr": "Per-sym",
     "symbol_rr": {
       "BTCUSDT": 4.0,
