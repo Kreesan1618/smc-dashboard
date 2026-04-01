@@ -1,34 +1,34 @@
 {
-  "scan_time": "01 Apr 2026 \u00b7 09:00 UTC",
+  "scan_time": "01 Apr 2026 \u00b7 10:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 68633.0,
+      "price": 68654.71,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2135.78,
+      "price": 2136.1,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 83.59,
+      "price": 83.39,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 615.25,
+      "price": 615.62,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09242,
+      "price": 0.09244,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -38,12 +38,24 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2093.36,
-      "current": 2135.78,
+      "current": 2136.1,
       "tp": 2195.01,
       "sl": 2052.7,
-      "unrealized_pct": 2.03,
-      "unrealized_pnl": 165.34,
+      "unrealized_pct": 2.04,
+      "unrealized_pnl": 166.59,
       "entry_time": "2026-03-31 18:00:37"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "symbol_name": "DOGE",
+      "direction": "LONG",
+      "entry": 0.09242,
+      "current": 0.09242,
+      "tp": 0.095854,
+      "sl": 0.091046,
+      "unrealized_pct": 0.0,
+      "unrealized_pnl": 0.0,
+      "entry_time": "2026-04-01 10:00:21"
     }
   ],
   "closed_trades": [
@@ -241,8 +253,8 @@
     }
   ],
   "stats": {
-    "total": 17,
-    "open": 1,
+    "total": 18,
+    "open": 2,
     "wins": 1,
     "losses": 15,
     "win_rate": 6.25,
@@ -253,8 +265,8 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 80,
+      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
     },
     {
       "symbol": "ETHUSDT",
@@ -281,8 +293,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 100,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
     }
   ],
   "account": {
