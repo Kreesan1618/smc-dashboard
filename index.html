@@ -71,6 +71,17 @@ table{width:100%;border-collapse:collapse}
 .bottom-title{font-size:14px;font-weight:700;color:var(--white)}
 @media(max-width:768px){.bottom-grid{grid-template-columns:1fr}}
 
+/* Whale Tracker full-width section */
+.whale-section{grid-column:1/-1;margin-bottom:24px}
+.whale-consensus-bar{padding:14px 24px;border-bottom:1px solid var(--border)}
+.whale-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;padding:20px 24px}
+.whale-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:16px;transition:all .3s}
+.whale-card:hover{border-color:var(--border-hover)}
+.whale-pos-row{display:flex;justify-content:space-between;align-items:center;padding:5px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-family:var(--mono);font-size:11px}
+.whale-pos-row:last-child{border-bottom:none}
+@media(max-width:900px){.whale-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.whale-grid{grid-template-columns:1fr}}
+
 .ft{text-align:center;padding:24px 0;font-size:10px;grid-column:1/-1}
 .ld{display:flex;align-items:center;justify-content:center;gap:8px;padding:30px;font-size:12px}
 .sp{width:14px;height:14px;border:2px solid;border-radius:50%;animation:spin .8s linear infinite}
@@ -391,12 +402,11 @@ tr:hover td{background:var(--card-hover)}
 
   <!-- SIDEBAR -->
   <div class="intel-col">
-    <!-- Tabbed: S/R, F&G, Whales, Liq -->
+    <!-- Tabbed: S/R, F&G, Liq -->
     <div class="sb-section">
       <div class="sb-tabs">
         <div class="sb-tab active" data-panel="sr">S/R Map</div>
         <div class="sb-tab" data-panel="fg">Fear/Greed</div>
-        <div class="sb-tab" data-panel="wh">Whales</div>
         <div class="sb-tab" data-panel="lq">Liq</div>
       </div>
       <div class="sb-panel active" id="panel-sr"><div id="sr-map"><div class="ld"><div class="sp"></div> Calculating...</div></div></div>
@@ -407,7 +417,6 @@ tr:hover td{background:var(--card-hover)}
         </div>
         <div class="fg-chart-wrap"><canvas id="fg-chart"></canvas></div>
       </div>
-      <div class="sb-panel" id="panel-wh"><div id="whale-feed" class="sb-body"><div class="ld"><div class="sp"></div> Loading...</div></div></div>
       <div class="sb-panel" id="panel-lq"><div id="liquidations"><div class="ld"><div class="sp"></div> Loading...</div></div></div>
     </div>
 
@@ -417,6 +426,12 @@ tr:hover td{background:var(--card-hover)}
       <div id="mtf-heatmap"><div class="ld"><div class="sp"></div> Scanning...</div></div>
     </div>
 
+  </div>
+
+  <!-- Whale Tracker — full width -->
+  <div class="whale-section cw">
+    <div class="ch"><div class="ct">Whale Tracker <span class="live-tag">● Hyperliquid</span></div><div id="whale-consensus-badge" class="badge">Loading...</div></div>
+    <div id="whale-section-body"><div class="ld"><div class="sp"></div> Loading whale data...</div></div>
   </div>
 
   <div class="ft">SMC Scanner v15 · Live prices via Binance WS · Whale positions via Hyperliquid · Educational purposes only · Not financial advice</div>
@@ -538,60 +553,79 @@ loadLiq();
 
 // Whales
 function loadWhales(){
-var el=document.getElementById('whale-feed');
+var el=document.getElementById('whale-section-body');
 fetch('dashboard_data.json?t='+Date.now()).then(function(r){return r.json()}).then(function(d){
 var ws=d.whale_summary;
 if(!ws||!ws.whales){el.innerHTML='<div class="es">No whale data yet</div>';return}
 var bearish=ws.consensus==='BEARISH',bullish=ws.consensus==='BULLISH';
 var consColor=bullish?'var(--accent)':bearish?'var(--red)':'var(--muted)';
 var longPct=ws.long_pct||0,shortPct=ws.short_pct||0;
-var html='<div style="margin-bottom:12px">';
-html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px">';
-html+='<span style="font-size:10px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;letter-spacing:1px">Consensus</span>';
-html+='<span style="font-size:13px;font-weight:700;font-family:var(--mono);color:'+consColor+'">'+ws.consensus+'</span></div>';
-html+='<div style="height:6px;background:var(--muted2);border-radius:3px;overflow:hidden;display:flex">';
-html+='<div style="width:'+longPct+'%;background:var(--accent)"></div>';
-html+='<div style="width:'+shortPct+'%;background:var(--red)"></div></div>';
-html+='<div style="display:flex;justify-content:space-between;margin-top:4px;font-size:9px;font-family:var(--mono);color:var(--muted)">';
-html+='<span style="color:var(--accent)">▲ '+longPct+'% Long</span><span style="color:var(--red)">'+shortPct+'% Short ▼</span></div></div>';
+var longCount=ws.whales.filter(function(w){return w.bias==='LONG'}).length;
+var shortCount=ws.whales.filter(function(w){return w.bias==='SHORT'}).length;
+// Update header badge
+var cb=document.getElementById('whale-consensus-badge');
+if(cb){cb.textContent=ws.consensus;cb.style.color=consColor;cb.style.background=bullish?'rgba(16,185,129,0.08)':bearish?'rgba(244,63,94,0.06)':'var(--muted2)'}
+// Consensus bar
+var html='<div class="whale-consensus-bar">';
+html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">';
+html+='<div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">';
+html+='<span style="font-size:11px;font-weight:700;font-family:var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:1px">Overall Consensus</span>';
+html+='<span style="font-size:15px;font-weight:800;font-family:var(--mono);color:'+consColor+'">'+ws.consensus+'</span></div>';
+html+='<span style="font-size:10px;color:var(--muted);font-family:var(--mono)">'+ws.last_updated+'</span></div>';
+html+='<div style="height:10px;background:var(--muted2);border-radius:5px;overflow:hidden;display:flex">';
+html+='<div style="width:'+longPct+'%;background:var(--accent);transition:width .5s;border-radius:5px 0 0 5px"></div>';
+html+='<div style="width:'+shortPct+'%;background:var(--red);transition:width .5s;border-radius:0 5px 5px 0"></div></div>';
+html+='<div style="display:flex;justify-content:space-between;margin-top:6px;font-size:10px;font-family:var(--mono)">';
+html+='<span style="color:var(--accent)">▲ '+longPct+'% Long · '+longCount+' whale'+(longCount!==1?'s':'')+'</span>';
+html+='<span style="color:var(--red)">'+shortCount+' whale'+(shortCount!==1?'s':'')+' · '+shortPct+'% Short ▼</span></div>';
+html+='</div>';
+// Whale cards grid
+html+='<div class="whale-grid">';
 ws.whales.forEach(function(w){
   var biasColor=w.bias==='LONG'?'var(--accent)':w.bias==='SHORT'?'var(--red)':'var(--muted)';
+  var biasBg=w.bias==='LONG'?'rgba(16,185,129,0.1)':w.bias==='SHORT'?'rgba(244,63,94,0.08)':'var(--muted2)';
   var upnlColor=(w.unrealized_pnl||0)>=0?'var(--accent)':'var(--red)';
   var upnlSign=(w.unrealized_pnl||0)>=0?'+':'';
   var acctStr=w.account_value>0?'$'+(w.account_value/1000).toFixed(0)+'K':'--';
-  html+='<div style="border-top:1px solid var(--border);padding:10px 0">';
-  html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">';
-  html+='<span style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--white)">'+w.label+'</span>';
-  html+='<span style="font-size:11px;font-weight:600;font-family:var(--mono);color:'+biasColor+'">'+w.bias+'</span></div>';
-  html+='<div style="display:flex;justify-content:space-between;font-size:10px;font-family:var(--mono);color:var(--muted);margin-bottom:6px">';
-  html+='<span>'+w.open_count+' positions · '+acctStr+'</span>';
-  html+='<span style="color:'+upnlColor+'">uPnL '+upnlSign+'$'+(Math.abs(w.unrealized_pnl||0)/1000).toFixed(0)+'K</span></div>';
+  html+='<div class="whale-card">';
+  // Card header
+  html+='<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">';
+  html+='<span style="font-size:14px;font-weight:800;font-family:var(--mono);color:var(--white)">'+w.label+'</span>';
+  html+='<span style="font-size:11px;font-weight:700;font-family:var(--mono);color:'+biasColor+';background:'+biasBg+';padding:3px 12px;border-radius:8px">'+w.bias+'</span>';
+  html+='</div>';
+  // Stats row
+  html+='<div style="display:flex;gap:12px;font-size:10px;font-family:var(--mono);color:var(--muted);margin-bottom:12px;flex-wrap:wrap;padding-bottom:10px;border-bottom:1px solid var(--border)">';
+  html+='<span>'+w.open_count+' pos</span>';
+  html+='<span>Acct: '+acctStr+'</span>';
+  html+='<span style="color:'+upnlColor+'">uPnL '+upnlSign+'$'+(Math.abs(w.unrealized_pnl||0)/1000).toFixed(1)+'K</span>';
+  if(w.total_trades>0){var wrColor=w.win_rate>=50?'var(--accent)':'var(--red)';html+='<span style="color:'+wrColor+'">WR '+w.win_rate.toFixed(0)+'%</span><span style="color:'+(w.avg_return>=0?'var(--accent)':'var(--red)')+'">Avg '+(w.avg_return>=0?'+':'')+w.avg_return.toFixed(1)+'%</span>';}
+  html+='</div>';
+  // All positions
   if(w.top_positions&&w.top_positions.length){
-    w.top_positions.slice(0,2).forEach(function(p){
+    html+='<div style="display:grid;grid-template-columns:minmax(55px,1fr) auto auto auto auto;gap:4px 8px;align-items:center">';
+    html+='<span style="font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase">Coin</span>';
+    html+='<span style="font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase">Dir</span>';
+    html+='<span style="font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase">Size</span>';
+    html+='<span style="font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase">Lev</span>';
+    html+='<span style="font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase">ROE</span>';
+    w.top_positions.forEach(function(p){
       var pc=p.direction==='LONG'?'var(--accent)':'var(--red)';
       var sizeStr=p.size_usd>=1000000?'$'+(p.size_usd/1000000).toFixed(1)+'M':p.size_usd>=1000?'$'+(p.size_usd/1000).toFixed(0)+'K':'$'+p.size_usd;
       var roeStr=(p.roe_pct>=0?'+':'')+p.roe_pct.toFixed(1)+'%';
       var roeColor=p.roe_pct>=0?'var(--accent)':'var(--red)';
-      html+='<div style="display:flex;justify-content:space-between;font-size:11px;font-family:var(--mono);padding:3px 0;border-bottom:1px solid rgba(255,255,255,0.04)">';
-      html+='<span style="color:'+pc+';font-weight:600;min-width:55px">'+p.coin+'</span>';
-      html+='<span style="color:'+pc+'">'+p.direction+'</span>';
-      html+='<span style="color:var(--text)">'+sizeStr+'</span>';
-      html+='<span style="color:var(--muted)">'+p.leverage+'x</span>';
-      html+='<span style="color:'+roeColor+'">'+roeStr+'</span></div>';
+      html+='<span style="color:'+pc+';font-weight:700;font-family:var(--mono);font-size:12px">'+p.coin+'</span>';
+      html+='<span style="color:'+pc+';font-family:var(--mono);font-size:11px">'+p.direction+'</span>';
+      html+='<span style="color:var(--text);font-family:var(--mono);font-size:11px">'+sizeStr+'</span>';
+      html+='<span style="color:var(--muted);font-family:var(--mono);font-size:11px">'+p.leverage+'x</span>';
+      html+='<span style="color:'+roeColor+';font-weight:700;font-family:var(--mono);font-size:11px">'+roeStr+'</span>';
     });
+    html+='</div>';
   } else {
-    html+='<div style="font-size:11px;font-family:var(--mono);color:var(--muted);padding:4px 0">No open positions</div>';
-  }
-  if(w.total_trades>0){
-    var wrColor=w.win_rate>=50?'var(--accent)':'var(--red)';
-    html+='<div style="display:flex;gap:12px;margin-top:6px;font-size:10px;font-family:var(--mono);color:var(--muted)">';
-    html+='<span>'+w.total_trades+' trades</span>';
-    html+='<span style="color:'+wrColor+'">WR '+w.win_rate.toFixed(0)+'%</span>';
-    html+='<span style="color:'+(w.avg_return>=0?'var(--accent)':'var(--red)')+'">Avg '+(w.avg_return>=0?'+':'')+w.avg_return.toFixed(1)+'%</span></div>';
+    html+='<div style="font-size:11px;font-family:var(--mono);color:var(--muted);padding:6px 0">No open positions</div>';
   }
   html+='</div>';
 });
-html+='<div style="font-size:9px;color:var(--muted);font-family:var(--mono);margin-top:8px;text-align:right">'+ws.last_updated+'</div>';
+html+='</div>';
 el.innerHTML=html;
 }).catch(function(){el.innerHTML='<div class="es">Could not load whale data</div>'})}
 loadWhales();setInterval(loadWhales,120000);
