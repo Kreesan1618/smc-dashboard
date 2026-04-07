@@ -1,60 +1,48 @@
 {
-  "scan_time": "07 Apr 2026 \u00b7 21:00 UTC",
+  "scan_time": "07 Apr 2026 \u00b7 22:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 69356.97,
+      "price": 70086.75,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2116.84,
-      "trend": "\ud83d\udd34 \u25bc"
+      "price": 2148.81,
+      "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 81.96,
+      "price": 83.0,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 607.96,
+      "price": 612.54,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09209,
+      "price": 0.093,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
   "open_positions": [
     {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "direction": "SHORT",
-      "entry": 69011.29,
-      "current": 69356.97,
-      "tp": 66701.34,
-      "sl": 69588.78,
-      "unrealized_pct": -0.5,
-      "unrealized_pnl": -84.79,
-      "entry_time": "2026-04-07 20:00:29"
-    },
-    {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 81.63,
-      "current": 81.96,
+      "current": 83.0,
       "tp": 85.0265,
       "sl": 80.6596,
-      "unrealized_pct": 0.4,
-      "unrealized_pnl": 48.17,
+      "unrealized_pct": 1.68,
+      "unrealized_pnl": 199.97,
       "entry_time": "2026-04-07 20:00:30"
     }
   ],
@@ -394,37 +382,49 @@
       "pnl_pct": "-1.66",
       "scan_time": "2026-04-06 10:00:30",
       "exit_time": "2026-04-06 17:00"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "direction": "SHORT",
+      "result": "SL_HIT",
+      "entry": "69011.29",
+      "exit_price": "69588.78",
+      "pnl": "-160.35",
+      "pnl_pct": "-1.6",
+      "scan_time": "2026-04-07 20:00:29",
+      "exit_time": "2026-04-07 21:00"
     }
   ],
   "stats": {
     "total": 30,
-    "open": 2,
+    "open": 1,
     "wins": 4,
-    "losses": 24,
-    "win_rate": 14.285714285714285,
-    "total_pnl": -2917.55
+    "losses": 25,
+    "win_rate": 13.793103448275861,
+    "total_pnl": -3077.9
   },
   "signal_radar": [
     {
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "ETHUSDT",
       "name": "ETH",
-      "trend": -1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "trend": 1,
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Structure break"
     },
     {
       "symbol": "BNBUSDT",
@@ -437,8 +437,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": 1,
-      "proximity": 100,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed \u00b7 Near order block"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
     }
   ],
   "account": {
@@ -457,11 +457,11 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "07 Apr \u00b7 21:00 UTC",
+    "last_updated": "07 Apr \u00b7 22:00 UTC",
     "consensus": "BEARISH",
-    "consensus_pct": 94,
-    "long_pct": 6,
-    "short_pct": 94,
+    "consensus_pct": 100,
+    "long_pct": 0,
+    "short_pct": 100,
     "whales": [
       {
         "label": "Whale A",
@@ -480,74 +480,67 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 1551533,
+        "account_value": 1477150,
         "open_count": 91,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 450344,
+        "unrealized_pnl": 375911,
         "top_positions": [
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 1757082,
+            "size_usd": 1784483,
             "leverage": 25,
-            "roe_pct": -22.0
+            "roe_pct": -61.3
           },
           {
             "coin": "BTC",
             "direction": "SHORT",
-            "size_usd": 1648497,
+            "size_usd": 1665569,
             "leverage": 40,
-            "roe_pct": -2.1
+            "roe_pct": -43.5
           },
           {
             "coin": "XPL",
             "direction": "SHORT",
-            "size_usd": 148152,
+            "size_usd": 153168,
             "leverage": 10,
-            "roe_pct": -17.9
+            "roe_pct": -52.4
           }
         ],
         "total_trades": 2,
-        "win_rate": 50.0,
-        "avg_return": -30.9
+        "win_rate": 0.0,
+        "avg_return": -31.99
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 175611,
-        "open_count": 4,
+        "account_value": 145698,
+        "open_count": 2,
         "bias": "SHORT",
-        "long_pct": 21,
-        "short_pct": 79,
-        "unrealized_pnl": -33256,
+        "long_pct": 0,
+        "short_pct": 100,
+        "unrealized_pnl": -61593,
         "top_positions": [
           {
             "coin": "HYPE",
             "direction": "SHORT",
-            "size_usd": 1299480,
+            "size_usd": 1419412,
             "leverage": 10,
-            "roe_pct": -37.5
+            "roe_pct": -54.1
           },
           {
-            "coin": "XRP",
-            "direction": "LONG",
-            "size_usd": 263600,
-            "leverage": 20,
-            "roe_pct": 1.9
-          },
-          {
-            "coin": "BTC",
-            "direction": "LONG",
-            "size_usd": 95849,
-            "leverage": 40,
-            "roe_pct": 55.2
+            "coin": "ETHFI",
+            "direction": "SHORT",
+            "size_usd": 44958,
+            "leverage": 5,
+            "roe_pct": 100.6
           }
         ],
-        "total_trades": 1,
-        "win_rate": 0.0,
-        "avg_return": -0.48
+        "total_trades": 2,
+        "win_rate": 100.0,
+        "avg_return": 1.35
       }
     ]
   }
