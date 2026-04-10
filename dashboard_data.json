@@ -1,22 +1,22 @@
 {
-  "scan_time": "10 Apr 2026 \u00b7 12:00 UTC",
+  "scan_time": "10 Apr 2026 \u00b7 13:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 72121.0,
+      "price": 72229.53,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2216.6,
+      "price": 2217.5,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 83.5,
+      "price": 84.08,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
@@ -28,7 +28,7 @@
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09249,
+      "price": 0.09288,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -463,8 +463,8 @@
       "symbol": "ETHUSDT",
       "name": "ETH",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 50,
+      "note": "Trend active \u00b7 Volume confirmed"
     },
     {
       "symbol": "SOLUSDT",
@@ -484,8 +484,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": 1,
-      "proximity": 80,
-      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
+      "proximity": 55,
+      "note": "Trend active \u00b7 Near order block"
     }
   ],
   "account": {
@@ -504,7 +504,7 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "10 Apr \u00b7 12:00 UTC",
+    "last_updated": "10 Apr \u00b7 13:00 UTC",
     "consensus": "BEARISH",
     "consensus_pct": 74,
     "long_pct": 26,
@@ -527,74 +527,74 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 915189,
+        "account_value": 903747,
         "open_count": 90,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 354625,
+        "unrealized_pnl": 343056,
         "top_positions": [
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 436473,
+            "size_usd": 436611,
             "leverage": 25,
-            "roe_pct": -25.9
+            "roe_pct": -26.7
           },
           {
             "coin": "ZEC",
             "direction": "SHORT",
-            "size_usd": 338986,
+            "size_usd": 341845,
             "leverage": 10,
-            "roe_pct": -45.7
+            "roe_pct": -54.5
           },
           {
             "coin": "SOL",
             "direction": "SHORT",
-            "size_usd": 273548,
+            "size_usd": 275347,
             "leverage": 20,
-            "roe_pct": 28.7
+            "roe_pct": 15.7
           }
         ],
         "total_trades": 2,
         "win_rate": 0.0,
-        "avg_return": -28.76
+        "avg_return": -29.19
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 423119,
+        "account_value": 416470,
         "open_count": 4,
         "bias": "SHORT",
         "long_pct": 40,
         "short_pct": 60,
-        "unrealized_pnl": -167509,
+        "unrealized_pnl": -174114,
         "top_positions": [
           {
             "coin": "HYPE",
             "direction": "SHORT",
-            "size_usd": 2463551,
+            "size_usd": 2472198,
             "leverage": 10,
-            "roe_pct": -83.5
+            "roe_pct": -87.3
           },
           {
             "coin": "BTC",
             "direction": "LONG",
-            "size_usd": 1437335,
+            "size_usd": 1439309,
             "leverage": 40,
-            "roe_pct": 20.7
+            "roe_pct": 26.2
           },
           {
             "coin": "ETH",
             "direction": "LONG",
-            "size_usd": 221560,
+            "size_usd": 221630,
             "leverage": 25,
-            "roe_pct": 33.0
+            "roe_pct": 33.8
           }
         ],
         "total_trades": 1,
         "win_rate": 100.0,
-        "avg_return": 0.82
+        "avg_return": 0.9
       }
     ]
   }
