@@ -1,34 +1,34 @@
 {
-  "scan_time": "11 Apr 2026 \u00b7 20:00 UTC",
+  "scan_time": "11 Apr 2026 \u00b7 21:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 73677.98,
+      "price": 73323.21,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2315.8,
+      "price": 2298.92,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 86.04,
+      "price": 85.41,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 613.02,
+      "price": 610.39,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09479,
+      "price": 0.09388,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -470,8 +470,8 @@
       "symbol": "SOLUSDT",
       "name": "SOL",
       "trend": 1,
-      "proximity": 75,
-      "note": "Trend active \u00b7 Structure break \u00b7 Volume confirmed"
+      "proximity": 80,
+      "note": "Trend active \u00b7 Structure break \u00b7 Near order block"
     },
     {
       "symbol": "BNBUSDT",
@@ -484,8 +484,8 @@
       "symbol": "DOGEUSDT",
       "name": "DOGE",
       "trend": 1,
-      "proximity": 50,
-      "note": "Trend active \u00b7 Volume confirmed"
+      "proximity": 75,
+      "note": "Trend active \u00b7 Volume confirmed \u00b7 Near order block"
     }
   ],
   "account": {
@@ -504,7 +504,7 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "11 Apr \u00b7 20:00 UTC",
+    "last_updated": "11 Apr \u00b7 21:00 UTC",
     "consensus": "BEARISH",
     "consensus_pct": 65,
     "long_pct": 35,
@@ -527,69 +527,69 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 856391,
+        "account_value": 862000,
         "open_count": 90,
         "bias": "SHORT",
-        "long_pct": 0,
-        "short_pct": 100,
-        "unrealized_pnl": 317071,
+        "long_pct": 1,
+        "short_pct": 99,
+        "unrealized_pnl": 322821,
         "top_positions": [
           {
             "coin": "ZEC",
             "direction": "SHORT",
-            "size_usd": 185666,
+            "size_usd": 185518,
             "leverage": 10,
-            "roe_pct": -40.0
+            "roe_pct": -39.2
           },
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 178255,
+            "size_usd": 176961,
             "leverage": 25,
-            "roe_pct": -139.2
+            "roe_pct": -120.0
           },
           {
             "coin": "SOL",
             "direction": "SHORT",
-            "size_usd": 152818,
+            "size_usd": 151715,
             "leverage": 20,
-            "roe_pct": -30.9
+            "roe_pct": -16.3
           }
         ],
         "total_trades": 2,
         "win_rate": 0.0,
-        "avg_return": -30.27
+        "avg_return": -29.91
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 676775,
+        "account_value": 699882,
         "open_count": 5,
         "bias": "SHORT",
         "long_pct": 43,
         "short_pct": 57,
-        "unrealized_pnl": -264546,
+        "unrealized_pnl": -241426,
         "top_positions": [
           {
             "coin": "HYPE",
             "direction": "SHORT",
-            "size_usd": 3505886,
+            "size_usd": 3471166,
             "leverage": 10,
-            "roe_pct": -103.9
+            "roe_pct": -93.0
           },
           {
             "coin": "BTC",
             "direction": "LONG",
-            "size_usd": 2209470,
+            "size_usd": 2198790,
             "leverage": 40,
-            "roe_pct": 77.7
+            "roe_pct": 58.0
           },
           {
             "coin": "TAO",
             "direction": "LONG",
-            "size_usd": 271530,
+            "size_usd": 271940,
             "leverage": 5,
-            "roe_pct": -1.1
+            "roe_pct": -0.4
           }
         ],
         "total_trades": 1,
