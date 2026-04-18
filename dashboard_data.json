@@ -1,34 +1,34 @@
 {
-  "scan_time": "18 Apr 2026 \u00b7 05:00 UTC",
+  "scan_time": "18 Apr 2026 \u00b7 06:00 UTC",
   "market_status": [
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 77124.05,
+      "price": 77134.65,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2407.15,
+      "price": 2408.95,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 88.32,
+      "price": 88.41,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 644.19,
+      "price": 645.19,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09835,
+      "price": 0.09884,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -672,8 +672,8 @@
       "symbol": "BTCUSDT",
       "name": "BTC",
       "trend": 1,
-      "proximity": 55,
-      "note": "Trend active \u00b7 Structure break"
+      "proximity": 30,
+      "note": "Trend active"
     },
     {
       "symbol": "ETHUSDT",
@@ -720,7 +720,7 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "18 Apr \u00b7 05:00 UTC",
+    "last_updated": "18 Apr \u00b7 06:00 UTC",
     "consensus": "BEARISH",
     "consensus_pct": 100,
     "long_pct": 0,
@@ -729,17 +729,17 @@
       {
         "label": "Whale A",
         "short_addr": "0xb632...73b7",
-        "account_value": 756043,
+        "account_value": 755652,
         "open_count": 1,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": -30415,
+        "unrealized_pnl": -30765,
         "top_positions": [
           {
             "coin": "BTC",
             "direction": "SHORT",
-            "size_usd": 3853900,
+            "size_usd": 3854250,
             "leverage": 5,
             "roe_pct": -4.0
           }
@@ -751,67 +751,67 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 1096330,
+        "account_value": 1084597,
         "open_count": 86,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 566636,
+        "unrealized_pnl": 554928,
         "top_positions": [
           {
             "coin": "BTC",
             "direction": "SHORT",
-            "size_usd": 1387403,
+            "size_usd": 1387529,
             "leverage": 40,
-            "roe_pct": -0.9
+            "roe_pct": -1.3
           },
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 721740,
+            "size_usd": 722220,
             "leverage": 25,
-            "roe_pct": 23.9
+            "roe_pct": 22.3
           },
           {
             "coin": "ORDI",
             "direction": "SHORT",
-            "size_usd": 429839,
+            "size_usd": 436808,
             "leverage": 3,
-            "roe_pct": 118.4
+            "roe_pct": 115.4
           }
         ],
         "total_trades": 7,
         "win_rate": 71.4,
-        "avg_return": 27.46
+        "avg_return": 27.01
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 111886,
+        "account_value": 115893,
         "open_count": 2,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": -42245,
+        "unrealized_pnl": -38236,
         "top_positions": [
           {
             "coin": "HYPE",
             "direction": "SHORT",
-            "size_usd": 1125075,
+            "size_usd": 1120475,
             "leverage": 10,
-            "roe_pct": -43.7
+            "roe_pct": -39.5
           },
           {
             "coin": "ETHFI",
             "direction": "SHORT",
-            "size_usd": 51385,
+            "size_usd": 51975,
             "leverage": 5,
-            "roe_pct": 43.5
+            "roe_pct": 38.2
           }
         ],
         "total_trades": 2,
         "win_rate": 100.0,
-        "avg_return": 7.57
+        "avg_return": 7.56
       }
     ]
   }
