@@ -438,11 +438,9 @@ function render(data) {
     }).join('');
   }
 
-  // Config comparison stats
-  const cfgStats = data.config_comparison || {};
+  // Config comparison stats (cfgStats and startingCapital already declared above)
   const bl = cfgStats.Baseline || cfgStats['Baseline'] || {};
   const c8 = cfgStats.Config8 || cfgStats['Long Focus'] || cfgStats['Config8'] || {};
-  const startingCapital = 10000;
 
   // Baseline - show breakdown: "$10,000 + $PnL"
   const blEquity = bl.equity || startingCapital;
