@@ -1,34 +1,34 @@
 {
-  "scan_time": "22 Apr 2026 \u00b7 08:00 UTC",
+  "scan_time": "22 Apr 2026 \u00b7 08:39 UTC",
   "market_status": [
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "price": 87.72,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
     {
       "symbol": "BTCUSDT",
       "symbol_name": "BTC",
-      "price": 78042.0,
+      "price": 77998.86,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2390.65,
-      "trend": "\ud83d\udfe2 \u25b2"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "price": 88.12,
-      "trend": "\ud83d\udfe2 \u25b2"
-    },
-    {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "price": 642.03,
+      "price": 2386.26,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.09757,
+      "price": 0.09812,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "price": 641.22,
       "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
@@ -38,60 +38,65 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 77604.71,
-      "current": 78042.0,
+      "current": 77998.86,
       "tp": 80464.56,
       "sl": 76889.75,
-      "unrealized_pct": 0.56,
-      "unrealized_pnl": 96.46,
-      "entry_time": "2026-04-22 03:00:31"
+      "unrealized_pct": 0.51,
+      "unrealized_pnl": 86.94,
+      "entry_time": "2026-04-22 03:00:31",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2370.34,
-      "current": 2390.65,
+      "current": 2386.26,
       "tp": 2461.31,
       "sl": 2344.35,
-      "unrealized_pct": 0.86,
-      "unrealized_pnl": 123.23,
-      "entry_time": "2026-04-22 03:00:31"
+      "unrealized_pct": 0.67,
+      "unrealized_pnl": 96.59,
+      "entry_time": "2026-04-22 03:00:31",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 87.42,
-      "current": 88.12,
+      "current": 87.72,
       "tp": 90.6062,
       "sl": 86.5096,
-      "unrealized_pct": 0.8,
-      "unrealized_pnl": 121.26,
-      "entry_time": "2026-04-22 03:00:31"
+      "unrealized_pct": 0.34,
+      "unrealized_pnl": 51.97,
+      "entry_time": "2026-04-22 03:00:31",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
       "direction": "LONG",
       "entry": 0.09654,
-      "current": 0.09757,
+      "current": 0.09812,
       "tp": 0.09877,
       "sl": 0.095648,
-      "unrealized_pct": 1.07,
-      "unrealized_pnl": 182.07,
-      "entry_time": "2026-04-22 03:00:32"
+      "unrealized_pct": 1.64,
+      "unrealized_pnl": 279.29,
+      "entry_time": "2026-04-22 03:00:32",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
       "direction": "LONG",
       "entry": 642.84,
-      "current": 642.03,
+      "current": 641.22,
       "tp": 653.3096,
       "sl": 638.6522,
-      "unrealized_pct": -0.13,
-      "unrealized_pnl": -30.5,
-      "entry_time": "2026-04-22 06:00:33"
+      "unrealized_pct": -0.25,
+      "unrealized_pnl": -61.01,
+      "entry_time": "2026-04-22 06:00:33",
+      "config": "Baseline"
     }
   ],
   "closed_trades": [
@@ -105,7 +110,8 @@
       "pnl": "-226.22",
       "pnl_pct": "-2.26",
       "scan_time": "2026-03-29 14:00:31",
-      "exit_time": "2026-03-29 20:00"
+      "exit_time": "2026-03-29 20:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -117,7 +123,8 @@
       "pnl": "-221.86",
       "pnl_pct": "-2.22",
       "scan_time": "2026-03-29 14:00:31",
-      "exit_time": "2026-03-29 20:00"
+      "exit_time": "2026-03-29 20:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -129,7 +136,8 @@
       "pnl": "661.38",
       "pnl_pct": "6.61",
       "scan_time": "2026-03-29 15:00:30",
-      "exit_time": "2026-03-29 22:00"
+      "exit_time": "2026-03-29 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -141,7 +149,8 @@
       "pnl": "-220.99",
       "pnl_pct": "-2.21",
       "scan_time": "2026-03-29 18:00:28",
-      "exit_time": "2026-03-30 00:00"
+      "exit_time": "2026-03-30 00:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -153,7 +162,8 @@
       "pnl": "-214.78",
       "pnl_pct": "-2.15",
       "scan_time": "2026-03-29 23:00:28",
-      "exit_time": "2026-03-30 00:00"
+      "exit_time": "2026-03-30 00:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -165,7 +175,8 @@
       "pnl": "-209.5",
       "pnl_pct": "-2.1",
       "scan_time": "2026-03-29 23:00:28",
-      "exit_time": "2026-03-30 00:00"
+      "exit_time": "2026-03-30 00:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -177,7 +188,8 @@
       "pnl": "-218.67",
       "pnl_pct": "-2.19",
       "scan_time": "2026-03-29 23:00:29",
-      "exit_time": "2026-03-30 00:00"
+      "exit_time": "2026-03-30 00:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -189,7 +201,8 @@
       "pnl": "-219.34",
       "pnl_pct": "-2.19",
       "scan_time": "2026-03-30 01:00:30",
-      "exit_time": "2026-03-30 02:00"
+      "exit_time": "2026-03-30 02:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -201,7 +214,8 @@
       "pnl": "-229.88",
       "pnl_pct": "-2.3",
       "scan_time": "2026-03-30 01:00:30",
-      "exit_time": "2026-03-30 02:00"
+      "exit_time": "2026-03-30 02:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -213,7 +227,8 @@
       "pnl": "-206.62",
       "pnl_pct": "-2.07",
       "scan_time": "2026-03-30 02:00:32",
-      "exit_time": "2026-03-30 04:00"
+      "exit_time": "2026-03-30 04:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -225,7 +240,8 @@
       "pnl": "-205.42",
       "pnl_pct": "-2.05",
       "scan_time": "2026-03-30 03:00:31",
-      "exit_time": "2026-03-30 19:00"
+      "exit_time": "2026-03-30 19:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -237,7 +253,8 @@
       "pnl": "-195.71",
       "pnl_pct": "-1.96",
       "scan_time": "2026-03-30 09:00:27",
-      "exit_time": "2026-03-30 14:00"
+      "exit_time": "2026-03-30 14:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -249,7 +266,8 @@
       "pnl": "-182.18",
       "pnl_pct": "-1.82",
       "scan_time": "2026-03-30 20:00:31",
-      "exit_time": "2026-03-31 09:00"
+      "exit_time": "2026-03-31 09:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -261,7 +279,8 @@
       "pnl": "-179.04",
       "pnl_pct": "-1.79",
       "scan_time": "2026-03-31 02:00:32",
-      "exit_time": "2026-04-01 06:00"
+      "exit_time": "2026-04-01 06:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -273,7 +292,8 @@
       "pnl": "-186.15",
       "pnl_pct": "-1.86",
       "scan_time": "2026-03-31 09:00:33",
-      "exit_time": "2026-03-31 13:00"
+      "exit_time": "2026-03-31 13:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -285,7 +305,8 @@
       "pnl": "-179.41",
       "pnl_pct": "-1.79",
       "scan_time": "2026-03-31 14:00:32",
-      "exit_time": "2026-03-31 17:00"
+      "exit_time": "2026-03-31 17:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -297,7 +318,8 @@
       "pnl": "-167.37",
       "pnl_pct": "-1.67",
       "scan_time": "2026-03-31 18:00:37",
-      "exit_time": "2026-04-02 03:00"
+      "exit_time": "2026-04-02 03:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -309,7 +331,8 @@
       "pnl": "-162.48",
       "pnl_pct": "-1.62",
       "scan_time": "2026-04-01 10:00:29",
-      "exit_time": "2026-04-02 01:00"
+      "exit_time": "2026-04-02 01:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -321,7 +344,8 @@
       "pnl": "-163.05",
       "pnl_pct": "-1.63",
       "scan_time": "2026-04-01 13:00:31",
-      "exit_time": "2026-04-01 21:00"
+      "exit_time": "2026-04-01 21:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -333,7 +357,8 @@
       "pnl": "-164.68",
       "pnl_pct": "-1.65",
       "scan_time": "2026-04-02 02:00:29",
-      "exit_time": "2026-04-05 22:00"
+      "exit_time": "2026-04-05 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -345,7 +370,8 @@
       "pnl": "-160.07",
       "pnl_pct": "-1.6",
       "scan_time": "2026-04-02 02:00:29",
-      "exit_time": "2026-04-06 00:00"
+      "exit_time": "2026-04-06 00:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -357,7 +383,8 @@
       "pnl": "350.6",
       "pnl_pct": "3.51",
       "scan_time": "2026-04-02 02:00:29",
-      "exit_time": "2026-04-02 04:00"
+      "exit_time": "2026-04-02 04:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -369,7 +396,8 @@
       "pnl": "-161.36",
       "pnl_pct": "-1.61",
       "scan_time": "2026-04-02 02:00:30",
-      "exit_time": "2026-04-03 12:00"
+      "exit_time": "2026-04-03 12:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -381,7 +409,8 @@
       "pnl": "326.49",
       "pnl_pct": "3.26",
       "scan_time": "2026-04-04 08:00:30",
-      "exit_time": "2026-04-04 19:00"
+      "exit_time": "2026-04-04 19:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -393,7 +422,8 @@
       "pnl": "-177.39",
       "pnl_pct": "-1.77",
       "scan_time": "2026-04-04 20:00:27",
-      "exit_time": "2026-04-05 02:00"
+      "exit_time": "2026-04-05 02:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -405,7 +435,8 @@
       "pnl": "333.34",
       "pnl_pct": "3.33",
       "scan_time": "2026-04-05 13:00:30",
-      "exit_time": "2026-04-05 15:00"
+      "exit_time": "2026-04-05 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -417,7 +448,8 @@
       "pnl": "-171.66",
       "pnl_pct": "-1.72",
       "scan_time": "2026-04-06 10:00:29",
-      "exit_time": "2026-04-06 13:00"
+      "exit_time": "2026-04-06 13:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -429,7 +461,8 @@
       "pnl": "-165.53",
       "pnl_pct": "-1.66",
       "scan_time": "2026-04-06 10:00:30",
-      "exit_time": "2026-04-06 17:00"
+      "exit_time": "2026-04-06 17:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -441,7 +474,8 @@
       "pnl": "-160.35",
       "pnl_pct": "-1.6",
       "scan_time": "2026-04-07 20:00:29",
-      "exit_time": "2026-04-07 21:00"
+      "exit_time": "2026-04-07 21:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -453,7 +487,8 @@
       "pnl": "482.39",
       "pnl_pct": "4.82",
       "scan_time": "2026-04-07 20:00:30",
-      "exit_time": "2026-04-07 22:00"
+      "exit_time": "2026-04-07 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -465,7 +500,8 @@
       "pnl": "-166.83",
       "pnl_pct": "-1.67",
       "scan_time": "2026-04-09 16:00:30",
-      "exit_time": "2026-04-10 07:00"
+      "exit_time": "2026-04-10 07:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -477,7 +513,8 @@
       "pnl": "-163.07",
       "pnl_pct": "-1.63",
       "scan_time": "2026-04-09 16:00:30",
-      "exit_time": "2026-04-09 23:00"
+      "exit_time": "2026-04-09 23:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -489,7 +526,8 @@
       "pnl": "-173.58",
       "pnl_pct": "-1.74",
       "scan_time": "2026-04-09 16:00:31",
-      "exit_time": "2026-04-09 21:00"
+      "exit_time": "2026-04-09 21:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -501,7 +539,8 @@
       "pnl": "351.88",
       "pnl_pct": "3.52",
       "scan_time": "2026-04-09 16:00:31",
-      "exit_time": "2026-04-09 22:00"
+      "exit_time": "2026-04-09 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -513,7 +552,8 @@
       "pnl": "489.95",
       "pnl_pct": "4.9",
       "scan_time": "2026-04-12 23:00:30",
-      "exit_time": "2026-04-13 22:00"
+      "exit_time": "2026-04-13 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -525,7 +565,8 @@
       "pnl": "-166.29",
       "pnl_pct": "-1.66",
       "scan_time": "2026-04-13 13:00:32",
-      "exit_time": "2026-04-13 14:00"
+      "exit_time": "2026-04-13 14:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -537,7 +578,8 @@
       "pnl": "553.31",
       "pnl_pct": "5.53",
       "scan_time": "2026-04-13 14:00:35",
-      "exit_time": "2026-04-13 19:00"
+      "exit_time": "2026-04-13 19:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -549,7 +591,8 @@
       "pnl": "-164.51",
       "pnl_pct": "-1.65",
       "scan_time": "2026-04-13 14:00:35",
-      "exit_time": "2026-04-13 15:00"
+      "exit_time": "2026-04-13 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -561,7 +604,8 @@
       "pnl": "339.96",
       "pnl_pct": "3.4",
       "scan_time": "2026-04-13 14:00:36",
-      "exit_time": "2026-04-13 22:00"
+      "exit_time": "2026-04-13 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -573,7 +617,8 @@
       "pnl": "325.9",
       "pnl_pct": "3.26",
       "scan_time": "2026-04-13 15:00:30",
-      "exit_time": "2026-04-13 22:00"
+      "exit_time": "2026-04-13 22:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -585,7 +630,8 @@
       "pnl": "-198.65",
       "pnl_pct": "-1.99",
       "scan_time": "2026-04-14 14:00:31",
-      "exit_time": "2026-04-14 15:00"
+      "exit_time": "2026-04-14 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -597,7 +643,8 @@
       "pnl": "-203.57",
       "pnl_pct": "-2.04",
       "scan_time": "2026-04-14 14:00:32",
-      "exit_time": "2026-04-14 15:00"
+      "exit_time": "2026-04-14 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -609,7 +656,8 @@
       "pnl": "-189.97",
       "pnl_pct": "-1.9",
       "scan_time": "2026-04-14 15:00:32",
-      "exit_time": "2026-04-14 16:00"
+      "exit_time": "2026-04-14 16:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BNBUSDT",
@@ -621,7 +669,8 @@
       "pnl": "-184.38",
       "pnl_pct": "-1.84",
       "scan_time": "2026-04-14 18:00:32",
-      "exit_time": "2026-04-14 19:00"
+      "exit_time": "2026-04-14 19:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -633,7 +682,8 @@
       "pnl": "-182.89",
       "pnl_pct": "-1.83",
       "scan_time": "2026-04-16 12:00:30",
-      "exit_time": "2026-04-16 13:00"
+      "exit_time": "2026-04-16 13:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -645,7 +695,8 @@
       "pnl": "606.79",
       "pnl_pct": "6.07",
       "scan_time": "2026-04-16 14:00:38",
-      "exit_time": "2026-04-17 09:00"
+      "exit_time": "2026-04-17 09:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -657,7 +708,8 @@
       "pnl": "-175.14",
       "pnl_pct": "-1.75",
       "scan_time": "2026-04-16 14:00:39",
-      "exit_time": "2026-04-16 15:00"
+      "exit_time": "2026-04-16 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -669,7 +721,8 @@
       "pnl": "378.85",
       "pnl_pct": "3.79",
       "scan_time": "2026-04-16 14:00:39",
-      "exit_time": "2026-04-16 18:00"
+      "exit_time": "2026-04-16 18:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -681,7 +734,8 @@
       "pnl": "-169.2",
       "pnl_pct": "-1.69",
       "scan_time": "2026-04-16 16:00:47",
-      "exit_time": "2026-04-16 20:00"
+      "exit_time": "2026-04-16 20:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -693,7 +747,8 @@
       "pnl": "522.39",
       "pnl_pct": "5.22",
       "scan_time": "2026-04-16 16:00:47",
-      "exit_time": "2026-04-16 20:00"
+      "exit_time": "2026-04-16 20:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -705,7 +760,8 @@
       "pnl": "-160.36",
       "pnl_pct": "-1.6",
       "scan_time": "2026-04-16 19:00:32",
-      "exit_time": "2026-04-17 02:00"
+      "exit_time": "2026-04-17 02:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -717,7 +773,8 @@
       "pnl": "587.88",
       "pnl_pct": "5.88",
       "scan_time": "2026-04-17 13:00:29",
-      "exit_time": "2026-04-17 14:00"
+      "exit_time": "2026-04-17 14:00",
+      "config": "Baseline"
     },
     {
       "symbol": "DOGEUSDT",
@@ -729,7 +786,8 @@
       "pnl": "-207.35",
       "pnl_pct": "-2.07",
       "scan_time": "2026-04-19 12:00:31",
-      "exit_time": "2026-04-19 13:00"
+      "exit_time": "2026-04-19 13:00",
+      "config": "Baseline"
     },
     {
       "symbol": "BTCUSDT",
@@ -741,7 +799,8 @@
       "pnl": "-221.61",
       "pnl_pct": "-2.22",
       "scan_time": "2026-04-19 14:00:28",
-      "exit_time": "2026-04-19 15:00"
+      "exit_time": "2026-04-19 15:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -753,7 +812,8 @@
       "pnl": "-196.22",
       "pnl_pct": "-1.96",
       "scan_time": "2026-04-20 08:00:32",
-      "exit_time": "2026-04-20 12:00"
+      "exit_time": "2026-04-20 12:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -765,7 +825,8 @@
       "pnl": "-193.71",
       "pnl_pct": "-1.94",
       "scan_time": "2026-04-21 13:00:32",
-      "exit_time": "2026-04-21 17:00"
+      "exit_time": "2026-04-21 17:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -777,7 +838,8 @@
       "pnl": "-191.36",
       "pnl_pct": "-1.91",
       "scan_time": "2026-04-21 18:00:29",
-      "exit_time": "2026-04-21 19:00"
+      "exit_time": "2026-04-21 19:00",
+      "config": "Baseline"
     },
     {
       "symbol": "ETHUSDT",
@@ -789,7 +851,8 @@
       "pnl": "-185.87",
       "pnl_pct": "-1.86",
       "scan_time": "2026-04-21 20:00:30",
-      "exit_time": "2026-04-21 23:00"
+      "exit_time": "2026-04-21 23:00",
+      "config": "Baseline"
     },
     {
       "symbol": "SOLUSDT",
@@ -801,7 +864,8 @@
       "pnl": "-181.63",
       "pnl_pct": "-1.82",
       "scan_time": "2026-04-21 21:00:29",
-      "exit_time": "2026-04-22 00:00"
+      "exit_time": "2026-04-22 00:00",
+      "config": "Baseline"
     }
   ],
   "stats": {
@@ -811,6 +875,30 @@
     "losses": 45,
     "win_rate": 23.728813559322035,
     "total_pnl": -2114.79
+  },
+  "config_comparison": {
+    "Baseline": {
+      "trades": 59,
+      "open": 5,
+      "wins": 14,
+      "losses": 45,
+      "win_rate": 23.7,
+      "pnl": -2114.79,
+      "profit_factor": 0.75,
+      "equity": 7885.21,
+      "risk_per_trade": 157.7
+    },
+    "Config8": {
+      "trades": 0,
+      "open": 0,
+      "wins": 0,
+      "losses": 0,
+      "win_rate": 0,
+      "pnl": 0,
+      "profit_factor": 0,
+      "equity": 10000.0,
+      "risk_per_trade": 200.0
+    }
   },
   "signal_radar": [
     {
@@ -851,6 +939,8 @@
   ],
   "account": {
     "current_equity": 7885.21,
+    "baseline_equity": 7885.21,
+    "config8_equity": 10000.0,
     "risk_per_trade": 157.7,
     "rr": "Per-sym",
     "symbol_rr": {
@@ -865,7 +955,7 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "22 Apr \u00b7 08:00 UTC",
+    "last_updated": "22 Apr \u00b7 08:39 UTC",
     "consensus": "BEARISH",
     "consensus_pct": 100,
     "long_pct": 0,
@@ -888,61 +978,86 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 1127771,
+        "account_value": 1128838,
         "open_count": 86,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 553412,
+        "unrealized_pnl": 554480,
         "top_positions": [
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 1426472,
+            "size_usd": 1423905,
             "leverage": 25,
-            "roe_pct": -9.7
+            "roe_pct": -5.2
           },
           {
             "coin": "BTC",
             "direction": "SHORT",
-            "size_usd": 701973,
+            "size_usd": 701694,
             "leverage": 40,
-            "roe_pct": -44.0
+            "roe_pct": -42.4
           },
           {
             "coin": "ORDI",
             "direction": "SHORT",
-            "size_usd": 317401,
+            "size_usd": 315868,
             "leverage": 3,
-            "roe_pct": 146.7
+            "roe_pct": 147.4
           }
         ],
         "total_trades": 7,
         "win_rate": 71.4,
-        "avg_return": 32.04
+        "avg_return": 30.62
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 7734,
+        "account_value": 7589,
         "open_count": 1,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 8516,
+        "unrealized_pnl": 8371,
         "top_positions": [
           {
             "coin": "ETHFI",
             "direction": "SHORT",
-            "size_usd": 47761,
+            "size_usd": 47906,
             "leverage": 5,
-            "roe_pct": 75.7
+            "roe_pct": 74.4
           }
         ],
         "total_trades": 2,
         "win_rate": 100.0,
-        "avg_return": 7.53
+        "avg_return": 7.42
       }
     ]
-  }
+  },
+  "active_configs": [
+    {
+      "name": "Baseline",
+      "symbols": [
+        "BTC",
+        "ETH",
+        "SOL",
+        "BNB",
+        "DOGE"
+      ],
+      "direction": "both",
+      "ema_filter": false
+    },
+    {
+      "name": "Config8",
+      "symbols": [
+        "BTC",
+        "SOL",
+        "BNB",
+        "DOGE"
+      ],
+      "direction": "long",
+      "ema_filter": true
+    }
+  ]
 }
