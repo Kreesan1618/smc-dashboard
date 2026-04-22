@@ -82,6 +82,29 @@ table{width:100%;border-collapse:collapse}
 @media(max-width:900px){.whale-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.whale-grid{grid-template-columns:1fr}}
 
+/* Config Comparison */
+.config-section{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:24px}
+@media(max-width:768px){.config-section{grid-template-columns:1fr}}
+.config-card{background:var(--card);backdrop-filter:blur(16px);border:1px solid var(--border);border-radius:16px;padding:18px;position:relative;overflow:hidden}
+.config-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.config-card.baseline::before{background:var(--amber)}
+.config-card.config8::before{background:#a855f7}
+.config-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.config-name{font-size:14px;font-weight:700;font-family:var(--mono)}
+.config-card.baseline .config-name{color:var(--amber)}
+.config-card.config8 .config-name{color:#a855f7}
+.config-badge{font-size:9px;padding:3px 10px;border-radius:10px;font-family:var(--mono);font-weight:600}
+.config-badge.active{background:rgba(16,185,129,0.12);color:var(--accent)}
+.config-badge.new{background:rgba(168,85,247,0.12);color:#a855f7}
+.config-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.config-stat{text-align:center;padding:10px 6px;background:var(--bg2);border-radius:10px}
+.config-stat-val{font-size:16px;font-weight:700;font-family:var(--mono)}
+.config-stat-label{font-size:9px;color:var(--muted);font-family:var(--mono);text-transform:uppercase;margin-top:3px}
+.config-desc{font-size:10px;color:var(--muted);font-family:var(--mono);margin-top:12px;padding-top:12px;border-top:1px solid var(--border)}
+.config-tag{font-size:9px;padding:2px 7px;border-radius:4px;font-weight:600;font-family:var(--mono)}
+.config-tag.baseline{background:rgba(251,191,36,0.12);color:var(--amber)}
+.config-tag.config8{background:rgba(168,85,247,0.12);color:#a855f7}
+
 .ft{text-align:center;padding:24px 0;font-size:10px;grid-column:1/-1}
 .ld{display:flex;align-items:center;justify-content:center;gap:8px;padding:30px;font-size:12px}
 .sp{width:14px;height:14px;border:2px solid;border-radius:50%;animation:spin .8s linear infinite}
@@ -381,6 +404,30 @@ tr:hover td{background:var(--card-hover)}
     <div class="st">Assets <span class="live-tag">● LIVE PRICES + SIGNAL</span></div>
     <div class="asset-grid" id="prices"><div class="ld"><div class="sp"></div> Loading...</div></div>
 
+    <div class="st">A/B Test — Config Comparison <span class="live-tag">● LIVE</span></div>
+    <div class="config-section">
+      <div class="config-card baseline">
+        <div class="config-header"><span class="config-name">🅰️ Baseline</span><span class="config-badge active">CONTROL</span></div>
+        <div class="config-stats">
+          <div class="config-stat"><div class="config-stat-val" id="bl-equity">--</div><div class="config-stat-label">Equity</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="bl-trades">--</div><div class="config-stat-label">Trades</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="bl-wr">--</div><div class="config-stat-label">Win Rate</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="bl-pnl">--</div><div class="config-stat-label">P&L</div></div>
+        </div>
+        <div class="config-desc">BTC, ETH, SOL, BNB, DOGE · Both · No EMA · Risk: <span id="bl-risk">--</span></div>
+      </div>
+      <div class="config-card config8">
+        <div class="config-header"><span class="config-name">🅱️ Config 8</span><span class="config-badge new">TEST</span></div>
+        <div class="config-stats">
+          <div class="config-stat"><div class="config-stat-val" id="c8-equity">--</div><div class="config-stat-label">Equity</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="c8-trades">--</div><div class="config-stat-label">Trades</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="c8-wr">--</div><div class="config-stat-label">Win Rate</div></div>
+          <div class="config-stat"><div class="config-stat-val" id="c8-pnl">--</div><div class="config-stat-label">P&L</div></div>
+        </div>
+        <div class="config-desc">BTC, SOL, BNB, DOGE · Long only · EMA 50 · Risk: <span id="c8-risk">--</span></div>
+      </div>
+    </div>
+
     <div class="st">Open positions <span class="live-tag">● LIVE P&L</span></div>
     <div class="cw"><div class="ch"><div class="ct">Active Trades</div><div class="badge" id="pos-count">0</div></div><div id="pos-body"><div class="es">No open positions</div></div></div>
 
@@ -392,10 +439,10 @@ tr:hover td{background:var(--card-hover)}
 
     <div class="st">Trade history</div>
     <div class="cw">
-      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><div class="flt" id="filters"><button class="fb ac" data-filter="all">All</button><button class="fb" data-filter="win">Wins</button><button class="fb" data-filter="loss">Losses</button><button class="fb" data-filter="long">Long</button><button class="fb" data-filter="short">Short</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
+      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><div class="flt" id="filters"><button class="fb ac" data-filter="all">All</button><button class="fb" data-filter="win">Wins</button><button class="fb" data-filter="loss">Losses</button><button class="fb" data-filter="long">Long</button><button class="fb" data-filter="short">Short</button><button class="fb" data-filter="baseline">🅰️ Baseline</button><button class="fb" data-filter="config8">🅱️ Config8</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
       <div class="collapse-body" id="history-collapse">
         <div class="hsu" id="history-summary"></div>
-        <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="8" class="es">No closed trades yet</td></tr></tbody></table></div>
+        <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Config</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="9" class="es">No closed trades yet</td></tr></tbody></table></div>
       </div>
     </div>
   </div>
@@ -801,6 +848,26 @@ document.getElementById('m-win-rate').textContent='WR '+(st.win_rate||0).toFixed
 var mr=document.getElementById('m-realised');mr.textContent=fPnl(rp);mr.className='ms-val '+(rp>0?'g':rp<0?'r':'n');
 document.getElementById('m-total-trades').textContent=(st.total||0)+' trades';
 
+// Config comparison stats
+var cfgStats=data.config_comparison||{};
+var bl=cfgStats.Baseline||{},c8=cfgStats.Config8||{};
+document.getElementById('bl-equity').textContent='$'+(bl.equity||10000).toLocaleString('en-US',{maximumFractionDigits:0});
+document.getElementById('bl-equity').style.color=(bl.pnl||0)>=0?'var(--accent)':'var(--red)';
+document.getElementById('bl-trades').textContent=bl.trades||0;
+document.getElementById('bl-wr').textContent=(bl.win_rate||0)+'%';
+document.getElementById('bl-wr').style.color=(bl.win_rate||0)>=50?'var(--accent)':'var(--text)';
+document.getElementById('bl-pnl').textContent=fPnl(bl.pnl||0);
+document.getElementById('bl-pnl').style.color=(bl.pnl||0)>=0?'var(--accent)':'var(--red)';
+document.getElementById('bl-risk').textContent='$'+(bl.risk_per_trade||200).toFixed(0);
+document.getElementById('c8-equity').textContent='$'+(c8.equity||10000).toLocaleString('en-US',{maximumFractionDigits:0});
+document.getElementById('c8-equity').style.color=(c8.pnl||0)>=0?'var(--accent)':'var(--red)';
+document.getElementById('c8-trades').textContent=c8.trades||0;
+document.getElementById('c8-wr').textContent=(c8.win_rate||0)+'%';
+document.getElementById('c8-wr').style.color=(c8.win_rate||0)>=50?'var(--accent)':'var(--red)';
+document.getElementById('c8-pnl').textContent=fPnl(c8.pnl||0);
+document.getElementById('c8-pnl').style.color=(c8.pnl||0)>=0?'var(--accent)':'var(--red)';
+document.getElementById('c8-risk').textContent='$'+(c8.risk_per_trade||200).toFixed(0);
+
 document.getElementById('prices').innerHTML=(data.market_status||[]).map(function(x){
   var b=(x.trend||'').indexOf('▲')!==-1;var lp=LP[x.symbol]||x.price;
   var sig=SIGNAL_MAP[x.symbol_name]||null;
@@ -814,10 +881,10 @@ document.getElementById('prices').innerHTML=(data.market_status||[]).map(functio
 document.getElementById('pos-count').textContent=pos.length;
 var pb=document.getElementById('pos-body');
 if(!pos.length){pb.innerHTML='<div class="es">No open positions</div>'}
-else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>TP / SL</th><th>Time</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;
+else{pb.innerHTML='<table><thead><tr><th>Asset</th><th>Config</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>TP / SL</th><th>Progress</th></tr></thead><tbody>'+pos.map(function(p){var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction;var cfg=p.config||'Baseline';var cfgClass=cfg==='Config8'?'config8':'baseline';var cfgLabel=cfg==='Config8'?'🅱️':'🅰️';
 var pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));var progCol=p.unrealized_pnl>=0?'var(--accent)':'var(--red)';
 var timeStr=fDuration(getEntryTime(p)||data.scan_time||null);
-return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td class="tit">'+timeStr+'</td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
+return '<tr><td style="font-weight:600">'+p.symbol_name+'</td><td><span class="config-tag '+cfgClass+'">'+cfgLabel+'</span></td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>'}).join('')+'</tbody></table>'}
 
 renderHistory('all');renderWinRateByAsset(AC);rc();
 }
@@ -853,16 +920,16 @@ function renderWinRateByAsset(trades){
   }).join('')+'</div>';
 }
 
-function renderHistory(f){var d=AC;if(f==='win')d=AC.filter(function(t){return t.result==='TP_HIT'});else if(f==='loss')d=AC.filter(function(t){return t.result==='SL_HIT'});else if(f==='long')d=AC.filter(function(t){return t.direction==='LONG'});else if(f==='short')d=AC.filter(function(t){return t.direction==='SHORT'});
+function renderHistory(f){var d=AC;if(f==='win')d=AC.filter(function(t){return t.result==='TP_HIT'});else if(f==='loss')d=AC.filter(function(t){return t.result==='SL_HIT'});else if(f==='long')d=AC.filter(function(t){return t.direction==='LONG'});else if(f==='short')d=AC.filter(function(t){return t.direction==='SHORT'});else if(f==='baseline')d=AC.filter(function(t){return (t.config||'Baseline')==='Baseline'});else if(f==='config8')d=AC.filter(function(t){return t.config==='Config8'});
 var w=d.filter(function(t){return t.result==='TP_HIT'}).length,l=d.filter(function(t){return t.result==='SL_HIT'}).length,tp=d.reduce(function(s,t){return s+parseFloat(t.pnl||0)},0),wr=d.length>0?w/d.length*100:0;
 document.getElementById('history-summary').innerHTML='<span>Showing: <b style="color:var(--text)">'+d.length+'</b></span><span style="color:var(--accent)">Wins: <b>'+w+'</b></span><span style="color:var(--red)">Losses: <b>'+l+'</b></span><span>WR: <b style="color:var(--text)">'+wr.toFixed(0)+'%</b></span><span>P&L: <b style="color:'+(tp>=0?'var(--accent)':'var(--red)')+'">'+fPnl(tp)+'</b></span>';
 var hb=document.getElementById('history-body');
-if(!d.length){hb.innerHTML='<tr><td colspan="8" class="es">No trades match</td></tr>';return}
-hb.innerHTML=d.map(function(t){var iw=t.result==='TP_HIT',pnl=+t.pnl||0,pct=+t.pnl_pct||0;
-return '<tr><td style="color:var(--muted);font-size:11px">'+(t.exit_time||'--')+'</td><td style="font-weight:600">'+(t.symbol_name||'--')+'</td><td class="'+(t.direction==='LONG'?'dl':'ds')+'">'+t.direction+'</td><td>'+(t.entry?fP(t.entry):'--')+'</td><td>'+(t.exit_price?fP(t.exit_price):'--')+'</td><td class="'+(iw?'rw':'rl')+'">'+(iw?'TP Hit':'SL Hit')+'</td><td class="'+(pnl>=0?'pp':'pn')+'">'+fPnl(pnl)+'</td><td class="'+(pct>=0?'pp':'pn')+'">'+(pct>=0?'+':'')+pct.toFixed(2)+'%</td></tr>'}).join('')}
+if(!d.length){hb.innerHTML='<tr><td colspan="9" class="es">No trades match</td></tr>';return}
+hb.innerHTML=d.map(function(t){var iw=t.result==='TP_HIT',pnl=+t.pnl||0,pct=+t.pnl_pct||0;var cfg=t.config||'Baseline';var cfgClass=cfg==='Config8'?'config8':'baseline';var cfgLabel=cfg==='Config8'?'🅱️':'🅰️';
+return '<tr><td style="color:var(--muted);font-size:11px">'+(t.exit_time||'--')+'</td><td style="font-weight:600">'+(t.symbol_name||'--')+'</td><td><span class="config-tag '+cfgClass+'">'+cfgLabel+'</span></td><td class="'+(t.direction==='LONG'?'dl':'ds')+'">'+t.direction+'</td><td>'+(t.entry?fP(t.entry):'--')+'</td><td>'+(t.exit_price?fP(t.exit_price):'--')+'</td><td class="'+(iw?'rw':'rl')+'">'+(iw?'TP Hit':'SL Hit')+'</td><td class="'+(pnl>=0?'pp':'pn')+'">'+fPnl(pnl)+'</td><td class="'+(pct>=0?'pp':'pn')+'">'+(pct>=0?'+':'')+pct.toFixed(2)+'%</td></tr>'}).join('')}
 
 document.getElementById('filters').addEventListener('click',function(e){if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');renderHistory(e.target.dataset.filter)});
-document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
+document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Config','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.config||'Baseline',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
 
 loadData();setInterval(loadData,15000);cBS();
 </script>
