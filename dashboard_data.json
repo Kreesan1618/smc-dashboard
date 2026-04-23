@@ -1,35 +1,35 @@
 {
-  "scan_time": "23 Apr 2026 \u00b7 08:23 UTC",
+  "scan_time": "23 Apr 2026 \u00b7 09:00 UTC",
   "market_status": [
     {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "price": 78030.01,
+      "symbol": "BNBUSDT",
+      "symbol_name": "BNB",
+      "price": 635.38,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "SOLUSDT",
       "symbol_name": "SOL",
-      "price": 85.83,
+      "price": 85.68,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
-      "symbol": "BNBUSDT",
-      "symbol_name": "BNB",
-      "price": 635.94,
-      "trend": "\ud83d\udfe2 \u25b2"
-    },
-    {
-      "symbol": "DOGEUSDT",
-      "symbol_name": "DOGE",
-      "price": 0.09607,
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "price": 77855.87,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2341.79,
+      "price": 2339.42,
       "trend": "\ud83d\udd34 \u25bc"
+    },
+    {
+      "symbol": "DOGEUSDT",
+      "symbol_name": "DOGE",
+      "price": 0.09598,
+      "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
   "open_positions": [
@@ -38,11 +38,11 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 77604.71,
-      "current": 78030.01,
+      "current": 77855.87,
       "tp": 80464.56,
       "sl": 76889.75,
-      "unrealized_pct": 0.55,
-      "unrealized_pnl": 93.81,
+      "unrealized_pct": 0.32,
+      "unrealized_pnl": 55.4,
       "entry_time": "2026-04-22 03:00:31",
       "config": "Baseline"
     }
@@ -1019,7 +1019,7 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "23 Apr \u00b7 08:23 UTC",
+    "last_updated": "23 Apr \u00b7 09:00 UTC",
     "consensus": "BEARISH",
     "consensus_pct": 67,
     "long_pct": 33,
@@ -1042,62 +1042,62 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 1191515,
+        "account_value": 1198365,
         "open_count": 86,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 562166,
+        "unrealized_pnl": 569040,
         "top_positions": [
           {
             "coin": "ETH",
             "direction": "SHORT",
-            "size_usd": 929178,
+            "size_usd": 928265,
             "leverage": 25,
-            "roe_pct": 41.6
+            "roe_pct": 44.1
           },
           {
             "coin": "BTC",
             "direction": "SHORT",
-            "size_usd": 545881,
+            "size_usd": 544796,
             "leverage": 40,
-            "roe_pct": -43.3
+            "roe_pct": -35.2
           },
           {
             "coin": "ORDI",
             "direction": "SHORT",
-            "size_usd": 287758,
+            "size_usd": 286358,
             "leverage": 3,
-            "roe_pct": 154.8
+            "roe_pct": 155.5
           }
         ],
         "total_trades": 7,
         "win_rate": 71.4,
-        "avg_return": 29.0
+        "avg_return": 28.98
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 158499,
+        "account_value": 156617,
         "open_count": 3,
         "bias": "LONG",
         "long_pct": 84,
         "short_pct": 16,
-        "unrealized_pnl": -7834,
+        "unrealized_pnl": -9704,
         "top_positions": [
           {
             "coin": "BTC",
             "direction": "LONG",
-            "size_usd": 1325711,
+            "size_usd": 1323076,
             "leverage": 40,
-            "roe_pct": -53.1
+            "roe_pct": -61.0
           },
           {
             "coin": "HYPE",
             "direction": "SHORT",
-            "size_usd": 206255,
+            "size_usd": 205490,
             "leverage": 10,
-            "roe_pct": -5.3
+            "roe_pct": -1.6
           },
           {
             "coin": "ETHFI",
@@ -1109,7 +1109,7 @@
         ],
         "total_trades": 1,
         "win_rate": 0.0,
-        "avg_return": -0.2
+        "avg_return": -0.49
       }
     ]
   },
