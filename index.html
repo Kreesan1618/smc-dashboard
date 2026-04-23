@@ -395,7 +395,7 @@ tr:hover td{background:var(--card-hover)}
 
     <div class="st">Trade history</div>
     <div class="cw">
-      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap"><div class="flt" id="filters"><button class="fb ac" data-filter="all">All</button><button class="fb" data-filter="win">Wins</button><button class="fb" data-filter="loss">Losses</button><button class="fb" data-filter="long">Long</button><button class="fb" data-filter="short">Short</button><button class="fb" data-filter="baseline">🅰️</button><button class="fb" data-filter="longfocus">🅱️</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
+      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><div class="flt" id="strat-filters" style="border-right:1px solid var(--muted2);padding-right:8px"><button class="fb strat-fb ac" data-strat="all">All</button><button class="fb strat-fb" data-strat="baseline">🅰️</button><button class="fb strat-fb" data-strat="longfocus">🅱️</button></div><div class="flt" id="type-filters"><button class="fb type-fb ac" data-type="all">All</button><button class="fb type-fb" data-type="win">Wins</button><button class="fb type-fb" data-type="loss">Losses</button><button class="fb type-fb" data-type="long">Long</button><button class="fb type-fb" data-type="short">Short</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
       <div class="collapse-body" id="history-collapse">
         <div class="hsu" id="history-summary"></div>
         <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Config</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="9" class="es">No closed trades yet</td></tr></tbody></table></div>
@@ -798,7 +798,7 @@ else{
   pb.innerHTML=html;
 }
 
-renderHistory('all');renderWinRateByAsset(AC);renderStrategies(data);rc();
+renderHistory();renderWinRateByAsset(AC);renderStrategies(data);rc();
 }
 
 // Donut SVG helper
@@ -844,23 +844,31 @@ function renderStrategies(data){
   var lfPnl=document.getElementById('lf-pnl');lfPnl.textContent=fPnl(lf.pnl||0);lfPnl.className='strat-pnl '+((lf.pnl||0)>=0?'g':'r');
 }
 
-function renderHistory(f){
+// Two-level filter state
+var HIST_STRAT='all',HIST_TYPE='all';
+
+function renderHistory(){
+// First filter by strategy
 var d=AC;
-if(f==='win')d=AC.filter(function(t){return t.result==='TP_HIT'});
-else if(f==='loss')d=AC.filter(function(t){return t.result==='SL_HIT'});
-else if(f==='long')d=AC.filter(function(t){return t.direction==='LONG'});
-else if(f==='short')d=AC.filter(function(t){return t.direction==='SHORT'});
-else if(f==='baseline')d=AC.filter(function(t){return t.config==='Baseline'});
-else if(f==='longfocus')d=AC.filter(function(t){return t.config==='Long Focus'});
-else if(f==='scalper')d=AC.filter(function(t){return t.config==='Scalper'});
+if(HIST_STRAT==='baseline')d=d.filter(function(t){return t.config==='Baseline'});
+else if(HIST_STRAT==='longfocus')d=d.filter(function(t){return t.config==='Long Focus'});
+// Then filter by type within strategy
+if(HIST_TYPE==='win')d=d.filter(function(t){return t.result==='TP_HIT'});
+else if(HIST_TYPE==='loss')d=d.filter(function(t){return t.result==='SL_HIT'});
+else if(HIST_TYPE==='long')d=d.filter(function(t){return t.direction==='LONG'});
+else if(HIST_TYPE==='short')d=d.filter(function(t){return t.direction==='SHORT'});
+var stratLabel=HIST_STRAT==='baseline'?'🅰️ Baseline':(HIST_STRAT==='longfocus'?'🅱️ Long Focus':'All Strategies');
 var w=d.filter(function(t){return t.result==='TP_HIT'}).length,l=d.filter(function(t){return t.result==='SL_HIT'}).length,tp=d.reduce(function(s,t){return s+parseFloat(t.pnl||0)},0),wr=d.length>0?w/d.length*100:0;
-document.getElementById('history-summary').innerHTML='<span>Showing: <b style="color:var(--text)">'+d.length+'</b></span><span style="color:var(--accent)">Wins: <b>'+w+'</b></span><span style="color:var(--red)">Losses: <b>'+l+'</b></span><span>WR: <b style="color:var(--text)">'+wr.toFixed(0)+'%</b></span><span>P&L: <b style="color:'+(tp>=0?'var(--accent)':'var(--red)')+'">'+fPnl(tp)+'</b></span>';
+document.getElementById('history-summary').innerHTML='<span style="color:var(--amber);font-weight:600">'+stratLabel+'</span><span>Showing: <b style="color:var(--text)">'+d.length+'</b></span><span style="color:var(--accent)">Wins: <b>'+w+'</b></span><span style="color:var(--red)">Losses: <b>'+l+'</b></span><span>WR: <b style="color:var(--text)">'+wr.toFixed(0)+'%</b></span><span>P&L: <b style="color:'+(tp>=0?'var(--accent)':'var(--red)')+'">'+fPnl(tp)+'</b></span>';
 var hb=document.getElementById('history-body');
 if(!d.length){hb.innerHTML='<tr><td colspan="9" class="es">No trades match</td></tr>';return}
 hb.innerHTML=d.map(function(t){var iw=t.result==='TP_HIT',pnl=+t.pnl||0,pct=+t.pnl_pct||0;var cc=cfgClass(t.config);
 return '<tr><td style="color:var(--muted);font-size:11px">'+(t.exit_time||'--')+'</td><td style="font-weight:600">'+(t.symbol_name||'--')+'</td><td><span class="cfg-tag '+cc+'">'+cfgIcon(t.config)+'</span></td><td class="'+(t.direction==='LONG'?'dl':'ds')+'">'+t.direction+'</td><td>'+(t.entry?fP(t.entry):'--')+'</td><td>'+(t.exit_price?fP(t.exit_price):'--')+'</td><td class="'+(iw?'rw':'rl')+'">'+(iw?'TP Hit':'SL Hit')+'</td><td class="'+(pnl>=0?'pp':'pn')+'">'+fPnl(pnl)+'</td><td class="'+(pct>=0?'pp':'pn')+'">'+(pct>=0?'+':'')+pct.toFixed(2)+'%</td></tr>'}).join('')}
 
-document.getElementById('filters').addEventListener('click',function(e){if(!e.target.classList.contains('fb'))return;document.querySelectorAll('.fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');renderHistory(e.target.dataset.filter)});
+// Strategy filter clicks
+document.getElementById('strat-filters').addEventListener('click',function(e){if(!e.target.classList.contains('strat-fb'))return;document.querySelectorAll('.strat-fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');HIST_STRAT=e.target.dataset.strat;renderHistory()});
+// Type filter clicks
+document.getElementById('type-filters').addEventListener('click',function(e){if(!e.target.classList.contains('type-fb'))return;document.querySelectorAll('.type-fb').forEach(function(b){b.classList.remove('ac')});e.target.classList.add('ac');HIST_TYPE=e.target.dataset.type;renderHistory()});
 document.getElementById('export-btn').addEventListener('click',function(){if(!AC.length)return;var rows=[['Date','Asset','Direction','Entry','Exit','Result','PnL','Return%']];AC.forEach(function(t){rows.push([t.exit_time||'',t.symbol_name||'',t.direction||'',t.entry||'',t.exit_price||'',t.result==='TP_HIT'?'TP Hit':'SL Hit',t.pnl||'',t.pnl_pct||''])});var csv=rows.map(function(r){return r.join(',')}).join('\n');var a=document.createElement('a');a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));a.download='smc_trades.csv';a.click()});
 
 loadData();setInterval(loadData,15000);cBS();
