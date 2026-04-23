@@ -433,7 +433,7 @@ tr:hover td{background:var(--card-hover)}
 
     <!-- Strategy A/B/C Comparison -->
     <div class="sb-section">
-      <div class="sb-head"><div class="sb-title">Strategy Test</div><div class="sb-badge">A/B/C</div></div>
+      <div class="sb-head"><div class="sb-title">Strategy Test</div><div class="sb-badge">A/B</div></div>
       <div id="strategy-grid" class="strat-grid">
         <div class="strat-row"><div class="strat-name" style="color:var(--amber)">🅰️ Baseline</div><div class="strat-stats"><span class="strat-wr" id="bl-wr">--</span><span class="strat-pnl" id="bl-pnl">--</span></div></div>
         <div class="strat-row"><div class="strat-name" style="color:#8b5cf6">🅱️ Long Focus</div><div class="strat-stats"><span class="strat-wr" id="lf-wr">--</span><span class="strat-pnl" id="lf-pnl">--</span></div></div>
@@ -732,25 +732,30 @@ AC=AC.map(function(t){t.config=normCfg(t.config);return t});
 (data.market_status||[]).forEach(function(m){if(!LP[m.symbol])LP[m.symbol]=m.price;addSparkTick(m.symbol,m.price)});
 if(data.signal_radar){data.signal_radar.forEach(function(r){SIGNAL_MAP[r.name]=r})}
 
-// Equity = 10000 + realized P&L
-var rp=st.total_pnl||0;var equity=10000+rp;
+// Equity = 10000 + Baseline realized P&L only (top nav shows Baseline only)
+var cfg=data.config_comparison||{};
+var blStats=cfg.Baseline||cfg['Baseline']||{};
+var rp=blStats.pnl||0;  // Baseline P&L only
+var equity=10000+rp;
 var eqEl=document.getElementById('equity');eqEl.textContent='$'+equity.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});eqEl.className='ns-val '+(rp>=0?'g':'r');
 document.getElementById('equity-sub').textContent=fPnl(rp)+' P&L';
 
-var tu=pos.reduce(function(s,p){return s+(p.unrealized_pnl||0)},0);
+// Filter positions for Baseline only (top nav shows Baseline stats)
+var blPos=pos.filter(function(p){return normCfg(p.config)==='Baseline'});
+var tu=blPos.reduce(function(s,p){return s+(p.unrealized_pnl||0)},0);
 var ue=document.getElementById('unrealised');ue.textContent=fPnl(tu);ue.className='ns-val '+(tu>0?'g':tu<0?'r':'n');
-document.getElementById('open-count').textContent=pos.length+' open';
-document.getElementById('record').textContent=(st.wins||0)+'W·'+(st.losses||0)+'L';
-document.getElementById('win-rate').textContent='WR '+(st.win_rate||0).toFixed(0)+'%';
+document.getElementById('open-count').textContent=blPos.length+' open';
+document.getElementById('record').textContent=(blStats.wins||0)+'W·'+(blStats.losses||0)+'L';
+document.getElementById('win-rate').textContent='WR '+(blStats.win_rate||0).toFixed(0)+'%';
 var re=document.getElementById('realised');re.textContent=fPnl(rp);re.className='ns-val '+(rp>0?'g':rp<0?'r':'n');
-document.getElementById('total-trades').textContent=(st.total||0)+' trades';
-// Mirror to mobile stats
-var mu=document.getElementById('m-unrealised');mu.textContent=fPnl(tu);mu.className='ms-val '+(tu>0?'g':tu<0?'r':'n');
-document.getElementById('m-open-count').textContent=pos.length+' open';
-document.getElementById('m-record').textContent=(st.wins||0)+'W·'+(st.losses||0)+'L';
-document.getElementById('m-win-rate').textContent='WR '+(st.win_rate||0).toFixed(0)+'%';
+document.getElementById('total-trades').textContent=(blStats.trades||0)+' trades';
+// Mirror to mobile stats (Baseline only)
+var mu=document.getElementById('m-unrealised');var blUnreal=blPos.reduce(function(s,p){return s+(p.unrealized_pnl||0)},0);mu.textContent=fPnl(blUnreal);mu.className='ms-val '+(blUnreal>0?'g':blUnreal<0?'r':'n');
+document.getElementById('m-open-count').textContent=blPos.length+' open';
+document.getElementById('m-record').textContent=(blStats.wins||0)+'W·'+(blStats.losses||0)+'L';
+document.getElementById('m-win-rate').textContent='WR '+(blStats.win_rate||0).toFixed(0)+'%';
 var mr=document.getElementById('m-realised');mr.textContent=fPnl(rp);mr.className='ms-val '+(rp>0?'g':rp<0?'r':'n');
-document.getElementById('m-total-trades').textContent=(st.total||0)+' trades';
+document.getElementById('m-total-trades').textContent=(blStats.trades||0)+' trades';
 // Mobile equity
 var meq=document.getElementById('m-equity');meq.textContent='$'+equity.toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0});meq.className='ms-val '+(rp>=0?'g':'r');
 document.getElementById('m-equity-sub').textContent=fPnl(rp);
@@ -831,16 +836,12 @@ function renderStrategies(data){
   var cfg=data.config_comparison||{};
   var bl=cfg.Baseline||cfg['Baseline']||{};
   var lf=cfg['Long Focus']||cfg.Config8||{};
-  var sc=cfg.Scalper||{};
   // Baseline
   document.getElementById('bl-wr').textContent=(bl.win_rate||0)+'% WR';
   var blPnl=document.getElementById('bl-pnl');blPnl.textContent=fPnl(bl.pnl||0);blPnl.className='strat-pnl '+((bl.pnl||0)>=0?'g':'r');
   // Long Focus
   document.getElementById('lf-wr').textContent=(lf.win_rate||0)+'% WR';
   var lfPnl=document.getElementById('lf-pnl');lfPnl.textContent=fPnl(lf.pnl||0);lfPnl.className='strat-pnl '+((lf.pnl||0)>=0?'g':'r');
-  // Scalper
-  document.getElementById('sc-wr').textContent=(sc.win_rate||0)+'% WR';
-  var scPnl=document.getElementById('sc-pnl');scPnl.textContent=fPnl(sc.pnl||0);scPnl.className='strat-pnl '+((sc.pnl||0)>=0?'g':'r');
 }
 
 function renderHistory(f){
