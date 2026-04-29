@@ -224,8 +224,10 @@ tr:hover td{background:var(--card-hover)}
 .cfg-tag.bl{background:rgba(251,191,36,0.15);color:#fbbf24}
 .cfg-tag.lf{background:rgba(139,92,246,0.15);color:#8b5cf6}
 .cfg-tag.sc{background:rgba(6,182,212,0.15);color:#06b6d4}
+.cfg-tag.sta{background:rgba(244,63,94,0.15);color:#f43f5e}
+.cfg-tag.stb{background:rgba(34,197,94,0.15);color:#22c55e}
 .pos-group{padding:12px 16px;border-bottom:1px solid var(--border);font-size:11px;font-weight:700;font-family:var(--mono);display:flex;align-items:center;gap:8px}
-.pos-group.bl{color:#fbbf24}.pos-group.lf{color:#8b5cf6}.pos-group.sc{color:#06b6d4}
+.pos-group.bl{color:#fbbf24}.pos-group.lf{color:#8b5cf6}.pos-group.sc{color:#06b6d4}.pos-group.sta{color:#f43f5e}.pos-group.stb{color:#22c55e}
 </style>
 
 <!-- ═══ HUD THEME ═══ -->
@@ -356,7 +358,7 @@ tr:hover td{background:var(--card-hover)}
 </head>
 <body>
 <div class="topnav"><div class="topnav-inner">
-  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">ATR SL + Volume Filter · 1H</div></div></div>
+  <div class="logo"><div class="logo-i">S</div><div><div class="logo-t">SMC SCANNER</div><div class="logo-s">SMC · Supertrend · Multi-TF</div></div></div>
   <div class="nav-center">
     <div class="nav-stat"><div class="ns-label">Equity</div><div class="ns-val g" id="equity">$10,000</div><div class="ns-sub" id="equity-sub">Starting</div></div>
     <div class="nav-stat"><div class="ns-label">Unrealised</div><div class="ns-val g" id="unrealised">--</div><div class="ns-sub" id="open-count">--</div></div>
@@ -395,7 +397,7 @@ tr:hover td{background:var(--card-hover)}
 
     <div class="st">Trade history</div>
     <div class="cw">
-      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><div class="flt" id="strat-filters" style="border-right:1px solid var(--muted2);padding-right:8px"><button class="fb strat-fb ac" data-strat="all">All</button><button class="fb strat-fb" data-strat="baseline">🅰️</button><button class="fb strat-fb" data-strat="longfocus">🅱️</button></div><div class="flt" id="type-filters"><button class="fb type-fb ac" data-type="all">All</button><button class="fb type-fb" data-type="win">Wins</button><button class="fb type-fb" data-type="loss">Losses</button><button class="fb type-fb" data-type="long">Long</button><button class="fb type-fb" data-type="short">Short</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
+      <div class="ch collapse-toggle" id="history-toggle"><div class="ct"><span class="collapse-arrow" id="history-arrow">▶</span>Closed Trades</div><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><div class="flt" id="strat-filters" style="border-right:1px solid var(--muted2);padding-right:8px"><button class="fb strat-fb ac" data-strat="all">All</button><button class="fb strat-fb" data-strat="baseline">🅰️</button><button class="fb strat-fb" data-strat="longfocus">🅱️</button><button class="fb strat-fb" data-strat="staggressive">🔥</button><button class="fb strat-fb" data-strat="stbalanced">⚖️</button></div><div class="flt" id="type-filters"><button class="fb type-fb ac" data-type="all">All</button><button class="fb type-fb" data-type="win">Wins</button><button class="fb type-fb" data-type="loss">Losses</button><button class="fb type-fb" data-type="long">Long</button><button class="fb type-fb" data-type="short">Short</button></div><button class="eb" id="export-btn">CSV ↓</button></div></div>
       <div class="collapse-body" id="history-collapse">
         <div class="hsu" id="history-summary"></div>
         <div class="hs"><table><thead><tr><th>Date</th><th>Asset</th><th>Config</th><th>Dir</th><th>Entry</th><th>Exit</th><th>Result</th><th>P&L</th><th>Return</th></tr></thead><tbody id="history-body"><tr><td colspan="9" class="es">No closed trades yet</td></tr></tbody></table></div>
@@ -433,10 +435,12 @@ tr:hover td{background:var(--card-hover)}
 
     <!-- Strategy A/B/C Comparison -->
     <div class="sb-section">
-      <div class="sb-head"><div class="sb-title">Strategy Test</div><div class="sb-badge">A/B</div></div>
+      <div class="sb-head"><div class="sb-title">Strategy Test</div><div class="sb-badge">A/B/C/D</div></div>
       <div id="strategy-grid" class="strat-grid">
         <div class="strat-row"><div class="strat-name" style="color:var(--amber)">🅰️ Baseline</div><div class="strat-stats"><span class="strat-wr" id="bl-wr">--</span><span class="strat-pnl" id="bl-pnl">--</span></div></div>
         <div class="strat-row"><div class="strat-name" style="color:#8b5cf6">🅱️ Long Focus</div><div class="strat-stats"><span class="strat-wr" id="lf-wr">--</span><span class="strat-pnl" id="lf-pnl">--</span></div></div>
+        <div class="strat-row"><div class="strat-name" style="color:#f43f5e">🔥 ST Aggressive</div><div class="strat-stats"><span class="strat-wr" id="sta-wr">--</span><span class="strat-pnl" id="sta-pnl">--</span><span class="strat-tf" style="font-size:9px;color:var(--muted);margin-left:4px">4H</span></div></div>
+        <div class="strat-row"><div class="strat-name" style="color:#22c55e">⚖️ ST Balanced</div><div class="strat-stats"><span class="strat-wr" id="stb-wr">--</span><span class="strat-pnl" id="stb-pnl">--</span><span class="strat-tf" style="font-size:9px;color:var(--muted);margin-left:4px">1D</span></div></div>
       </div>
     </div>
 
@@ -722,8 +726,8 @@ function processData(d){if(d.scan_time!==LST){LST=d.scan_time;D=d;render(d)}}
 
 // Normalize config name: empty/null -> Baseline, Config8 -> Long Focus
 function normCfg(c){if(!c||c===''||c==='null')return 'Baseline';if(c==='Config8')return 'Long Focus';return c}
-function cfgClass(c){var n=normCfg(c);return n==='Scalper'?'sc':(n==='Long Focus'?'lf':'bl')}
-function cfgIcon(c){var n=normCfg(c);return n==='Scalper'?'🔪':(n==='Long Focus'?'🅱️':'🅰️')}
+function cfgClass(c){var n=normCfg(c);if(n==='Scalper')return 'sc';if(n==='Long Focus')return 'lf';if(n==='ST Aggressive')return 'sta';if(n==='ST Balanced')return 'stb';return 'bl'}
+function cfgIcon(c){var n=normCfg(c);if(n==='Scalper')return '🔪';if(n==='Long Focus')return '🅱️';if(n==='ST Aggressive')return '🔥';if(n==='ST Balanced')return '⚖️';return '🅰️'}
 
 function render(data){
 var st=data.stats||{},pos=data.open_positions||[];AC=(data.closed_trades||[]).reverse();
@@ -776,10 +780,10 @@ if(!pos.length){pb.innerHTML='<div class="es">No open positions</div>'}
 else{
   // Normalize and group positions by config
   pos.forEach(function(p){p.config=normCfg(p.config)});
-  var grouped={Baseline:[],['Long Focus']:[]};
+  var grouped={Baseline:[],['Long Focus']:[],['ST Aggressive']:[],['ST Balanced']:[]};
   pos.forEach(function(p){var c=p.config;if(!grouped[c])grouped[c]=[];grouped[c].push(p)});
   var html='';
-  ['Baseline','Long Focus'].forEach(function(cfg){
+  ['Baseline','Long Focus','ST Aggressive','ST Balanced'].forEach(function(cfg){
     var cfgPos=grouped[cfg]||[];
     if(!cfgPos.length)return;
     var cc=cfgClass(cfg);
@@ -836,12 +840,20 @@ function renderStrategies(data){
   var cfg=data.config_comparison||{};
   var bl=cfg.Baseline||cfg['Baseline']||{};
   var lf=cfg['Long Focus']||cfg.Config8||{};
+  var sta=cfg['ST Aggressive']||{};
+  var stb=cfg['ST Balanced']||{};
   // Baseline
   document.getElementById('bl-wr').textContent=(bl.win_rate||0)+'% WR';
   var blPnl=document.getElementById('bl-pnl');blPnl.textContent=fPnl(bl.pnl||0);blPnl.className='strat-pnl '+((bl.pnl||0)>=0?'g':'r');
   // Long Focus
   document.getElementById('lf-wr').textContent=(lf.win_rate||0)+'% WR';
   var lfPnl=document.getElementById('lf-pnl');lfPnl.textContent=fPnl(lf.pnl||0);lfPnl.className='strat-pnl '+((lf.pnl||0)>=0?'g':'r');
+  // ST Aggressive (4H)
+  document.getElementById('sta-wr').textContent=(sta.win_rate||0)+'% WR';
+  var staPnl=document.getElementById('sta-pnl');staPnl.textContent=fPnl(sta.pnl||0);staPnl.className='strat-pnl '+((sta.pnl||0)>=0?'g':'r');
+  // ST Balanced (1D)
+  document.getElementById('stb-wr').textContent=(stb.win_rate||0)+'% WR';
+  var stbPnl=document.getElementById('stb-pnl');stbPnl.textContent=fPnl(stb.pnl||0);stbPnl.className='strat-pnl '+((stb.pnl||0)>=0?'g':'r');
 }
 
 // Two-level filter state
@@ -852,12 +864,14 @@ function renderHistory(){
 var d=AC;
 if(HIST_STRAT==='baseline')d=d.filter(function(t){return t.config==='Baseline'});
 else if(HIST_STRAT==='longfocus')d=d.filter(function(t){return t.config==='Long Focus'});
+else if(HIST_STRAT==='staggressive')d=d.filter(function(t){return t.config==='ST Aggressive'});
+else if(HIST_STRAT==='stbalanced')d=d.filter(function(t){return t.config==='ST Balanced'});
 // Then filter by type within strategy
 if(HIST_TYPE==='win')d=d.filter(function(t){return t.result==='TP_HIT'});
 else if(HIST_TYPE==='loss')d=d.filter(function(t){return t.result==='SL_HIT'});
 else if(HIST_TYPE==='long')d=d.filter(function(t){return t.direction==='LONG'});
 else if(HIST_TYPE==='short')d=d.filter(function(t){return t.direction==='SHORT'});
-var stratLabel=HIST_STRAT==='baseline'?'🅰️ Baseline':(HIST_STRAT==='longfocus'?'🅱️ Long Focus':'All Strategies');
+var stratLabel=HIST_STRAT==='baseline'?'🅰️ Baseline':(HIST_STRAT==='longfocus'?'🅱️ Long Focus':(HIST_STRAT==='staggressive'?'🔥 ST Aggressive':(HIST_STRAT==='stbalanced'?'⚖️ ST Balanced':'All Strategies')));
 var w=d.filter(function(t){return t.result==='TP_HIT'}).length,l=d.filter(function(t){return t.result==='SL_HIT'}).length,tp=d.reduce(function(s,t){return s+parseFloat(t.pnl||0)},0),wr=d.length>0?w/d.length*100:0;
 document.getElementById('history-summary').innerHTML='<span style="color:var(--amber);font-weight:600">'+stratLabel+'</span><span>Showing: <b style="color:var(--text)">'+d.length+'</b></span><span style="color:var(--accent)">Wins: <b>'+w+'</b></span><span style="color:var(--red)">Losses: <b>'+l+'</b></span><span>WR: <b style="color:var(--text)">'+wr.toFixed(0)+'%</b></span><span>P&L: <b style="color:'+(tp>=0?'var(--accent)':'var(--red)')+'">'+fPnl(tp)+'</b></span>';
 var hb=document.getElementById('history-body');
