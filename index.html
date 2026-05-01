@@ -788,14 +788,26 @@ else{
     if(!cfgPos.length)return;
     var cc=cfgClass(cfg);
     html+='<div class="pos-group '+cc+'">'+cfgIcon(cfg)+' '+cfg+' <span style="font-weight:400;color:var(--muted)">('+cfgPos.length+')</span></div>';
-    html+='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>TP / SL</th><th>Time</th><th>Progress</th></tr></thead><tbody>';
+    var isST=cfg==='ST Aggressive'||cfg==='ST Balanced';
+    var exitHeader=isST?'Exit':'TP / SL';
+    var progHeader=isST?'Trend':'Progress';
+    html+='<table><thead><tr><th>Asset</th><th>Dir</th><th>Entry</th><th>Current</th><th>P&L %</th><th>P&L $</th><th>'+exitHeader+'</th><th>Time</th><th>'+progHeader+'</th></tr></thead><tbody>';
     cfgPos.forEach(function(p){
       var pc=p.unrealized_pct>=0?'pp':'pn',dc=p.direction==='LONG'?'dl':'ds';
       var lp=LP[p.symbol]||p.current,id=p.symbol+'-'+p.direction+'-'+cfg.replace(' ','');
       var pct;if(p.direction==='LONG')pct=((lp-p.sl)/(p.tp-p.sl))*100;else pct=((p.sl-lp)/(p.sl-p.tp))*100;pct=Math.max(0,Math.min(100,pct));
       var progCol=p.unrealized_pnl>=0?'var(--accent)':'var(--red)';
       var timeStr=fDuration(getEntryTime(p)||data.scan_time||null);
-      html+='<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td><span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span></td><td class="tit">'+timeStr+'</td><td style="min-width:90px"><div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div></td></tr>';
+      var exitCell,progCell;
+      if(isST){
+        exitCell='<span style="color:var(--accent);font-weight:600">ST Flip</span>';
+        var trendIcon=p.unrealized_pct>=0?'📈':'📉';
+        progCell='<span style="font-size:18px">'+trendIcon+'</span> <span style="font-size:10px;color:var(--muted)">Riding</span>';
+      }else{
+        exitCell='<span class="tv">'+fP(p.tp)+'</span> / <span class="slv">'+fP(p.sl)+'</span>';
+        progCell='<div class="pw"><div class="pf" id="prog-'+id+'" style="width:'+pct+'%;background:'+progCol+'"></div></div><div class="pl"><span>SL</span><span>TP</span></div>';
+      }
+      html+='<tr><td style="font-weight:600">'+p.symbol_name+'</td><td class="'+dc+'">'+p.direction+'</td><td>'+fP(p.entry)+'</td><td id="pos-now-'+id+'" style="color:var(--text);font-weight:500">'+fPF(lp)+'</td><td id="pos-pct-'+id+'" class="'+pc+'">'+(p.unrealized_pct>=0?'+':'')+p.unrealized_pct.toFixed(2)+'%</td><td id="pos-pnl-'+id+'" class="'+pc+'">'+fPnl(p.unrealized_pnl)+'</td><td>'+exitCell+'</td><td class="tit">'+timeStr+'</td><td style="min-width:90px">'+progCell+'</td></tr>';
     });
     html+='</tbody></table>';
   });
