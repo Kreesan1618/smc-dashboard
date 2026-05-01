@@ -812,7 +812,17 @@ else{
           else if(stDist>=0){healthCol='linear-gradient(90deg,#fb923c,#fdba74)';statusText='Close';statusCol='#fb923c'}
           else{healthCol='linear-gradient(90deg,#f43f5e,#fb7185)';statusText='Danger';statusCol='#f43f5e'}
           var stLineStr=p.st_line?fP(p.st_line):'--';
-          progCell='<div style="min-width:110px">'
+          // Expected P&L at flip
+          var exitPnl=p.st_exit_pnl;
+          var exitPnlPct=p.st_exit_pnl_pct;
+          var exitPnlStr='';
+          if(exitPnl!==null&&exitPnl!==undefined){
+            var exitCol=exitPnl>=0?'#34d399':'#f43f5e';
+            var exitSign=exitPnl>=0?'+':'';
+            exitPnlStr='<div style="font-size:9px;font-family:var(--mono);margin-top:2px;text-align:center;color:'+exitCol+'">'
+              +'If flip: '+exitSign+'$'+Math.abs(exitPnl).toFixed(0)+' ('+exitSign+exitPnlPct.toFixed(1)+'%)</div>';
+          }
+          progCell='<div style="min-width:120px">'
             +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">'
             +'<span style="font-size:9px;color:var(--muted);font-family:var(--mono)">ST: '+stLineStr+'</span>'
             +'<span style="font-size:9px;font-weight:700;color:'+statusCol+';font-family:var(--mono)">'+statusText+'</span>'
@@ -821,6 +831,7 @@ else{
             +'<div style="width:'+healthPct+'%;height:100%;background:'+healthCol+';border-radius:3px;transition:width 0.5s"></div>'
             +'</div>'
             +'<div style="font-size:9px;color:var(--muted);font-family:var(--mono);margin-top:2px;text-align:center">'+(stDist>=0?'+':'')+stDist.toFixed(2)+'% from flip</div>'
+            +exitPnlStr
             +'</div>';
         }else{
           var trendIcon=p.unrealized_pct>=0?'📈':'📉';
