@@ -709,7 +709,7 @@ function fl(s,p){
 
 function rc(){if(!D||!D.open_positions)return;var tot=0,any=false;
 D.open_positions.forEach(function(p){var lp=LP[p.symbol];if(!lp)return;any=true;
-var risk=Math.abs(p.entry-p.sl),qty=risk>0?200/risk:0;var up,un;
+var qty=p.qty||0;var up,un;
 if(p.direction==='LONG'){up=(lp-p.entry)/p.entry*100;un=(lp-p.entry)*qty}else{up=(p.entry-lp)/p.entry*100;un=(p.entry-lp)*qty}
 tot+=un;var cfg=normCfg(p.config);var id=p.symbol+'-'+p.direction+'-'+cfg.replace(' ','');
 var ne=document.getElementById('pos-now-'+id),pe=document.getElementById('pos-pct-'+id),ue=document.getElementById('pos-pnl-'+id);
