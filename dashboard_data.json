@@ -1,35 +1,35 @@
 {
-  "scan_time": "06 Nov 2026 \u00b7 04:00 UTC",
+  "scan_time": "06 Nov 2026 \u00b7 05:00 UTC",
   "market_status": [
+    {
+      "symbol": "SOLUSDT",
+      "symbol_name": "SOL",
+      "price": 89.53,
+      "trend": "\ud83d\udd34 \u25bc"
+    },
     {
       "symbol": "BNBUSDT",
       "symbol_name": "BNB",
-      "price": 693.64,
+      "price": 693.35,
+      "trend": "\ud83d\udfe2 \u25b2"
+    },
+    {
+      "symbol": "BTCUSDT",
+      "symbol_name": "BTC",
+      "price": 75794.01,
       "trend": "\ud83d\udfe2 \u25b2"
     },
     {
       "symbol": "ETHUSDT",
       "symbol_name": "ETH",
-      "price": 2234.91,
-      "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "SOLUSDT",
-      "symbol_name": "SOL",
-      "price": 89.74,
+      "price": 2234.11,
       "trend": "\ud83d\udd34 \u25bc"
     },
     {
       "symbol": "DOGEUSDT",
       "symbol_name": "DOGE",
-      "price": 0.07182,
+      "price": 0.07169,
       "trend": "\ud83d\udd34 \u25bc"
-    },
-    {
-      "symbol": "BTCUSDT",
-      "symbol_name": "BTC",
-      "price": 75876.01,
-      "trend": "\ud83d\udfe2 \u25b2"
     }
   ],
   "open_positions": [
@@ -38,16 +38,16 @@
       "symbol_name": "ETH",
       "direction": "LONG",
       "entry": 2536.94,
-      "current": 2235.08,
+      "current": 2232.59,
       "tp": 25369.4,
       "sl": 25.37,
       "qty": 1.528061,
-      "unrealized_pct": -11.9,
-      "unrealized_pnl": -461.26,
+      "unrealized_pct": -12.0,
+      "unrealized_pnl": -465.07,
       "entry_time": "2026-10-12 00:01:12",
       "config": "ST Balanced",
       "st_line": 2194.9164285714287,
-      "st_distance_pct": 1.8,
+      "st_distance_pct": 1.69,
       "st_exit_pnl": -522.63,
       "st_exit_pnl_pct": -13.48
     },
@@ -56,16 +56,16 @@
       "symbol_name": "DOGE",
       "direction": "LONG",
       "entry": 0.08679,
-      "current": 0.07182,
+      "current": 0.07168,
       "tp": 0.8679,
       "sl": 0.000868,
       "qty": 27584.447696,
-      "unrealized_pct": -17.25,
-      "unrealized_pnl": -412.94,
+      "unrealized_pct": -17.41,
+      "unrealized_pnl": -416.8,
       "entry_time": "2026-10-12 00:01:13",
       "config": "ST Balanced",
       "st_line": 0.06970142857142857,
-      "st_distance_pct": 2.95,
+      "st_distance_pct": 2.76,
       "st_exit_pnl": -471.38,
       "st_exit_pnl_pct": -19.69
     },
@@ -74,16 +74,16 @@
       "symbol_name": "SOL",
       "direction": "LONG",
       "entry": 94.53,
-      "current": 89.74,
+      "current": 89.47,
       "tp": 945.3,
       "sl": 0.9453,
       "qty": 30.351819,
-      "unrealized_pct": -5.07,
-      "unrealized_pnl": -145.39,
+      "unrealized_pct": -5.35,
+      "unrealized_pnl": -153.58,
       "entry_time": "2026-11-02 00:01:02",
       "config": "ST Balanced",
       "st_line": 86.46357142857143,
-      "st_distance_pct": 3.65,
+      "st_distance_pct": 3.36,
       "st_exit_pnl": -244.83,
       "st_exit_pnl_pct": -8.53
     },
@@ -92,16 +92,16 @@
       "symbol_name": "BNB",
       "direction": "LONG",
       "entry": 712.69,
-      "current": 693.49,
+      "current": 693.25,
       "tp": 7126.9,
       "sl": 7.1269,
       "qty": 5.444601,
-      "unrealized_pct": -2.69,
-      "unrealized_pnl": -104.54,
+      "unrealized_pct": -2.73,
+      "unrealized_pnl": -105.84,
       "entry_time": "2026-11-02 00:01:02",
       "config": "ST Balanced",
       "st_line": 663.9614285714285,
-      "st_distance_pct": 4.26,
+      "st_distance_pct": 4.22,
       "st_exit_pnl": -265.31,
       "st_exit_pnl_pct": -6.84
     },
@@ -110,16 +110,16 @@
       "symbol_name": "BTC",
       "direction": "LONG",
       "entry": 76816.0,
-      "current": 75887.58,
+      "current": 75749.14,
       "tp": 768160.0,
       "sl": 768.16,
       "qty": 0.065724,
-      "unrealized_pct": -1.21,
-      "unrealized_pnl": -61.02,
+      "unrealized_pct": -1.39,
+      "unrealized_pnl": -70.12,
       "entry_time": "2026-11-03 00:01:18",
       "config": "ST Balanced",
       "st_line": 74730.52642857144,
-      "st_distance_pct": 1.52,
+      "st_distance_pct": 1.34,
       "st_exit_pnl": -137.07,
       "st_exit_pnl_pct": -2.71
     },
@@ -128,16 +128,16 @@
       "symbol_name": "BTC",
       "direction": "SHORT",
       "entry": 76029.79,
-      "current": 75887.57,
+      "current": 75748.0,
       "tp": 760.3,
       "sl": 7602979.0,
       "qty": 0.025496,
-      "unrealized_pct": 0.19,
-      "unrealized_pnl": 3.63,
+      "unrealized_pct": 0.37,
+      "unrealized_pnl": 7.18,
       "entry_time": "2026-11-05 16:01:03",
       "config": "ST Aggressive",
       "st_line": 78291.88199999998,
-      "st_distance_pct": 3.17,
+      "st_distance_pct": 3.36,
       "st_exit_pnl": -57.67,
       "st_exit_pnl_pct": -2.98
     },
@@ -146,16 +146,16 @@
       "symbol_name": "ETH",
       "direction": "SHORT",
       "entry": 2252.7,
-      "current": 2234.8,
+      "current": 2232.45,
       "tp": 22.53,
       "sl": 225270.0,
       "qty": 0.64429,
-      "unrealized_pct": 0.79,
-      "unrealized_pnl": 11.53,
+      "unrealized_pct": 0.9,
+      "unrealized_pnl": 13.05,
       "entry_time": "2026-11-05 16:01:03",
       "config": "ST Aggressive",
       "st_line": 2331.66,
-      "st_distance_pct": 4.33,
+      "st_distance_pct": 4.44,
       "st_exit_pnl": -50.87,
       "st_exit_pnl_pct": -3.51
     },
@@ -164,16 +164,16 @@
       "symbol_name": "SOL",
       "direction": "SHORT",
       "entry": 90.22,
-      "current": 89.73,
+      "current": 89.47,
       "tp": 0.9022,
       "sl": 9022.0,
       "qty": 13.611535,
-      "unrealized_pct": 0.54,
-      "unrealized_pnl": 6.67,
+      "unrealized_pct": 0.83,
+      "unrealized_pnl": 10.21,
       "entry_time": "2026-11-05 16:01:04",
       "config": "ST Aggressive",
       "st_line": 93.72099999999999,
-      "st_distance_pct": 4.45,
+      "st_distance_pct": 4.75,
       "st_exit_pnl": -47.65,
       "st_exit_pnl_pct": -3.88
     },
@@ -182,16 +182,16 @@
       "symbol_name": "BNB",
       "direction": "SHORT",
       "entry": 688.97,
-      "current": 693.51,
+      "current": 693.25,
       "tp": 6.8897,
       "sl": 68897.0,
       "qty": 2.806425,
-      "unrealized_pct": -0.66,
-      "unrealized_pnl": -12.74,
+      "unrealized_pct": -0.62,
+      "unrealized_pnl": -12.01,
       "entry_time": "2026-11-05 16:01:04",
       "config": "ST Aggressive",
       "st_line": 707.019,
-      "st_distance_pct": 1.95,
+      "st_distance_pct": 1.99,
       "st_exit_pnl": -50.65,
       "st_exit_pnl_pct": -2.62
     },
@@ -200,18 +200,18 @@
       "symbol_name": "DOGE",
       "direction": "LONG",
       "entry": 0.07186,
-      "current": 0.07186,
+      "current": 0.07164,
       "tp": 0.7186,
       "sl": 0.000719,
-      "qty": 0,
-      "unrealized_pct": 0.0,
-      "unrealized_pnl": 0.0,
-      "entry_time": "2026-11-06 04:00:23",
+      "qty": 16488.646872,
+      "unrealized_pct": -0.31,
+      "unrealized_pnl": -3.63,
+      "entry_time": "2026-11-06 04:00:58",
       "config": "ST Aggressive",
-      "st_line": null,
-      "st_distance_pct": null,
-      "st_exit_pnl": null,
-      "st_exit_pnl_pct": null
+      "st_line": 0.068111,
+      "st_distance_pct": 4.93,
+      "st_exit_pnl": -61.82,
+      "st_exit_pnl_pct": -5.22
     }
   ],
   "closed_trades": [
@@ -11831,11 +11831,11 @@
     "cooldown_until": ""
   },
   "whale_summary": {
-    "last_updated": "06 Nov \u00b7 04:00 UTC",
+    "last_updated": "06 Nov \u00b7 05:01 UTC",
     "consensus": "BULLISH",
-    "consensus_pct": 90,
-    "long_pct": 90,
-    "short_pct": 10,
+    "consensus_pct": 91,
+    "long_pct": 91,
+    "short_pct": 9,
     "whales": [
       {
         "label": "Whale A",
@@ -11854,12 +11854,12 @@
       {
         "label": "Whale B",
         "short_addr": "0x888e...6d77",
-        "account_value": 609780,
+        "account_value": 609148,
         "open_count": 39,
         "bias": "SHORT",
         "long_pct": 0,
         "short_pct": 100,
-        "unrealized_pnl": 457709,
+        "unrealized_pnl": 457075,
         "top_positions": [
           {
             "coin": "kPEPE",
@@ -11871,57 +11871,57 @@
           {
             "coin": "STRK",
             "direction": "SHORT",
-            "size_usd": 93460,
+            "size_usd": 93925,
             "leverage": 5,
-            "roe_pct": 306.7
+            "roe_pct": 305.8
           },
           {
             "coin": "TRUMP",
             "direction": "SHORT",
-            "size_usd": 56945,
+            "size_usd": 57438,
             "leverage": 10,
-            "roe_pct": 497.5
+            "roe_pct": 493.2
           }
         ],
         "total_trades": 60,
         "win_rate": 85.0,
-        "avg_return": 42.57
+        "avg_return": 42.53
       },
       {
         "label": "Whale C",
         "short_addr": "0x6990...f207",
-        "account_value": 1056111,
+        "account_value": 1178359,
         "open_count": 5,
         "bias": "LONG",
         "long_pct": 99,
         "short_pct": 1,
-        "unrealized_pnl": -778863,
+        "unrealized_pnl": -744222,
         "top_positions": [
           {
             "coin": "HYPE",
             "direction": "LONG",
-            "size_usd": 6167007,
+            "size_usd": 6203693,
             "leverage": 10,
-            "roe_pct": -113.5
+            "roe_pct": -108.2
           },
           {
             "coin": "ETH",
             "direction": "LONG",
-            "size_usd": 483559,
+            "size_usd": 483039,
             "leverage": 25,
-            "roe_pct": -14.0
+            "roe_pct": -16.7
           },
           {
             "coin": "ZEC",
             "direction": "LONG",
-            "size_usd": 329601,
+            "size_usd": 378380,
             "leverage": 10,
-            "roe_pct": 14.5
+            "roe_pct": 9.2
           }
         ],
         "total_trades": 1,
         "win_rate": 0.0,
-        "avg_return": -14.31
+        "avg_return": -14.25
       }
     ]
   },
